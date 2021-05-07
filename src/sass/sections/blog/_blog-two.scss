@@ -1,0 +1,33 @@
+.blog-two{
+  display: flex;
+  &-section{
+    padding: 0;
+  }
+  &__item{
+    display: flex;
+    align-items: flex-start;
+    width: 50%;
+    padding: 6.5rem;
+    &-desc{
+      width: 50%;
+      padding-right: 2.5rem;
+    }
+    &-img{
+      width: 50%;
+      height: 28rem;
+      img, video{
+        flex-shrink: 0;
+        @include img();
+      }
+    }
+    //modifications
+    &--left{
+      background-color: #0f0f0f;
+      padding-left: 8rem;
+    }
+    &--right{
+      background-color: #1a1a1a;
+      padding-right: 8rem;
+    }
+  }
+}
