@@ -36,6 +36,7 @@
   }
 }
 
+//wishlist
 .wishlist-btn{
   display: inline-block;
   text-align: center;
@@ -50,6 +51,7 @@
   background-color: $orangey-yellow;
   box-shadow: 0 1rem 2rem 0 rgba(251, 179, 22, 0.2);
   text-transform: uppercase;
+  transition-delay: .1s;
   @include transition();
   &-wrap{
     text-align: center;
@@ -64,6 +66,9 @@
     left: 2rem;
     top: 50%;
     transform: translateY(-50%);
+    path{
+      @include transition();
+    }
   }
   &__arrow{
     display: flex;
@@ -76,6 +81,7 @@
     right: 0;
     top: 0;
     background: $black;
+    @include transition();
   }
   &__text{
     padding-top: 3rem;
@@ -86,6 +92,18 @@
     color: #3c3c3c;
     @media (max-width: 1199px){
       font-size: 1.5rem;
+    }
+  }
+  @media (min-width: 768px) {
+    &:hover {
+      background-color: $black;
+      color: $white;
+      .wishlist-btn__mail path{
+        fill: $orangey-yellow;
+      }
+      .wishlist-btn__arrow{
+        background: $orangey-yellow;
+      }
     }
   }
 }

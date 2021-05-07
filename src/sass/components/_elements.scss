@@ -267,7 +267,7 @@ body[data-active='orange-black']{
     }
   }
   .tog-nav{
-    border-bottom: .2rem solid $white;
+    border-bottom: 2px solid $white;
     &::before, &::after{
       background: $white;
     }
@@ -284,7 +284,7 @@ body[data-active='white']{
     }
   }
   .tog-nav{
-    border-bottom: .2rem solid $black;
+    border-bottom: 2px solid $black;
     &::before, &::after{
       background: $black;
     }
@@ -304,7 +304,7 @@ body .header-section.bg {
     span{
       background: $orangey-yellow;
     }
-    //border-bottom: .2rem solid $white;
+    //border-bottom: 2px solid $white;
     &::before, &::after{
       background: $white;
     }
