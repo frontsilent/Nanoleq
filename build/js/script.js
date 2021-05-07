@@ -1,33 +1,20 @@
 let blocks = Array.from(document.querySelectorAll('.section')),
     bodyContainer = document.querySelector('body'),
-    headerSection = document.querySelector('.header-section')
-    navigationPoints = document.querySelectorAll('.main-nav__item');
-
-function getVisiblePart(element){
-    if (element.getBoundingClientRect().top < 120){
-        return true;
-    }
-}
+    headerSection = $('.header-section')
+    mainMenuWrap = $('.main-menu-wrap'),
+    menuBurger = $('.tog-nav');
 
 window.addEventListener('scroll', function() {
 
-    // if(window.scrollY > 400){
-    //     headerSection.classList.add('bg')
-    // } else{
-    //     headerSection.classList.remove('bg')
-    // }
+    if(window.scrollY > 200){
+        headerSection.removeClass('bg');
+        mainMenuWrap.removeClass('show');
+        menuBurger.removeClass('active');
+    }
 
     blocks.forEach(function (item, index) {
 
         if (getVisiblePart(item)) {
-
-            // if(bodyContainer.classList.contains('main-page')){
-            //
-            //     blocks.forEach(function (element, i){
-            //         navigationPoints[i].classList.remove('active');
-            //     });
-            //     navigationPoints[index].classList.add('active');
-            // }
             if($(window).width() > 767){
                 bodyContainer.dataset.active = item.dataset.theme;
                 return false;
@@ -38,25 +25,26 @@ window.addEventListener('scroll', function() {
 
 });
 
-//MENU SLIDE TOGGLE
-let menuBurger = $('.tog-nav'),
-    menuWrapper = $('.main-menu-wrap');
+function getVisiblePart(element){
+    if (element.getBoundingClientRect().top < 120){
+        return true;
+    }
+}
 
-if ($(window).width() > 767) {
-    menuBurger.hover(function () {
-        menuWrapper.addClass('show');
-        $('.header-section').addClass('bg');
-    });
-} else{
-    menuBurger.on('click', function () {
-        menuBurger.toggleClass('active');
-        menuWrapper.slideToggle();
-    });
-};
+//MENU SLIDE TOGGLE
+menuBurger.on('click', function () {
+    menuBurger.toggleClass('active');
+    if ($(window).width() < 767) {
+        mainMenuWrap.slideToggle();
+    } else{
+        mainMenuWrap.toggleClass('show');
+        headerSection.toggleClass('bg');
+    }
+});
 
 $(window).on('resize', function () {
     if ($(window).width() > 767) {
-        menuWrapper.removeAttr('style');
+        mainMenuWrap.removeAttr('style');
     } else {
         menuBurger.removeClass('active');
     }
