@@ -1,5 +1,7 @@
 // UTILS
+
 @import "components/reset";
+
 @import "components/mixins";
 
 // LIBS
@@ -15,6 +17,7 @@
 @import "components/buttons";
 @import "components/header";
 @import "components/footer";
+@import "sections/intro";
 @import "sections/updates";
 
 //PAGES
@@ -22,3 +25,4 @@
 @import "pages/vital";
 @import "pages/about";
 @import "pages/activity";
+@import "pages/products/products";
