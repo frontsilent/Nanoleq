@@ -1,7 +1,7 @@
-const util  = require('gulp-util');
+const util = require('gulp-util');
 
 let config = {
-    logEnvironment: function() {
+    logEnvironment: function () {
         util.log(
             'Environment:',
             util.colors.white.bgRed(' ' + process.env.NODE_ENV.toUpperCase() + ' ')

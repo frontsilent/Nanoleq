@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "export NODE_ENV=development&&gulp",
-    "build": "export NODE_ENV=production&&gulp"
+    "start": "set NODE_ENV=development&&gulp",
+    "build": "set NODE_ENV=production&&gulp"
   },
   "author": "Artem Rudakov",
   "license": "ISC",
@@ -29,6 +29,7 @@
     "run-sequence": "^2.2.1"
   },
   "dependencies": {
-    "gulp-file-include": "^2.0.1"
+    "gulp-file-include": "^2.0.1",
+    "graceful-fs": "^4.2.4"
   }
 }
