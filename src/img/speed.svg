@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="chronometer" width="47" height="35.801" viewBox="0 0 47 35.801">
+    <defs>
+        <style>
+            .cls-1{fill:#fbb316}
+        </style>
+    </defs>
+    <path id="Path_7728" d="M182 20.654a15.146 15.146 0 1 0 16.523-15.083V2.754h2.754V0h-8.262v2.754h2.754v2.817A15.167 15.167 0 0 0 182 20.654zm27.539 0a12.393 12.393 0 1 1-12.393-12.392 12.407 12.407 0 0 1 12.393 12.392zm0 0" class="cls-1" transform="translate(-165.293)"/>
+    <path id="Path_7729" d="M332 120v11.016h11.016v-2.754h-8.262V120zm0 0" class="cls-1" transform="translate(-301.523 -108.984)"/>
+    <path id="Path_7730" d="M0 210h11.2v2.754H0zm0 0" class="cls-1" transform="translate(0 -190.723)"/>
+    <path id="Path_7731" d="M30 120h11.2v2.754H30zm0 0" class="cls-1" transform="translate(-27.246 -108.984)"/>
+    <path id="Path_7732" d="M30 300h11.2v2.754H30zm0 0" class="cls-1" transform="translate(-27.246 -272.461)"/>
+</svg>

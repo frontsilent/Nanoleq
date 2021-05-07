@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="213" height="70" viewBox="0 0 213 70">
+    <g>
+        <g stroke="#fff" stroke-miterlimit="10">
+            <path stroke="none" d="M0 0H213V70H0z" transform="translate(-414 -211) translate(414 211)"/>
+            <path fill="none" d="M0.5 0.5H212.5V69.5H0.5z" transform="translate(-414 -211) translate(414 211)"/>
+        </g>
+        <text fill="#fff" font-family="Helvetica" font-size="15px" transform="translate(-414 -211) translate(482 234)">
+            <tspan x="0" y="0">Download on the</tspan>
+        </text>
+        <text fill="#fff" font-family="Helvetica" font-size="26px" transform="translate(-414 -211) translate(482 259)">
+            <tspan x="0" y="0">App Store</tspan>
+        </text>
+        <path fill="#fff" d="M4.424 36.6C.81 31.4-1.949 21.9 1.762 15.486a10.293 10.293 0 0 1 8.7-5.253c2.717-.049 5.284 1.823 6.944 1.823s4.777-2.249 8.052-1.919a9.832 9.832 0 0 1 7.69 4.15 9.489 9.489 0 0 0-4.539 7.981 9.252 9.252 0 0 0 5.643 8.474 23 23 0 0 1-2.916 5.958c-1.755 2.555-3.57 5.094-6.436 5.147-2.821.053-3.725-1.663-6.944-1.663S13.728 41.8 11.065 41.9h-.144c-2.697.008-4.758-2.8-6.497-5.3zM17.07 9.659a8.754 8.754 0 0 1 2.23-6.485A9.455 9.455 0 0 1 25.5 0a9.219 9.219 0 0 1-2.19 6.693 7.982 7.982 0 0 1-5.81 2.982q-.217 0-.43-.016z" transform="translate(-414 -211) translate(430.823 223.092)"/>
+    </g>
+</svg>

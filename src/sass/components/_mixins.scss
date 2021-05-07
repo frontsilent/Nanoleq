@@ -1,0 +1,10 @@
+@mixin transition($properties: all, $time: 0.3s, $timing-function: ease-in) {
+  transition-property: $properties;
+  transition-duration: $time;
+  transition-timing-function: $timing-function;
+}
+@mixin img(){
+  object-fit:cover;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,92 @@
+.btn {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  letter-spacing: 0.16rem;
+  padding: 1.4rem 1.5rem 1.2rem;
+  text-transform: uppercase;
+  @include transition();
+  *{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &-wrap{
+    text-align: center;
+  }
+  &--orange{
+    color: $orangey-yellow;
+    border-top: 1px solid $orangey-yellow;
+    border-bottom: 1px solid $orangey-yellow;
+  }
+  @media (min-width: 768px) {
+    &:hover {
+
+    }
+  }
+  span{
+    margin-right: 3.5rem;
+    @media (max-width: 1023px){
+      margin-right: 2.5rem;
+    }
+    @media (max-width: 425px){
+      margin-right: 1rem;
+    }
+  }
+}
+
+.wishlist-btn{
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  font-family: inherit;
+  font-size: 2.4rem;
+  padding: 1.5rem 7rem 1.5rem 7rem;
+  min-width: 31rem;
+  line-height: 1.25;
+  letter-spacing: 0.24rem;
+  color: $white;
+  background-color: $orangey-yellow;
+  box-shadow: 0 1rem 2rem 0 rgba(251, 179, 22, 0.2);
+  text-transform: uppercase;
+  @include transition();
+  &-wrap{
+    text-align: center;
+    padding-top: 8rem;
+    @media (max-width: 1023px){
+      padding-top: 6rem;
+    }
+  }
+  &__mail{
+    width: 3.2rem;
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &__arrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 4.2rem;
+    height: 6rem;
+    padding: 1rem;
+    right: 0;
+    top: 0;
+    background: $black;
+  }
+  &__text{
+    padding-top: 3rem;
+    font-family: 'Roboto';
+    font-size: 1.4rem;
+    line-height: 1.64;
+    text-align: center;
+    color: #3c3c3c;
+    @media (max-width: 1199px){
+      font-size: 1.5rem;
+    }
+  }
+}
+

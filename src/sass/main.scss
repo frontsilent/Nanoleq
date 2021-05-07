@@ -1,0 +1,24 @@
+// UTILS
+@import "components/reset";
+@import "components/mixins";
+
+// LIBS
+@import "../cssLibs/slick.min.css";
+
+// BASE
+@import "components/fonts";
+@import "components/base";
+@import "components/animations";
+@import "components/elements";
+
+// COMPONENTS
+@import "components/buttons";
+@import "components/header";
+@import "components/footer";
+@import "sections/updates";
+
+//PAGES
+@import "pages/home";
+@import "pages/vital";
+@import "pages/about";
+@import "pages/activity";

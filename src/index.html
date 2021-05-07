@@ -1,0 +1,255 @@
+@@include('./includes/_header-main.html')
+
+<!-- page body -->
+<div class="page-body">
+    <!-- intro -->
+    <section data-theme="dark" id="intro" class="section intro-section">
+        <video class="intro__video" src="video.mp4" autoplay muted loop></video>
+        <img src="img/scroll-btn.svg" alt="scroll" class="intro__scroll">
+        <div class="container">
+           <div class="intro">
+              <div class="intro__title"><em>RECONNECT</em> TO YOUR BODY.<br>
+                  KNOW YOUR VITALS.</div>
+               <a href="" class="intro__btn btn btn--orange">
+                   <span>explore our products</span>
+                   <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
+                       <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5px">
+                           <path fill-rule="evenodd" stroke-linejoin="round" d="M0 0h6.838v6.838" transform="translate(6.25 1.061) rotate(45 3.583 8.649)"/>
+                           <path d="M16.5 0L0 0" transform="translate(6.25 1.061) translate(-5.5 4.771)"/>
+                       </g>
+                   </svg>
+               </a>
+           </div>
+        </div>
+    </section>
+    <!-- main-desc -->
+    <section data-theme="orange" id="main-desc" class="section main-desc-section" style="background-image: url('/img/main-desc-bg.jpg')">
+        <div class="container">
+           <div class="main-desc">
+               <img class="main-desc__decor" src="img/main-desc.svg" alt="image">
+               <div class="main-desc__title el-title el-title--big el-title--black el-title--left"><i>Vital signs</i> are the most important indicators of our health.</div>
+               <div class="main-desc__text text-group">
+                   <p>In the coming years, monitoring of our vitals will become increasingly important.</p>
+                   <p>A better knowledge of our body and mind will help us on our path to a healthier and more balanced life and rediscover our relation to physical activities. At Nanoleq, we believe in the value of empowering people by understanding their vital signs.</p>
+                   <p>Ultimately, continuous monitoring for patients will pave the way for predictive diagnostics and individualized medicine to improve people’s health and happiness. </p>
+               </div>
+           </div>
+        </div>
+    </section>
+    <!-- game-->
+    <div data-theme="dark" class="wrapper game-main section game-main-section" id="mainarea">
+        <div class="alert alert-warning centered-axis-xy" style="min-height: 20px; display:none;" role="alert" id="compilingmessage">
+            <div id='loadTasks'> </div>
+        </div>
+        <!-- The "tabindex=0" specifier on the canvas is important to allow it to capture keyboard focus when clicking on it with a mouse -->
+        <canvas tabindex=0 id="canvas" class="emscripten" oncontextmenu="event.preventDefault()" style="display:none;"></canvas>
+    </div>
+    <div class="row buttonarea text-center" id="buttonrow" style="display:none;">
+        <div class="col-sm-2 text-center"></div>
+        <div class="col-sm-2 text-center"><button type="button" class="btn btn-primary" onclick="try { Module['pauseMainLoop'](); } catch(e) {console.error(e);}">Pause</button></div>
+        <div class="col-sm-2 text-center"><button type="button" class="btn btn-primary" onclick="try { Module['resumeMainLoop'](); } catch(e) {console.error(e);}">Resume</button></div>
+        <div class="col-sm-2 text-center"><button type="button" class="btn btn-primary" onclick="var w = document.getElementById('logwindow'); w.style.display = w.style.display ? '' : 'none';">Toggle Log</button></div>
+        <div class="col-sm-2 text-center"><button type="button" class="btn btn-primary" id='clear_indexeddb' onclick="try { deleteIndexedDBStorage(); } catch(e) {console.error(e);}">Clear IndexedDB</button></div>
+        <div class="col-sm-2 text-center"><button type="button" class="btn btn-primary" id="fullscreen_request">FullScreen</button></div>
+        <div class="col-sm-2 text-center"></div>
+        <div class="col-sm-2 text-center"></div>
+    </div>
+    <div class="texthalf text-normal jumbotron " id="logwindow" style='display:none'></div>
+    <!-- advantages -->
+    <section data-theme="orange-white" id="advantages" class="section advantages-section">
+        <div class="container">
+           <div class="advantages">
+              <div class="advantages__left">
+                 <div class="advantages__title el-title el-title--big el-title--black el-title--left">
+                     Health and
+                     performance<br>
+                     <i>insights with one change of shirt.</i>
+                 </div>
+                  <div class="advantages__subtitle">
+                      Monitor your most important vital<br> signs with ease.
+                  </div>
+                  <div class="advantages__items">
+                      <div class="advantages__item">
+                          <div class="advantages__item-icon">
+                              <img src="img/badge.svg" alt="image">
+                          </div>
+                          <div class="advantages__item-text">
+                            <em>ecg</em> - heart rate/variability
+                          </div>
+                      </div>
+                      <div class="advantages__item">
+                          <div class="advantages__item-icon">
+                              <img src="img/smartphone-2.svg" alt="image">
+                          </div>
+                          <div class="advantages__item-text">
+                              <em>ble&ant+</em> - compatible
+                          </div>
+                      </div>
+                      <div class="advantages__item">
+                          <div class="advantages__item-icon">
+                              <img src="img/xmlid-1212.svg" alt="image">
+                          </div>
+                          <div class="advantages__item-text">
+                              reliable
+                          </div>
+                      </div>
+                      <div class="advantages__item">
+                          <div class="advantages__item-icon">
+                              <img src="img/clothes.svg" alt="image">
+                          </div>
+                          <div class="advantages__item-text">
+                              washable
+                          </div>
+                      </div>
+                      <div class="advantages__item">
+                          <div class="advantages__item-icon">
+                              <img src="img/like.svg" alt="image">
+                          </div>
+                          <div class="advantages__item-text">
+                              modern
+                          </div>
+                      </div>
+                  </div>
+              </div>
+               <div class="advantages__right">
+                   <img class="advantages__img" src="img/tim.png" alt="">
+               </div>
+           </div>
+        </div>
+    </section>
+    <!-- shirts -->
+    <section data-theme="dark" id="shirts" class="section shirts-section">
+        <div class="container">
+           <div class="shirts">
+               <div class="shirts__title el-title el-title--big el-title--white">
+                   <i>Advanced</i> textile Engineering
+               </div>
+              <div class="shirts__items">
+                  <a href="" class="shirts__item">
+                      <div class="shirts__item-img">
+                          <img src="img/shirt-1.png" alt="product">
+                      </div>
+                      <div class="shirts__item-title">
+                          Vital Shirt
+                          <i>Run</i>
+                      </div>
+                      <div class="shirts__item-subtitle">Faster For Longer</div>
+                      <div class="shirts__item-bottom">
+                          <p>explore</p>
+                          <span><img src="img/arrow.svg" alt="arrow"></span>
+                      </div>
+                  </a>
+                  <a href="" class="shirts__item">
+                      <div class="shirts__item-img">
+                          <img src="img/shirt-2.png" alt="product">
+                      </div>
+                      <div class="shirts__item-title">
+                          Vital Shirt
+                          <i>Bike</i>
+                      </div>
+                      <div class="shirts__item-subtitle">Push More Watts</div>
+                      <div class="shirts__item-bottom">
+                          <p>explore</p>
+                          <span><img src="img/arrow.svg" alt="arrow"></span>
+                      </div>
+                  </a>
+                  <a href="" class="shirts__item">
+                      <div class="shirts__item-img">
+                          <img src="img/shirt-3.png" alt="product">
+                      </div>
+                      <div class="shirts__item-title">
+                          Vital Shirt
+                          <i>Ski</i>
+                      </div>
+                      <div class="shirts__item-subtitle">New Heights</div>
+                      <div class="shirts__item-bottom">
+                          <p>explore</p>
+                          <span><img src="img/arrow.svg" alt="arrow"></span>
+                      </div>
+                  </a>
+                  <a href="" class="shirts__item">
+                      <div class="shirts__item-img">
+                          <img src="img/shirt-4.png" alt="product">
+                      </div>
+                      <div class="shirts__item-title">
+                          Vital Shirt
+                          <i>Gym</i>
+                      </div>
+                      <div class="shirts__item-subtitle">Make Your Move</div>
+                      <div class="shirts__item-bottom">
+                          <p>explore</p>
+                          <span><img src="img/arrow.svg" alt="arrow"></span>
+                      </div>
+                  </a>
+                  <div class="shirts__caption">
+                      <p>Engineered in <i>Switzerland</i></p>
+                      <img src="img/made.png" alt="swiss">
+                  </div>
+              </div>
+           </div>
+        </div>
+    </section>
+    <!-- features -->
+    <section data-theme="white" id="features" class="section features-section">
+        <div class="container">
+           <div class="features">
+              <div class="features-directions">
+                <div class="features-directions__item features-directions__item--white">
+                    <div class="features-directions__item-title">Digitize Your Textiles<br>
+                        and Brand</div>
+                    <a href="" class="features-directions__item-btn btn btn--orange">
+                        <span>experience vitalshirt</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
+                            <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5px">
+                                <path fill-rule="evenodd" stroke-linejoin="round" d="M0 0h6.838v6.838" transform="translate(6.25 1.061) rotate(45 3.583 8.649)"/>
+                                <path d="M16.5 0L0 0" transform="translate(6.25 1.061) translate(-5.5 4.771)"/>
+                            </g>
+                        </svg>
+                    </a>
+                    <div class="features-directions__item-bottom">
+                        Become a <i>Brand Ambassador</i>
+                    </div>
+                </div>
+                  <div class="features-directions__item features-directions__item--black">
+                      <div class="features-directions__item-title">Innovative and Reliable Smart<br> Textile Components</div>
+                      <a href="" class="features-directions__item-btn btn btn--orange">
+                          <span>discover products</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
+                              <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5px">
+                                  <path fill-rule="evenodd" stroke-linejoin="round" d="M0 0h6.838v6.838" transform="translate(6.25 1.061) rotate(45 3.583 8.649)"/>
+                                  <path d="M16.5 0L0 0" transform="translate(6.25 1.061) translate(-5.5 4.771)"/>
+                              </g>
+                          </svg>
+                      </a>
+                      <div class="features-directions__item-bottom">
+                          Upgrade your  <i>Smart Textiles</i>
+                      </div>
+                  </div>
+              </div>
+               <div class="features-brands">
+                   <div class="features-brands__title">as featured in</div>
+                   <div class="features-brands__items">
+                       <div class="features-brands__item">
+                           <img src="img/forbes-logo-black-transparent.png" alt="" class="features-brands__logo">
+                       </div>
+                       <div class="features-brands__item">
+                           <img src="img/logo-bilan.png" alt="" class="features-brands__logo">
+                       </div>
+                       <div class="features-brands__item">
+                           <img src="img/top100.png" alt="" class="features-brands__logo">
+                       </div>
+                       <div class="features-brands__item">
+                           <img src="img/european-union-logo-75776-f-70-c-0-seeklogo-com.png" alt="" class="features-brands__logo">
+                       </div>
+                       <div class="features-brands__item">
+                           <img src="img/eurostars.png" alt="" class="features-brands__logo">
+                       </div>
+                   </div>
+               </div>
+               @@include('./includes/_updates.html')
+           </div>
+        </div>
+    </section>
+</div>
+
+@@include('./includes/_footer-main.html')

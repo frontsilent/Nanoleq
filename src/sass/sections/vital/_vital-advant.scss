@@ -1,0 +1,142 @@
+.vital-advant{
+  &-section{
+    padding: 0;
+    background-color: #1a1a1a;
+    @media (max-width: 1023px){
+      padding: 10rem 0 0;
+    }
+  }
+  &__item{
+    display: flex;
+    align-items: center;
+    min-height: 60rem;
+    @media (max-width: 1023px){
+      flex-wrap: wrap;
+      margin-bottom: 5rem;
+    }
+    &-wrap{
+      position: relative;
+    }
+    &-img{
+      position: absolute;
+      display: block;
+      width: 50%;
+      height: 100%;
+      @media (max-width: 1199px){
+        width: 44%;
+      }
+      @media (max-width: 1023px){
+        width: 100%;
+        position: relative;
+      }
+      img{
+        display: block;
+        @include img();
+      }
+    }
+    &-title{
+      margin-bottom: 3rem;
+    }
+    &-desc{
+      width: 100%;
+      padding: 2rem 0;
+      @media (max-width: 1023px){
+        padding: 0;
+        margin-bottom: 4rem;
+      }
+      p{
+        &:last-of-type{
+          margin-bottom: 0;
+        }
+      }
+    }
+    &-details{
+      display: inline-block;
+      margin-right: 1.8rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 1rem 2.5rem 0 rgba($black, 0.15);
+      background: $white;
+      font-size: 1.8rem;
+      line-height: 5rem;
+      color: #0f0f0f;
+      padding: 0 1.7rem;
+      @media (max-width: 1199px){
+        padding: 0 1.4rem;
+        margin-right: 1.4rem;
+        margin-bottom: 1.4rem;
+      }
+      svg, span{
+        vertical-align: middle;
+      }
+      svg{
+        width: 2rem;
+        margin-right: 1.2rem;
+        @media (max-width: 1199px){
+          margin-right: .7rem;
+        }
+      }
+    }
+  }
+}
+
+//modifications
+.vital-advant__item--1{
+  .vital-advant__item-desc{
+    max-width: 45rem;
+    margin-left: auto;
+    @media (max-width: 1023px){
+      max-width: 100%;
+      order: -1;
+    }
+  }
+  .vital-advant__item-img{
+    left: 0;
+  }
+}
+
+.vital-advant__item--2{
+  .vital-advant__item-desc{
+    max-width: 49rem;
+    @media (max-width: 1023px){
+      max-width: 100%;
+    }
+  }
+  .vital-advant__item-img{
+    right: 0;
+  }
+}
+.vital-advant__item--3{
+  background-color: #e7ebee;
+  @media (max-width: 1023px){
+    padding: 5rem 0;
+  }
+  .vital-advant__item-desc{
+    max-width: 53rem;
+    margin-left: auto;
+    @media (max-width: 1199px){
+      max-width: 45rem;
+    }
+    @media (max-width: 1023px){
+      max-width: 100%;
+      order: -1;
+    }
+  }
+  .vital-advant__item-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    background-color: #111111;
+    @media (max-width: 1023px){
+      background: 0;
+    }
+    img{
+      width: auto;
+      height: auto;
+      max-width: 46rem;
+      @media (max-width: 1199px){
+        max-width: 42rem;
+      }
+    }
+  }
+}
