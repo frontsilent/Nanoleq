@@ -90,7 +90,7 @@
 //member
 .about-leadership-member{
   position: relative;
-  z-index: 100;
+  z-index: 97;
   width: 22rem;
   text-align: center;
   margin: 0 4rem 7.5rem;
@@ -174,7 +174,7 @@
   }
   &__top{
     position: relative;
-    z-index: 100;
+    z-index: 97;
     cursor: pointer;
     @media (max-width: 767px){
         z-index: 98;

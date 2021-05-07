@@ -7,7 +7,7 @@
   margin: 0 auto;
   z-index: 99;
   &.bg{
-    background: rgba(#000, .5);
+    background: rgba(#000, .9);
     @media (max-width: 767px){
       background: rgba(#000, .9);
     }
@@ -100,6 +100,20 @@
   border-bottom: .2rem solid $white;
   margin-left: 2rem;
   cursor: pointer;
+  &.active {
+    border-color: transparent;
+    span{
+      display: none;
+    }
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 3.5rem;
+    }
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+      width: 3.5rem;
+    }
+  }
   &::before, &::after {
     content: '';
     position: absolute;
@@ -181,6 +195,7 @@
   }
   a{
     position: relative;
+    width: 100%;
     z-index: 2;
     font-family: inherit;
     color: $white;
@@ -239,20 +254,6 @@
     display: block;
     margin-left: auto;
     width: 4rem;
-    &.active {
-      border-color: transparent;
-      span{
-        display: none;
-      }
-      &::before {
-        transform: translate(-50%, -50%) rotate(45deg);
-        //background: $orangey-yellow;
-      }
-      &::after {
-        transform: translate(-50%, -50%) rotate(-45deg);
-        //background: $orangey-yellow;
-      }
-    }
   }
   .main-menu-wrap {
     display: none;
