@@ -1,0 +1,194 @@
+.blog-list{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1.5rem;
+  @media (max-width: 767px){
+    margin: 0 auto;
+  }
+  &-section{
+    padding: 0 0 7.5rem;
+  }
+  &__top{
+    position: relative;
+    margin-bottom: 6rem;
+    @media (max-width: 1023px){
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &-wrap{
+      background-color: #f4f7fa;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        left: calc(66.66% + 2rem);
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: $orangey-yellow;
+        @media (max-width: 1023px){
+          left: 0;
+          bottom: auto;
+          height: 6rem;
+        }
+      }
+    }
+  }
+  &__categories{
+    display: flex;
+    margin: 0 -1.7rem;
+    font-size: 1.8rem;
+    padding-top: 2.5rem;
+    letter-spacing: 0.18rem;
+    text-transform: uppercase;
+    li{
+      margin: 0 1.7rem;
+      &.active{
+        a{
+          color: $orangey-yellow;
+          &::before{
+            opacity: 1;
+          }
+        }
+      }
+      @media (min-width: 768px) {
+        &:hover {
+          a{
+            color: $orangey-yellow;
+            &::before{
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    a{
+      position: relative;
+      color: #0f0f0f;
+      padding-bottom: 2.5rem;
+      @include transition();
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 1px;
+        background: $orangey-yellow;
+        opacity: 0;
+        @include transition();
+      }
+    }
+  }
+  &__search{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    left: calc(66.66% + 2rem);
+    padding-left: 2rem;
+    background: $orangey-yellow;
+    @media (max-width: 1023px){
+      width: 100%;
+      order: -1;
+      left: 0;
+      padding-left: 0;
+      position: relative;
+    }
+    svg{
+      width: 1.8rem;
+      margin-right: .9rem;
+    }
+    input{
+      padding: 2rem 2rem 2rem 0;
+      background: $orangey-yellow;
+      font-family: 'Roboto', serif;
+      font-size: 1.6rem;
+      line-height: 2rem;
+      color: $white;
+      border: 0;
+      outline: 0;
+    }
+    textarea::-webkit-input-placeholder, input::-webkit-input-placeholder{
+      font-size: 1.6rem;
+      line-height: normal !important;
+      color: $white;
+      opacity: 1;
+    }
+    textarea::-moz-placeholder, input::-moz-placeholder{
+      font-size: 1.6rem;
+      line-height: normal !important;
+      color: $white;
+      opacity: 1;
+    }
+    textarea:-ms-input-placeholder,input:-ms-input-placeholder{
+      font-size: 1.6rem;
+      line-height: normal !important;
+      color: $white;
+      opacity: 1;
+    }
+    textarea:focus::-webkit-input-placeholder,input:focus::-webkit-input-placeholder{
+      color: transparent;
+    }
+    textarea:focus:-moz-placeholder,input:focus:-moz-placeholder{
+      color: transparent;
+    }
+    textarea:focus::-moz-placeholder,input:focus::-moz-placeholder{
+      color: transparent;
+    }
+    textarea:focus:-ms-input-placeholder, input:focus:-ms-input-placeholder{
+      color: transparent;
+    }
+  }
+  &__item{
+    width: calc(33.33% - 3rem);
+    margin: 0 1.5rem 5.5rem;
+    @media (max-width: 1023px){
+      width: calc(50% - 3rem);
+    }
+    @media (max-width: 767px){
+      width: 100%;
+      margin: 0 auto 4.5rem;
+      max-width: 50rem;
+    }
+  }
+  &__more{
+    position: relative;
+    background: $black;
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.08);
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    padding: 1.9rem 2rem;
+    min-width: 16.7rem;
+    color: $white;
+    border: 0;
+    outline: 0;
+    letter-spacing: .07rem;
+    text-align: center;
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 1px;
+      width: 16rem;
+      background: #d5d5d5;
+      @media (max-width: 425px){
+        width: 8rem;
+      }
+    }
+    &::before{
+      right: 100%;
+    }
+    &::after{
+      left: 100%;
+    }
+    &-wrap{
+      width: 100%;
+      padding-top: 4rem;
+      text-align: center;
+    }
+  }
+}

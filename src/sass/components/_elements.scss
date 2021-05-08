@@ -226,6 +226,22 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  &__img{
+    position: relative;
+    width: 100%;
+    height: 26.4rem;
+    margin-bottom: 2.5rem;
+    cursor: pointer;
+    @media (max-width: 1199px){
+      height: 23rem;
+    }
+    @media (max-width: 767px){
+      height: 28rem;
+    }
+    img{
+      @include img();
+    }
+  }
   &__cat{
     display: block;
     margin-bottom: 1rem;
@@ -239,7 +255,7 @@
     display: block;
     font-size: 2.6rem;
     line-height: 1.38;
-    margin-bottom: .5rem;
+    margin-bottom: .7rem;
   }
   &__text{
     font-family: 'Roboto', serif;
