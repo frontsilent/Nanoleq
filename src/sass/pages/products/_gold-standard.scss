@@ -1,0 +1,101 @@
+.gold-standard-section{
+    background-color: #f9f9f9;
+}
+.gold-standard{
+    text-align: center;
+
+    &__icon{
+        margin-bottom: 30px;
+    }
+
+    &__panels{
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+        max-width: 880px;
+        margin: 0 auto;
+    }
+    &__panel{
+        width: 50%;
+        position: relative;
+        i{
+            @include center-x;
+            margin-left: -75px;
+            text-align: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: $orangey-yellow;
+            border-radius: 40px;
+            text-align: center;
+            z-index: 10;
+            top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 2.5rem;
+            box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        &__imageWrapper{
+            width: 303px;
+            height: 349px;
+            max-width: 100%;
+            -webkit-mask-image: url("../img/gold-standard-mask.svg");
+            mask-image: url("../img/gold-standard-mask.svg");
+            mask-repeat: no-repeat;
+            mask-size: cover;
+            mask-position: right center;
+            margin: 0 auto 30px auto;
+        }
+        h3{
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            letter-spacing: -1px;
+        }
+        h6{
+            color: $orangey-yellow;
+        }
+
+        &--right{
+            i{
+                margin-left: 75px;
+            }
+        }
+    }
+
+    @include custom-bp(1024){
+        &__panel{
+
+            i{
+                width: 30px;
+                height: 30px;
+                font-size: 1.8rem;
+                top: 10px;
+                margin-left: -50px;
+            }
+
+            &__imageWrapper{
+                width: 203px;
+                height: 232px;
+            }
+
+            &--right{
+                i{
+                    margin-left: 50px;
+                }
+            }
+
+        }
+    }
+    @include custom-bp(768){
+        &__panels{
+            flex-direction: column;
+            justify-content: center;
+        }
+        &__panel{
+            width: 100%;
+            margin: 30px 0;
+        }
+    }
+}

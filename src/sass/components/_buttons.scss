@@ -90,3 +90,12 @@
   }
 }
 
+.order-btn{
+	background-color: $orangey-yellow;
+	font-size: 1.8rem;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 1.3rem 2.8rem;
+	@include transition(all 300ms ease-in-out);
+}
+

@@ -187,9 +187,9 @@
     }
 
     @include custom-bp(1200px) {
-        width: 355px;
+        width: 325px;
         margin: 0 auto 50px auto;
-        padding-bottom: 40px;
+        padding-bottom: 10px;
 
         &__slide{
             height: 420px;
@@ -198,8 +198,8 @@
 
         &__imageWrapper {
 
-            width: 355px;
-            height: 410px;
+            width: 325px;
+            height: 375px;
             float: none;
             margin: 0 auto;
 
@@ -207,20 +207,20 @@
 
         &__title {
             font-size: 2rem;
-            top: 180px;
+            top: 150px;
             width: 160px;
             letter-spacing: 1px;
         }
 
 
         &__rightImage {
-            left: 60%;
-            top: 0;
+            left: 50%;
+            top: -10px;
         }
 
         &__leftImage {
-            left: 10%;
-            top: 70%;
+            left: 5%;
+            top: 60%;
         }
         .slick-dots{
             bottom: 50px !important;
@@ -290,24 +290,24 @@
     }
 
     @include custom-bp(1500){
-        width: 88px;
-        height: 52px;
+        width: 78px;
+        height: 45px;
         margin: 32px 0;
 
         &:before,
         &:after {
-            width: 54px;
-            height: 54px;
-            left: 7px;
+            width: 46px;
+            height: 46px;
+            left: 6px;
 
         }
 
         &:before {
-            top: -31px;
+            top: -27px;
         }
 
         &:after {
-            bottom: -31px;
+            bottom: -27px;
         }
 /* 
         span {

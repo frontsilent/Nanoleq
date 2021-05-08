@@ -1,0 +1,121 @@
+.combined-kit-section{
+   padding: 0;
+   overflow-x: hidden;
+
+   @include custom-bp(1024){
+       overflow: hidden
+   }
+}
+
+.combined-kit{
+    display: flex;
+    justify-content: space-between;
+
+    &__left{
+        width: 50%;
+        padding: 11rem 6.9rem 0 0;
+        .el-title{
+            margin: 0.5rem 0 1rem 0;
+        }
+        h3{
+            margin-top: 40px;
+        }
+    }
+    &__right{
+        width: 50%;
+    }
+
+    .starter-kit-image,
+    .starter-kit-description{
+        background-color: #e7ebee;
+        position: relative;
+        min-height: 56rem;
+
+        img{
+            @include center-y;
+            max-width: 110%;
+            height: auto;
+            margin-left: 50px;
+        }
+        
+        &::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 500vw;
+            height: 100%;
+            background-color: #e7ebee;
+            z-index: -1;
+        }
+    }
+
+    .starter-kit-description{
+        text-align: center;
+        padding: 11rem 0 25rem 0;
+        width: 150%;
+
+        .text-group{
+            max-width: 65rem;
+            margin: 3.2rem auto;
+        }
+        
+
+        &,
+        &::before{
+           background-color: #f9f9f9;
+        }
+    }
+
+    @include custom-bp(1600){
+        .starter-kit-description{
+            width: 130%;
+        }
+    }
+    @include custom-bp(1500){
+        .starter-kit-description{
+            width: 150%;
+            &:before{
+                height: 90vh;
+            }
+        }
+    }
+    @include custom-bp(1300){
+        .starter-kit-description{
+            width: 140%;
+        }
+    }
+    @include custom-bp(1230){
+        .starter-kit-description{
+            width: 130%;
+            .text-group{
+                max-width: 50rem;
+            }
+        }
+    }
+
+    @include custom-bp(1024){
+        flex-direction: column;
+
+        &__left,
+        &__right{
+            width: 100%;
+            padding-right: 0;
+        }
+
+        .starter-kit-image,
+        .starter-kit-description{
+            &:before{
+                display: none;
+            }
+            img{
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+
+        .starter-kit-description{
+            width: 100%;
+        }
+    }
+}
