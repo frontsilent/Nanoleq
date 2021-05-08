@@ -29,7 +29,8 @@
     "run-sequence": "^2.2.1"
   },
   "dependencies": {
+    "graceful-fs": "^4.2.4",
     "gulp-file-include": "^2.0.1",
-    "graceful-fs": "^4.2.4"
+    "gulp-wait": "0.0.2"
   }
 }
