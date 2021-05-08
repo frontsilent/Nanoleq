@@ -8,6 +8,15 @@ h6{
             color: $orangey-yellow;
         }
     }
+    &.white-orange{
+        color: $white;
+        span{
+            color: $orangey-yellow;
+        }
+    }
+    &.text-uppercase{
+        text-transform: uppercase;
+    }
 }
 h3{
     font-size: 3.6rem;
@@ -17,4 +26,5 @@ h5{
 }
 h6{
     font-size: 2.2rem;
+    line-height: 1.6;
 }

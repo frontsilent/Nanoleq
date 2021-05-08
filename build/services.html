@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Napoleq</title>
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+<!-- header -->
+<header id="header" class="header-section">
+    <div class="header">
+        <a href="" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="99.872" height="79.097" viewBox="0 0 99.872 79.097">
+                <g id="logo" transform="translate(0 -.214)">
+                    <path id="Fill_1" d="M25.3 58.435L0 43.826V14.608l13.736-7.93 8.09 4.672a5.131 5.131 0 1 1-2.167 3.75l-5.924-3.42-9.4 5.427v24.216l7.233 4.177V21.286l2.167-1.251L34.7 32.142V10.433L20.967 2.5 25.3 0l25.3 14.608v29.218l-13.73 7.929-8.091-4.671a5.132 5.132 0 1 1 2.167-3.754l5.924 3.42 9.4-5.426V17.112l-7.232-4.177v24.212L36.87 38.4 15.9 26.293V48l13.735 7.93-4.334 2.5zm.532-17.472a1.917 1.917 0 1 0 1.658 2.875 1.917 1.917 0 0 0-1.658-2.875zm-1.059-27.328a1.916 1.916 0 1 0 .957.257 1.923 1.923 0 0 0-.957-.257z" class="cls-2" transform="translate(23.834 .214)"/>
+                    <g id="Group_6" transform="translate(0 66.49)">
+                        <path id="Clip_5-2" fill="none" d="M0 0h99.872v12.66H0z" transform="translate(0 .16)"/>
+                        <g id="Group_6-2" clip-path="url(#clip-path)">
+                            <path id="Fill_4" d="M98.508 12.66l-1.45-1.294a6.666 6.666 0 0 1-1.692.837 6.334 6.334 0 0 1-1.986.3 6.49 6.49 0 0 1-2.557-.492 6 6 0 0 1-3.283-3.323 6.5 6.5 0 0 1 0-4.836 6.1 6.1 0 0 1 1.313-2A6.3 6.3 0 0 1 93.413 0a6.488 6.488 0 0 1 2.556.492 6 6 0 0 1 3.281 3.325 6.349 6.349 0 0 1 .467 2.418 6.212 6.212 0 0 1-.32 1.986 6.287 6.287 0 0 1-.906 1.744l1.382 1.174-1.365 1.521zM93.379 1.952a4.008 4.008 0 0 0-1.65.337 3.917 3.917 0 0 0-1.287.915 4.227 4.227 0 0 0-.842 1.364 4.745 4.745 0 0 0 0 3.334 4.238 4.238 0 0 0 .846 1.373 4.047 4.047 0 0 0 1.3.932 3.976 3.976 0 0 0 1.658.346 3.9 3.9 0 0 0 1.122-.156 3.759 3.759 0 0 0 .95-.432L93.413 8.2l1.364-1.555 2.09 1.9a3.782 3.782 0 0 0 .466-1.063 4.7 4.7 0 0 0 .156-1.218 4.628 4.628 0 0 0-.3-1.667 4.254 4.254 0 0 0-.849-1.367 4.048 4.048 0 0 0-1.3-.933 3.989 3.989 0 0 0-1.661-.345zM51.568 12.5a6.488 6.488 0 0 1-2.556-.492 6.088 6.088 0 0 1-1.986-1.338 6.158 6.158 0 0 1-1.3-1.986 6.5 6.5 0 0 1 0-4.836 6.115 6.115 0 0 1 1.313-2A6.3 6.3 0 0 1 51.6 0a6.5 6.5 0 0 1 2.557.492 6 6 0 0 1 3.281 3.325 6.5 6.5 0 0 1 0 4.836 6.1 6.1 0 0 1-1.313 2 6.294 6.294 0 0 1-4.557 1.847zm0-10.552a4.014 4.014 0 0 0-1.65.337 3.922 3.922 0 0 0-1.286.915 4.232 4.232 0 0 0-.838 1.364 4.745 4.745 0 0 0 0 3.334 4.256 4.256 0 0 0 .846 1.373 4.047 4.047 0 0 0 1.3.932 4.18 4.18 0 0 0 3.307.009 3.934 3.934 0 0 0 1.292-.912 4.215 4.215 0 0 0 .837-1.364 4.745 4.745 0 0 0 0-3.334 4.237 4.237 0 0 0-.846-1.372 4.054 4.054 0 0 0-1.3-.933 4 4 0 0 0-1.662-.345zM32.64 12.3h-2.107V.208H32.5l6.463 8.359V.208h2.107V12.3h-1.778L32.64 3.7v8.6zm-30.533 0H0V.208h1.967l6.462 8.359V.208h2.107V12.3H8.76L2.107 3.7v8.6zm14.3 0H14.23L19.55.121h1.969L26.837 12.3h-2.244l-.418-.995C22.893 8.251 22.12 6.409 20.5 2.66c-1.2 2.8-1.727 4.048-2.339 5.5-.46 1.091-.935 2.215-1.755 4.14zm67.043 0h-9.034V.208h8.947v1.917h-6.84v3.108h6.062V7.15h-6.063v3.23h6.926v1.92zm-12.883 0H62.1V.208h2.11v10.173h6.356V12.3z" class="cls-1" transform="translate(0 .16)"/>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </a>
+        <div class="main-menu-wrap">
+            <ul class="main-menu">
+                <li class="menu-item-has-children">
+                    <span></span>
+                    <a href="vital.html">THE VITAL SHIRT</a>
+                    <ul class="sub-menu">
+                        <li><a href="run.html">RUN</a></li>
+                        <li><a href="training.html">GYM</a></li>
+                        <li><a href="ski.html">SKI</a></li>
+                        <li><a href="">BIKE</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <span></span>
+                    <a href="">PRODUCTS</a>
+                    <ul class="sub-menu">
+                        <li><a href="">ElectroSkin™</a></li>
+                        <li><a href="">PhantomTape™</a></li>
+                        <li><a href="">PhantomLink™</a></li>
+                        <li><a href="">Services</a></li>
+                    </ul>
+                </li>
+                <li><a href="">JOURNAL</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="">CONTACT</a></li>
+            </ul>
+        </div>
+        <span class="tog-nav">
+            <span></span>
+        </span>
+    </div>
+</header>
+
+
+<!-- page body -->
+<div class="page-body">
+    <!-- intro -->
+    <section data-theme="dark" id="intro" class="section intro-section">
+        <div class="intro__img">
+            <img src="img/our-services-intro.jpg" alt="image">
+        </div>
+        <img src="img/scroll-btn.svg" alt="scroll" class="intro__scroll">
+        <div class="container">
+            <div class="intro">
+                <div class="intro__title">
+                    Our Products<br>
+                    <em>Your applications.</em>
+                </div>
+                <div class="intro__text el-subtitle">
+                    The Connectivity Standard for Textile Solutions.
+                </div>
+                <a href="" class="intro__btn btn btn--orange">
+                   <span>DISCOVER PRODUCTS</span>
+                   <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
+                       <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5px">
+                           <path fill-rule="evenodd" stroke-linejoin="round" d="M0 0h6.838v6.838" transform="translate(6.25 1.061) rotate(45 3.583 8.649)"/>
+                           <path d="M16.5 0L0 0" transform="translate(6.25 1.061) translate(-5.5 4.771)"/>
+                       </g>
+                   </svg>
+               </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services -->
+    <section data-theme="white" id="our-services" class="section our-services-section">
+        <div class="our-services">
+            <div class="el-title">
+                Our Services
+            </div>
+            <h5>We offer the ultimate service for businesses and brands</h5>
+
+            <div class="our-services__panels">
+                <!-- The Future Of Vital Sign Monitoring -->
+                <a href="#" class="our-services__panel">
+                    <div class="our-services__panel__icon">
+                        <svg width="50" height="38.746" viewBox="0 0 50 38.746">
+                            <path class="icon-fill" d="M48.543 74.611H45.3c2.1-5.861-.333-13.019-5.793-15.69A12.092 12.092 0 0 0 25 61.639a12.092 12.092 0 0 0-14.5-2.718c-5.465 2.67-7.893 9.829-5.8 15.69H1.458a1.465 1.465 0 0 0 0 2.931h4.529a14.011 14.011 0 0 0 2.453 3.223c.444.445 14.237 14.519 14.356 14.642l.025.025a3.11 3.11 0 0 0 2.152.914h.055a3.109 3.109 0 0 0 2.152-.914l.03-.03c.115-.118 13.911-14.2 14.352-14.638a14.01 14.01 0 0 0 2.453-3.224h4.529a1.465 1.465 0 0 0 0-2.931zm-41.65-4.919a9.439 9.439 0 0 1 4.944-8.165 9.136 9.136 0 0 1 11.915 3.335 1.471 1.471 0 0 0 2.5 0 9.136 9.136 0 0 1 11.915-3.335 9.439 9.439 0 0 1 4.944 8.165 11.966 11.966 0 0 1-.944 4.919H31.851a1.466 1.466 0 0 0-1.109.507l-4.5 5.213-4.669-11.513a1.465 1.465 0 0 0-2.6-.233l-3.812 6.026H7.837a11.968 11.968 0 0 1-.944-4.919zm32.628 8.969c-.179.173-14.28 14.562-14.406 14.691l-.009.009a.185.185 0 0 1-.106.054.191.191 0 0 1-.11-.057c-.131-.134-14.231-14.524-14.411-14.7a9.718 9.718 0 0 1-.99-1.12h6.483a1.465 1.465 0 0 0 1.238-.682l2.718-4.3 4.493 11.091a1.465 1.465 0 0 0 2.467.408l5.633-6.519h7.99a9.722 9.722 0 0 1-.99 1.119z" transform="translate(0 -57.601)"/>
+                        </svg>
+                    </div>
+                    <div class="our-services__panel__weOffer">
+                        We Offer
+                    </div>
+                    <div class="el-subtitle">
+                        the future of vital sign monitoring
+                    </div>
+                    <span class="our-services__panel__arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
+                            <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5px">
+                                <path fill-rule="evenodd" stroke-linejoin="round" d="M0 0h6.838v6.838" transform="translate(6.25 1.061) rotate(45 3.583 8.649)"/>
+                                <path d="M16.5 0L0 0" transform="translate(6.25 1.061) translate(-5.5 4.771)"/>
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Patented Technology -->
+                <a href="#" class="our-services__panel">
+                    <div class="our-services__panel__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="53.18" viewBox="0 0 50 53.18">
+                            <g id="patent" transform="translate(-15.251)">
+                                <path id="Path_7847" d="M58.994 4.692V0H24.583v6.369c-12.448 2.08-12.439 19.6 0 21.673v18.882h4.692v6.256h35.976V4.692zM18.327 17.205a7.83 7.83 0 0 1 7.821-7.821c10.375.43 10.372 15.213 0 15.641a7.83 7.83 0 0 1-7.821-7.82zm9.385 10.837c12.448-2.08 12.439-19.6 0-21.673V3.128h28.154V43.8H27.711zm34.411 22.01H32.4v-3.128h26.59V7.821h3.128z" class="icon-fill"/>
+                                <path id="Path_7848" d="M82.779 128.03l-2.212-2.212a1.564 1.564 0 1 1 0-2.212l2.212-2.212a4.692 4.692 0 1 0 0 6.636z" class="icon-fill" transform="translate(-53.314 -107.506)"/>
+                                <path id="Path_7849" d="M269.75 75h10.95v3.128h-10.95z" class="icon-fill" transform="translate(-227.961 -67.179)"/>
+                                <path id="Path_7850" d="M269.75 135h10.95v3.128h-10.95z" class="icon-fill" transform="translate(-227.961 -120.923)"/>
+                                <path id="Path_7851" d="M269.75 195h10.95v3.128h-10.95z" class="icon-fill" transform="translate(-227.961 -174.666)"/>
+                                <path id="Path_7852" d="M224.75 255h15.641v3.128H224.75z" class="icon-fill" transform="translate(-187.654 -228.41)"/>
+                                <path id="Path_7853" d="M164.75 315h21.9v3.128h-21.9z" class="icon-fill" transform="translate(-133.91 -282.153)"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="our-services__panel__weOffer">
+                        We Offer
+                    </div>
+                    <div class="el-subtitle">
+                        Patented <br />Technology
+                    </div>
+                    <span class="our-services__panel__arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
+                            <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5px">
+                                <path fill-rule="evenodd" stroke-linejoin="round" d="M0 0h6.838v6.838" transform="translate(6.25 1.061) rotate(45 3.583 8.649)"/>
+                                <path d="M16.5 0L0 0" transform="translate(6.25 1.061) translate(-5.5 4.771)"/>
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Consulting Services -->
+                <a href="#" class="our-services__panel">
+                    <div class="our-services__panel__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" id="consultation" width="50" height="50" viewBox="0 0 50 50">
+                        <path id="Path_7844" d="M15.2 114.116h-3.213v-4.979a5.971 5.971 0 0 0-1.694-4.17 6.634 6.634 0 1 0-8.014-.529A5.984 5.984 0 0 0 0 109.137v14.83h9.778v9.778h9.851v-15.2a4.43 4.43 0 0 0-4.429-4.429zM6.632 95.738a3.7 3.7 0 1 1-3.7 3.7 3.707 3.707 0 0 1 3.7-3.7zM16.7 130.816h-3.992v-9.778H2.93v-11.9a3.064 3.064 0 0 1 6.128 0v7.909H15.2a1.5 1.5 0 0 1 1.5 1.5zm0 0" class="icon-fill" transform="translate(0 -83.745)"/>
+                        <path id="Path_7845" d="M328.35 104.438a6.631 6.631 0 1 0-8.014.529 5.971 5.971 0 0 0-1.694 4.169v4.979h-3.217a4.43 4.43 0 0 0-4.425 4.426v15.2h9.851v-9.778h9.778v-14.83a5.984 5.984 0 0 0-2.279-4.695zm-4.35-8.7a3.7 3.7 0 1 1-3.7 3.7 3.707 3.707 0 0 1 3.7-3.7zm3.7 25.3h-9.778v9.778h-3.992v-12.275a1.5 1.5 0 0 1 1.5-1.5h6.146v-7.909a3.064 3.064 0 0 1 6.128 0zm0 0" class="icon-fill" transform="translate(-280.629 -83.745)"/>
+                        <path id="Path_7846" d="M178.75 11.881V4.134A4.138 4.138 0 0 0 174.616 0h-10.482A4.138 4.138 0 0 0 160 4.134v7.747a4.139 4.139 0 0 0 4.134 4.134h1.775l3.466 6 3.466-6h1.775a4.139 4.139 0 0 0 4.134-4.134zm-2.93 0a1.206 1.206 0 0 1-1.2 1.2h-3.47l-1.775 3.074-1.775-3.069h-3.466a1.206 1.206 0 0 1-1.2-1.2V4.134a1.206 1.206 0 0 1 1.2-1.2h10.482a1.206 1.206 0 0 1 1.2 1.2zm0 0" class="icon-fill" transform="translate(-144.375)"/>
+                    </svg>
+                    </div>
+                    <div class="our-services__panel__weOffer">
+                        We Offer
+                    </div>
+                    <div class="el-subtitle">
+                        Consulting <br />Services
+                    </div>
+                    <span class="our-services__panel__arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
+                            <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5px">
+                                <path fill-rule="evenodd" stroke-linejoin="round" d="M0 0h6.838v6.838" transform="translate(6.25 1.061) rotate(45 3.583 8.649)"/>
+                                <path d="M16.5 0L0 0" transform="translate(6.25 1.061) translate(-5.5 4.771)"/>
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Expert Knowledge -->
+                <a href="#" class="our-services__panel">
+                    <div class="our-services__panel__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="44.061" viewBox="0 0 50 44.061">
+                            <g id="specialist" transform="translate(0 -30.406)">
+                                <path id="Path_7854" d="M241 241.594h2.93v2.93H241z" class="icon-fill" transform="translate(-217.465 -190.564)"/>
+                                <path id="Path_7855" d="M36.719 34.682l-.429-.429c-.157-.157-3.932-3.847-11.29-3.847S13.867 34.1 13.71 34.253l-.429.429v4.629H0v35.156h50V39.311H36.719zm-20.508 1.282A14.349 14.349 0 0 1 25 33.336a14.325 14.325 0 0 1 8.789 2.627v3.348H16.211zM2.93 71.538V58.354h17.675v11.159L25 67.316l4.395 2.2V58.354H47.07v13.184zm20.605-11.866a7.354 7.354 0 0 0 2.93 0v5.1L25 64.041l-1.465.732zM25 56.889a4.395 4.395 0 1 1 4.395-4.395A4.4 4.4 0 0 1 25 56.889zm22.07-1.465H31.711a7.324 7.324 0 1 0-13.422 0H2.93V42.241h44.14z" class="icon-fill"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="our-services__panel__weOffer">
+                        We Offer
+                    </div>
+                    <div class="el-subtitle">
+                        Expert <br />Knowledge
+                    </div>
+                    <span class="our-services__panel__arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
+                            <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5px">
+                                <path fill-rule="evenodd" stroke-linejoin="round" d="M0 0h6.838v6.838" transform="translate(6.25 1.061) rotate(45 3.583 8.649)"/>
+                                <path d="M16.5 0L0 0" transform="translate(6.25 1.061) translate(-5.5 4.771)"/>
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Access To Partner Network -->
+                <a href="#" class="our-services__panel">
+                    <div class="our-services__panel__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+                            <path class="icon-fill" d="M37.413 26.471h4.016a4.412 4.412 0 1 0 0-2.941h-4.016a12.441 12.441 0 0 0-2.6-6.263l3.794-3.794a6.491 6.491 0 1 0-2.08-2.08l-3.794 3.794a12.441 12.441 0 0 0-6.263-2.6V8.571a4.412 4.412 0 1 0-2.941 0v4.016a12.44 12.44 0 0 0-6.263 2.6l-3.794-3.794a6.491 6.491 0 1 0-2.08 2.08l3.794 3.794a12.442 12.442 0 0 0-2.6 6.263H8.571a4.412 4.412 0 1 0 0 2.941h4.016a12.441 12.441 0 0 0 2.6 6.263l-3.794 3.794a6.491 6.491 0 1 0 2.08 2.08l3.794-3.794a12.441 12.441 0 0 0 6.263 2.6v4.016a4.412 4.412 0 1 0 2.941 0v-4.017a12.44 12.44 0 0 0 6.263-2.6l3.794 3.794a6.491 6.491 0 1 0 2.08-2.08l-3.794-3.794a12.441 12.441 0 0 0 2.599-6.262zM22.794 25A2.206 2.206 0 1 1 25 27.206 2.208 2.208 0 0 1 22.794 25zM25 30.147a4.419 4.419 0 0 1 4.292 3.392 9.54 9.54 0 0 1-8.583 0A4.419 4.419 0 0 1 25 30.147zm20.588-6.618A1.471 1.471 0 1 1 44.118 25a1.472 1.472 0 0 1 1.47-1.471zM39.527 5.452a3.55 3.55 0 1 1 0 5.021 3.54 3.54 0 0 1 0-5.021zM25 2.941a1.471 1.471 0 1 1-1.471 1.471A1.472 1.472 0 0 1 25 2.941zm0 12.5a9.554 9.554 0 0 1 6.785 16.285 7.4 7.4 0 0 0-2.872-3.388 5.147 5.147 0 1 0-7.826 0 7.4 7.4 0 0 0-2.872 3.388A9.554 9.554 0 0 1 25 15.441zM5.452 10.473a3.55 3.55 0 1 1 5.021 0 3.554 3.554 0 0 1-5.021 0zm-1.04 16A1.471 1.471 0 1 1 5.882 25a1.472 1.472 0 0 1-1.47 1.471zm6.061 18.078a3.55 3.55 0 1 1 0-5.021 3.554 3.554 0 0 1 0 5.018zM25 47.059a1.471 1.471 0 1 1 1.471-1.471A1.472 1.472 0 0 1 25 47.059zm19.548-7.531a3.55 3.55 0 1 1-5.021 0 3.554 3.554 0 0 1 5.021-.001z"/>
+                        </svg>
+                    </div>
+                    <div class="our-services__panel__weOffer">
+                        We Offer
+                    </div>
+                    <div class="el-subtitle">
+                        Access To <br />Partner Network
+                    </div>
+                    <span class="our-services__panel__arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
+                            <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5px">
+                                <path fill-rule="evenodd" stroke-linejoin="round" d="M0 0h6.838v6.838" transform="translate(6.25 1.061) rotate(45 3.583 8.649)"/>
+                                <path d="M16.5 0L0 0" transform="translate(6.25 1.061) translate(-5.5 4.771)"/>
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nanoleq Technology -->
+    <section data-theme="dark" id="nanoleq-technology" class="section nanoleq-technology-section">
+        <div class="nanoleq-technology">
+            <h3 class="white-orange"><span>Nanoleq technology</span><br>
+            is the gold standard in the e-textile industry. </h3>
+            <a href="#" class="order-btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Nanoleq Technology -->
+    <section data-theme="dark" id="our-services-banner" class="section our-services-banner-section">
+        <div class="container">
+            <div class="our-services-banner">
+                <div class="our-services-banner__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="82.536" viewBox="0 0 80 82.536">
+                        <defs>
+                            <style>
+                                .cls-1{fill:#fbb316}
+                            </style>
+                        </defs>
+                        <g id="idea" transform="translate(-3.518)">
+                            <path id="Path_7873" d="M76.616 51.743A21.377 21.377 0 0 0 55.264 73.1a21.084 21.084 0 0 0 4.567 13.164c.59.751 1.209 1.469 1.865 2.23l.036.042c2.007 2.328 4.081 4.736 4.856 7.572a13.249 13.249 0 0 1 .19 2.855v1.631a2.7 2.7 0 0 0 2.7 2.7h14.156a2.7 2.7 0 0 0 2.7-2.7v-1.65a11.51 11.51 0 0 1 .187-2.643c.779-2.817 3.078-5.522 5.125-7.929l.088-.1c.591-.694 1.149-1.35 1.657-2A21.083 21.083 0 0 0 97.967 73.1a21.376 21.376 0 0 0-21.351-21.357zm12.53 31.181c-.445.566-.97 1.183-1.526 1.835l-.109.128c-2.391 2.812-5.1 6-6.2 9.971a12.167 12.167 0 0 0-.372 3.028h-8.76a12.832 12.832 0 0 0-.373-3.2c-1.1-4.023-3.8-7.163-5.979-9.686l-.036-.043c-.614-.712-1.195-1.386-1.71-2.042A15.732 15.732 0 0 1 60.67 73.1a15.945 15.945 0 1 1 31.891 0 15.731 15.731 0 0 1-3.414 9.824z" class="cls-1" transform="translate(-33.097 -33.095)"/>
+                            <path id="Path_7874" d="M104.069 196.91H89.916a2.7 2.7 0 1 0 0 5.406h14.153a2.7 2.7 0 1 0 0-5.406z" class="cls-1" transform="translate(-53.532 -125.946)"/>
+                            <path id="Path_7875" d="M106.81 214.018h-7.076a2.7 2.7 0 1 0 0 5.406h7.076a2.7 2.7 0 1 0 0-5.406z" class="cls-1" transform="translate(-59.812 -136.888)"/>
+                            <path id="Path_7876" d="M196.654 103.491h-9.324a2.7 2.7 0 0 0 0 5.406h9.324a2.7 2.7 0 0 0 0-5.406z" class="cls-1" transform="translate(-115.839 -66.194)"/>
+                            <path id="Path_7877" d="M18.249 106.194a2.7 2.7 0 0 0-2.7-2.7H6.221a2.7 2.7 0 1 0 0 5.406h9.325a2.7 2.7 0 0 0 2.703-2.706z" class="cls-1" transform="translate(0 -66.194)"/>
+                            <path id="Path_7878" d="M109.713 14.733a2.7 2.7 0 0 0 2.7-2.7V2.7a2.7 2.7 0 0 0-5.406 0v9.33a2.7 2.7 0 0 0 2.706 2.703z" class="cls-1" transform="translate(-66.195)"/>
+                            <path id="Path_7879" d="M166.5 159.164a2.7 2.7 0 0 0-3.823 3.822l6.594 6.6a2.7 2.7 0 1 0 3.823-3.822z" class="cls-1" transform="translate(-101.296 -101.296)"/>
+                            <path id="Path_7880" d="M41.215 41.518a2.7 2.7 0 0 0 3.823-3.818l-6.591-6.6a2.7 2.7 0 1 0-3.823 3.822z" class="cls-1" transform="translate(-19.389 -19.387)"/>
+                            <path id="Path_7881" d="M41.217 159.164l-6.594 6.6a2.7 2.7 0 0 0 3.823 3.822l6.594-6.6a2.7 2.7 0 0 0-3.823-3.822z" class="cls-1" transform="translate(-19.389 -101.296)"/>
+                            <path id="Path_7882" d="M164.6 42.309a2.7 2.7 0 0 0 1.912-.792l6.592-6.593a2.7 2.7 0 0 0-3.823-3.822l-6.596 6.598a2.7 2.7 0 0 0 1.911 4.614z" class="cls-1" transform="translate(-101.299 -19.387)"/>
+                        </g>
+                    </svg>
+                </div>
+
+                <h5 class="black-orange">Because we are engineers at heart, we like to <span>design</span>, <span>produce</span> and <span>test</span> our products ourselves. We make sure to offer exceptionally high product quality, as we believe this is key to keep our customers happy.</h5>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services Row -->
+    <section data-theme="white" id="our-services-row" class="section our-services-row-section our-services-row-section--gray">
+        <div class="container">
+            <div class="our-services-row">
+                <div class="our-services-row__content">
+                    <h3>Production capabilities</h3>
+                    <div class="text-group">
+                        <p>Over the last years, we have established our own automated production in the heart of Zurich. Our fabrication equipment spans from compounding, extrusion and screen-printing to textile lamination and testing equipment. With our prototyping and production capabilities, we are flexible and ready to support bold and challenging requests from our textile customers.</p>
+                    </div>
+                </div>
+
+                <div class="our-services-row__image">
+                    <img src="img/product-capabilities.jpg" alt="Production Capabilities" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services Row -->
+    <section data-theme="white" id="our-services-row" class="section our-services-row-section">
+        <div class="container">
+            <div class="our-services-row our-services-row--reverse">
+                <div class="our-services-row__content">
+                    <h3>Engineering services</h3>
+                    <div class="text-group">
+                        <p>With several years of experience in the field, the Nanoleq team is able to engineer and deliver full end-to-end solution for biosignal monitoring applied to textiles. To date, our technologies can be found in a wide range of consumer, workwear and medical applications. Through our vast network of textile and electronics manufacturers, software and cloud providers, we can provide you with a ready-to-market product.</p>
+                    </div>
+                </div>
+
+                <div class="our-services-row__image">
+                    <img src="img/engineered-services.jpg" alt="Engineering Services" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services Row -->
+    <section data-theme="white" id="our-services-row" class="section our-services-row-section our-services-row-section--gray">
+        <div class="container">
+            <div class="our-services-row">
+                <div class="our-services-row__content">
+                    <h3>Laboratory testing</h3>
+                    <div class="text-group">
+                        <p>Over the years, Nanoleq has not only built truly reliable, washable and comfortable technology for smart textiles but also established numerous testing protocols for products to satisfy industry requirements.</p> 
+
+                        <p>To transform your functional prototype into a reliable product, we can provide insight into your product on the following aspects:</p>
+                    </div>
+                </div>
+
+                <div class="our-services-row__image">
+                    <img src="img/laboratory-testing.jpg" alt="Laboratory Testing" />
+                </div>
+            </div>
+
+            <div class="our-services-listPanels">
+                <div class="our-services-listPanels__panel our-services-listPanels__panel--2col">
+                    <h6>Basic Textile Choice</h6>
+                    <ul class="nq-list nq-list--small nq-list--2column">
+                        <li>Selection of materials</li>
+                        <li>Strength</li>
+                        <li>Abrasion</li>
+                        <li>Pilling resistance</li>
+                        <li>Colorfastness</li>
+                        <li>Stability to washing and dry cleaning</li>
+                    </ul>
+                </div>
+
+                <div class="our-services-listPanels__panel">
+                    <h6>Electronics Robustness </h6>
+                    <ul class="nq-list nq-list--small">
+                        <li>Stretching</li>
+                        <li>Abrasion</li>
+                        <li>Shear</li>
+                        <li>Stress</li>
+                    </ul>
+                </div>
+
+                <div class="our-services-listPanels__panel">
+                    <h6>Chemical Resistance</h6>
+                    <ul class="nq-list nq-list--small">
+                        <li>Washing Cycles</li>
+                        <li>Swear Exposure</li>
+                        <li>Prolonged Wearing</li>
+                    </ul>
+                </div>
+
+                <div class="our-services-listPanels__panel">
+                    <h6>Biocompatibility Testing </h6>
+                    <ul class="nq-list nq-list--small">
+                        <li>Cytotoxicity ISO 10993-5</li>
+                        <li>Skin irritation ISO 10993-10</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h6>We indicate how your product relates to comparable systems and we advise you how to further improve the reliability.</h6>
+    </section>
+
+    <!-- vital-updates -->
+    <section data-theme="white" id="vital-updates" class="section vital-updates-section">
+        <div class="container">
+           <div class="vital-updates">
+               <div class="updates">
+    <div class="updates__title">
+        THE JOURNAL
+    </div>
+    <div class="updates__items">
+        <div class="updates__item">
+            <a class="updates__item-left">
+                <img class="updates__item-img" src="img/news-1.jpg" alt="news">
+                <span class="updates__item-date">10 <em>March</em></span>
+            </a>
+            <div class="updates__item-right">
+                <div class="updates__item-category">science</div>
+                <a class="updates__item-title">How accurate is your heart rate monitoring device?</a>
+                <div class="updates__item-desc">Sed haec quis possit intrepidus aestimare tellus.</div>
+                <a href="" class="updates__item-btn">Read More</a>
+            </div>
+        </div>
+        <div class="updates__item">
+            <a class="updates__item-left">
+                <img class="updates__item-img" src="img/news-2.jpg" alt="news">
+                <span class="updates__item-date">10 <em>March</em></span>
+            </a>
+            <div class="updates__item-right">
+                <div class="updates__item-category">User stories</div>
+                <a class="updates__item-title">Discover Angel, the smart shirt from Adresys to avoid electrical shocks.</a>
+                <div class="updates__item-desc">Sed haec quis possit intrepidus aestimare tellus.</div>
+                <a href="" class="updates__item-btn">Read More</a>
+            </div>
+        </div>
+    </div>
+</div>
+           </div>
+        </div>
+    </section>
+</div>
+
+<!-- footer -->
+<footer id="footer" class="footer-section">
+    <div class="container">
+        <div class="footer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="34.641" class="footer__logo">
+                <path fill="#fbb316"
+                      d="M15 34.641l-15-8.66V8.66l8.143-4.7 4.8 2.77a3.042 3.042 0 11-1.285 2.225L8.142 6.926 2.57 10.144V24.5l4.287 2.476V12.619l1.285-.742 12.43 7.177V6.185l-8.143-4.7L15 0l15 8.66v17.321l-8.143 4.7-4.8-2.769a3.042 3.042 0 111.285-2.225l3.512 2.027 5.575-3.214V10.144l-4.286-2.476v14.354l-1.285.742-12.43-7.177v12.869l8.142 4.7L15 34.641zm.315-10.358a1.136 1.136 0 10.983 1.7 1.136 1.136 0 00-.983-1.7zm-.63-16.2a1.136 1.136 0 10.567.152 1.14 1.14 0 00-.567-.152z"/>
+            </svg>
+            <ul class="footer__menu">
+                <li><a href="vital.html">THE VITAL SHIRT</a></li>
+                <li><a href="">PRODUCTS</a></li>
+                <li><a href="">JOURNAL</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="">PRESS</a></li>
+                <li><a href="">Contact Us</a></li>
+            </ul>
+            <!--socials-->
+            <div class="socials">
+                <a href="" class="socials__item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="41.326" height="47.753">
+                        <g id="Group_1215" transform="translate(-77.432 -489.845)">
+                            <path id="Fill_1_Copy_10" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"
+                                  d="M78.432 502.361v22.721l19.663 11.361 19.663-11.361v-22.721L98.095 491z" opacity=".2"/>
+                            <g id="linkedin_2_" transform="translate(91 505.721)">
+                                <path id="Path_7637"
+                                      d="M17.534 17.156v-5.135c0-2.512-.541-4.447-3.477-4.447a3.048 3.048 0 00-2.746 1.509h-.041V7.809H8.489v9.347h2.9v-4.629c0-1.219.231-2.4 1.74-2.4 1.487 0 1.509 1.391 1.509 2.475v4.551z"
+                                      class="cls-2" transform="translate(-3.537 -3.156)"/>
+                                <path id="Path_7638" d="M.4 7.977h2.9v9.347H.4z" class="cls-2" transform="translate(-.165 -3.324)"/>
+                                <path id="Path_7639" d="M1.681 0a1.689 1.689 0 101.681 1.681A1.682 1.682 0 001.681 0z"
+                                      class="cls-2"/>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+                <a href="" class="socials__item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="41.326" height="47.753">
+                        <path fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"
+                              d="M1 12.516v22.721l19.663 11.361 19.663-11.361V12.516L20.663 1.155z" opacity=".2"/>
+                        <path class="cls-2" d="M26.471 29.335h-10.83a2.074 2.074 0 01-2.057-2.086v-6.571a2.073 2.073 0 012.057-2.085h10.83a2.073 2.073 0 012.057 2.085v6.571a2.074 2.074 0 01-2.057 2.086zm-7.048-8.242v5.665l4.524-2.65z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="footer__bottom">
+                © 2021 - Nanoleq.com - All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="js/slick.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+
+</body>
+</html>

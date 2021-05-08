@@ -243,27 +243,5 @@ if (productSlider.length > 0) {
     productSlider.slick({
         arrows: false,
         dots: true,
-        //autoplay: true,
-        //autoplaySpeed: 6000,
-        responsive: [
-            /*             {
-                            breakpoint: 9999,
-                            settings: "unslick"
-                        },
-                        {
-                            breakpoint: 768,
-                            settings: {
-                                slidesToShow: 2,
-                                slidesToScroll: 1
-                            }
-                        },
-                        {
-                            breakpoint: 550,
-                            settings: {
-                                slidesToShow: 1,
-                                slidesToScroll: 1,
-                            }
-                        } */
-        ]
     });
 }

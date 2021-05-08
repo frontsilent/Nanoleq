@@ -345,4 +345,25 @@ body .header-section.bg {
 			background-color: $orangey-yellow;
 		}
 	}
+	&--small{
+		margin: 20px 0;
+		li{
+			font-size: 1.5rem;
+			@include body-font(r);
+			padding-left: 15px;
+			
+
+			&:before{
+				width: 0.5rem;
+				height: 0.5rem;
+				border-radius: 0;
+				top: 11px;
+			}
+		}
+	}
+	&--2column{
+		columns: 2;
+		-webkit-columns: 2;
+		-moz-columns: 2;
+	}
 }
