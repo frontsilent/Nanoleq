@@ -28,11 +28,18 @@
         padding: 0 4rem 0 0;
     }
 
+    &__image{
+        text-align: right;
+    }
+
     &--reverse{
         flex-direction: row-reverse;
 
         .our-services-row__content{
             padding: 0 0 0 4rem;
+        }
+        .our-services-row__image{
+            text-align: left;
         }
     }
 
@@ -48,7 +55,7 @@
         }
     }
     @include custom-bp(768){
-        padding: 0 4rem;
+        padding: 0 2rem;
     }
 }
 
@@ -84,7 +91,7 @@
         }
     }
     @include custom-bp(768){
-        padding: 1.9rem 4rem 0 4rem;
+        padding: 1.9rem 2rem 0 2rem;
         &__panel{
             width: 100% !important;
             margin: 2rem 0;

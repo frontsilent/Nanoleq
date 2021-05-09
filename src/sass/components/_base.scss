@@ -34,10 +34,14 @@ body{
 }
 
 .section{
-  position: relative;
-  background: center;
-  background-size: cover;
-  padding: 11rem 0;
+	position: relative;
+	background: center;
+	background-size: cover;
+	padding: 11rem 0;
+
+	&--smallp{
+		padding: 7rem 0;
+	}
 }
 
 .container {
