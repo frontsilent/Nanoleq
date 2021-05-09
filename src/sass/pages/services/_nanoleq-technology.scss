@@ -1,0 +1,23 @@
+.nanoleq-technology-section{
+    background: #000 url("../img/nanoleq-technology.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-top: -10rem;
+    padding-top: 25.6rem;
+    z-index: 5;
+
+    @include custom-bp(768){
+        padding: 15rem 4rem 11rem 4rem;
+    }
+}
+
+.nanoleq-technology{
+    text-align: center;
+    width: 100%;
+
+    h3{
+        line-height: 1.5;
+        margin-bottom: 3rem;
+    }
+}

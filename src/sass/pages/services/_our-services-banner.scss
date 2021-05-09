@@ -1,0 +1,12 @@
+.our-services-banner{
+    text-align: center;
+    h5{
+        max-width: 80rem;
+        margin: 4rem auto 0 auto;
+    }
+    @include custom-bp(768){
+        h5{
+            padding: 0 2rem;
+        }
+    }
+}

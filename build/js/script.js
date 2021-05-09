@@ -1,12 +1,12 @@
 let blocks = Array.from(document.querySelectorAll('.section')),
     bodyContainer = document.querySelector('body'),
     headerSection = $('.header-section')
-    mainMenuWrap = $('.main-menu-wrap'),
+mainMenuWrap = $('.main-menu-wrap'),
     menuBurger = $('.tog-nav');
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
 
-    if(window.scrollY > 200){
+    if (window.scrollY > 200) {
         headerSection.removeClass('bg');
         mainMenuWrap.removeClass('show');
         menuBurger.removeClass('active');
@@ -15,7 +15,7 @@ window.addEventListener('scroll', function() {
     blocks.forEach(function (item, index) {
 
         if (getVisiblePart(item)) {
-            if($(window).width() > 767){
+            if ($(window).width() > 767) {
                 bodyContainer.dataset.active = item.dataset.theme;
                 return false;
             }
@@ -25,8 +25,8 @@ window.addEventListener('scroll', function() {
 
 });
 
-function getVisiblePart(element){
-    if (element.getBoundingClientRect().top < 120){
+function getVisiblePart(element) {
+    if (element.getBoundingClientRect().top < 120) {
         return true;
     }
 }
@@ -36,7 +36,7 @@ menuBurger.on('click', function () {
     menuBurger.toggleClass('active');
     if ($(window).width() < 767) {
         mainMenuWrap.slideToggle();
-    } else{
+    } else {
         mainMenuWrap.toggleClass('show');
         headerSection.toggleClass('bg');
     }
@@ -104,9 +104,9 @@ if (vitalSlider.length > 0) {
 
 // about tab
 const aboutLeadershipTabWrap = $('.about-leadership-section'),
-      aboutLeadershipTabTop = aboutLeadershipTabWrap.find('.about-leadership-tab__top'),
-      aboutLeadershipTabBottom = aboutLeadershipTabWrap.find('.about-leadership-tab__bottom'),
-      aboutLeadershipTabClose = $('.about-leadership-tab__close');
+    aboutLeadershipTabTop = aboutLeadershipTabWrap.find('.about-leadership-tab__top'),
+    aboutLeadershipTabBottom = aboutLeadershipTabWrap.find('.about-leadership-tab__bottom'),
+    aboutLeadershipTabClose = $('.about-leadership-tab__close');
 
 // about tab change active item
 aboutLeadershipTabTop.on('click', function () {
@@ -233,5 +233,15 @@ if (advisorsSlider.length > 0) {
                 }
             }
         ]
+    });
+}
+
+
+//Products Page
+const productSlider = $('.products-slider');
+if (productSlider.length > 0) {
+    productSlider.slick({
+        arrows: false,
+        dots: true,
     });
 }
