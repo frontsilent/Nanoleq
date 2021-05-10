@@ -12,6 +12,9 @@
       background: rgba(#000, .9);
     }
   }
+  &--dark{
+    background: $black;
+  }
 }
 .header{
   display: flex;
@@ -146,6 +149,9 @@
   pointer-events: none;
   opacity: 0;
   @include transition();
+  @media (max-width: 767px){
+      pointer-events: all;
+  }
   &::before {
     content: '';
     position: absolute;
