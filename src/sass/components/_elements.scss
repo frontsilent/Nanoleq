@@ -78,28 +78,6 @@
 	}
 }
 
-//text-group
-.text-group{
-  font-family: 'Roboto', serif;
-  font-size: 1.7rem;
-  line-height: 1.6;
-  @media (max-width: 1199px){
-    font-size: 1.8rem;
-  }
-  &--black{
-    color: #0f0f0f;
-  }
-  &--white{
-    color: $white;
-  }
-  p{
-    margin-bottom: 2rem;
-  }
-  strong{
-    font-weight: 700;
-  }
-}
-
 
 //social
 .socials{

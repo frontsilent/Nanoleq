@@ -1,0 +1,30 @@
+.blog-other{
+  &__title{
+    margin-bottom: 5rem;
+  }
+  &__items{
+    display: flex;
+    margin: 0 -1.5rem;
+    @media (max-width: 1023px){
+        flex-wrap: wrap;
+    }
+    @media (max-width: 767px){
+      margin: 0 auto;
+    }
+  }
+  &__item{
+    width: calc(33.33% - 3rem);
+    margin: 0 1.5rem;
+    @media (max-width: 1023px){
+      width: calc(50% - 3rem);
+      &:nth-of-type(n+3){
+        display: none;
+      }
+    }
+    @media (max-width: 767px){
+      width: 100%;
+      margin: 0 auto 4.5rem;
+      max-width: 50rem;
+    }
+  }
+}
