@@ -35,20 +35,25 @@
   }
 }
 
+.game-section{
+  padding: 0;
+  background: $black;
+  overflow: hidden;
+}
+
 .wrapper {
   position: relative;
-  padding: 0 10%;
+  padding: 0;
   text-align: center;
   min-width: 320px;
   width: 100%;
+  max-width: 80%;
   height: 100vh; /* initial height, will be dynamically adjusted at runtime */
-  max-width: 100%;
   margin: 0 auto;
   display: block;
   align-items: center;
   justify-content: center;
   overflow: auto;
-  background: $black;
 }
 
 .emscripten {

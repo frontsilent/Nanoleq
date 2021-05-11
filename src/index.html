@@ -37,12 +37,14 @@
         </div>
     </section>
     <!-- game-->
-    <div data-theme="dark" class="wrapper game-main section game-main-section" id="mainarea">
-        <div class="alert alert-warning centered-axis-xy" style="min-height: 20px; display:none;" role="alert" id="compilingmessage">
-            <div id='loadTasks'> </div>
+    <div data-theme="dark" class="section game-section">
+        <div  class="wrapper game-main game-main-section" id="mainarea">
+            <div class="alert alert-warning centered-axis-xy" style="min-height: 20px; display:none;" role="alert" id="compilingmessage">
+                <div id='loadTasks'> </div>
+            </div>
+            <!-- The "tabindex=0" specifier on the canvas is important to allow it to capture keyboard focus when clicking on it with a mouse -->
+            <canvas tabindex=0 id="canvas" class="emscripten" oncontextmenu="event.preventDefault()" style="display:none;"></canvas>
         </div>
-        <!-- The "tabindex=0" specifier on the canvas is important to allow it to capture keyboard focus when clicking on it with a mouse -->
-        <canvas tabindex=0 id="canvas" class="emscripten" oncontextmenu="event.preventDefault()" style="display:none;"></canvas>
     </div>
     <div class="row buttonarea text-center" id="buttonrow" style="display:none;">
         <div class="col-sm-2 text-center"></div>
