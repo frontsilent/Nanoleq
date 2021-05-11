@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Napoleq</title>
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+<!-- header -->
+<header id="header" class="header-section">
+    <div class="header">
+        <a href="" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="99.872" height="79.097" viewBox="0 0 99.872 79.097">
+                <g id="logo" transform="translate(0 -.214)">
+                    <path id="Fill_1" d="M25.3 58.435L0 43.826V14.608l13.736-7.93 8.09 4.672a5.131 5.131 0 1 1-2.167 3.75l-5.924-3.42-9.4 5.427v24.216l7.233 4.177V21.286l2.167-1.251L34.7 32.142V10.433L20.967 2.5 25.3 0l25.3 14.608v29.218l-13.73 7.929-8.091-4.671a5.132 5.132 0 1 1 2.167-3.754l5.924 3.42 9.4-5.426V17.112l-7.232-4.177v24.212L36.87 38.4 15.9 26.293V48l13.735 7.93-4.334 2.5zm.532-17.472a1.917 1.917 0 1 0 1.658 2.875 1.917 1.917 0 0 0-1.658-2.875zm-1.059-27.328a1.916 1.916 0 1 0 .957.257 1.923 1.923 0 0 0-.957-.257z" class="cls-2" transform="translate(23.834 .214)"/>
+                    <g id="Group_6" transform="translate(0 66.49)">
+                        <path id="Clip_5-2" fill="none" d="M0 0h99.872v12.66H0z" transform="translate(0 .16)"/>
+                        <g id="Group_6-2" clip-path="url(#clip-path)">
+                            <path id="Fill_4" d="M98.508 12.66l-1.45-1.294a6.666 6.666 0 0 1-1.692.837 6.334 6.334 0 0 1-1.986.3 6.49 6.49 0 0 1-2.557-.492 6 6 0 0 1-3.283-3.323 6.5 6.5 0 0 1 0-4.836 6.1 6.1 0 0 1 1.313-2A6.3 6.3 0 0 1 93.413 0a6.488 6.488 0 0 1 2.556.492 6 6 0 0 1 3.281 3.325 6.349 6.349 0 0 1 .467 2.418 6.212 6.212 0 0 1-.32 1.986 6.287 6.287 0 0 1-.906 1.744l1.382 1.174-1.365 1.521zM93.379 1.952a4.008 4.008 0 0 0-1.65.337 3.917 3.917 0 0 0-1.287.915 4.227 4.227 0 0 0-.842 1.364 4.745 4.745 0 0 0 0 3.334 4.238 4.238 0 0 0 .846 1.373 4.047 4.047 0 0 0 1.3.932 3.976 3.976 0 0 0 1.658.346 3.9 3.9 0 0 0 1.122-.156 3.759 3.759 0 0 0 .95-.432L93.413 8.2l1.364-1.555 2.09 1.9a3.782 3.782 0 0 0 .466-1.063 4.7 4.7 0 0 0 .156-1.218 4.628 4.628 0 0 0-.3-1.667 4.254 4.254 0 0 0-.849-1.367 4.048 4.048 0 0 0-1.3-.933 3.989 3.989 0 0 0-1.661-.345zM51.568 12.5a6.488 6.488 0 0 1-2.556-.492 6.088 6.088 0 0 1-1.986-1.338 6.158 6.158 0 0 1-1.3-1.986 6.5 6.5 0 0 1 0-4.836 6.115 6.115 0 0 1 1.313-2A6.3 6.3 0 0 1 51.6 0a6.5 6.5 0 0 1 2.557.492 6 6 0 0 1 3.281 3.325 6.5 6.5 0 0 1 0 4.836 6.1 6.1 0 0 1-1.313 2 6.294 6.294 0 0 1-4.557 1.847zm0-10.552a4.014 4.014 0 0 0-1.65.337 3.922 3.922 0 0 0-1.286.915 4.232 4.232 0 0 0-.838 1.364 4.745 4.745 0 0 0 0 3.334 4.256 4.256 0 0 0 .846 1.373 4.047 4.047 0 0 0 1.3.932 4.18 4.18 0 0 0 3.307.009 3.934 3.934 0 0 0 1.292-.912 4.215 4.215 0 0 0 .837-1.364 4.745 4.745 0 0 0 0-3.334 4.237 4.237 0 0 0-.846-1.372 4.054 4.054 0 0 0-1.3-.933 4 4 0 0 0-1.662-.345zM32.64 12.3h-2.107V.208H32.5l6.463 8.359V.208h2.107V12.3h-1.778L32.64 3.7v8.6zm-30.533 0H0V.208h1.967l6.462 8.359V.208h2.107V12.3H8.76L2.107 3.7v8.6zm14.3 0H14.23L19.55.121h1.969L26.837 12.3h-2.244l-.418-.995C22.893 8.251 22.12 6.409 20.5 2.66c-1.2 2.8-1.727 4.048-2.339 5.5-.46 1.091-.935 2.215-1.755 4.14zm67.043 0h-9.034V.208h8.947v1.917h-6.84v3.108h6.062V7.15h-6.063v3.23h6.926v1.92zm-12.883 0H62.1V.208h2.11v10.173h6.356V12.3z" class="cls-1" transform="translate(0 .16)"/>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </a>
+        <div class="main-menu-wrap">
+            <ul class="main-menu">
+                <li class="menu-item-has-children">
+                    <span></span>
+                    <a href="vital.html">THE VITAL SHIRT</a>
+                    <ul class="sub-menu">
+                        <li><a href="run.html">RUN</a></li>
+                        <li><a href="training.html">GYM</a></li>
+                        <li><a href="ski.html">SKI</a></li>
+                        <li><a href="">BIKE</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <span></span>
+                    <a href="">PRODUCTS</a>
+                    <ul class="sub-menu">
+                        <li><a href="">ElectroSkin™</a></li>
+                        <li><a href="">PhantomTape™</a></li>
+                        <li><a href="">PhantomLink™</a></li>
+                        <li><a href="">Services</a></li>
+                    </ul>
+                </li>
+                <li><a href="">JOURNAL</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="">CONTACT</a></li>
+            </ul>
+        </div>
+        <span class="tog-nav">
+            <span></span>
+        </span>
+    </div>
+</header>
+
+
+<!-- page body -->
+<div class="page-body">
+    <!-- intro -->
+    <section data-theme="dark" id="intro" class="section intro-section">
+        <div class="intro__img">
+            <img src="img/electroskin-intro.jpg" alt="image">
+        </div>
+        <img src="img/scroll-btn.svg" alt="scroll" class="intro__scroll">
+        <div class="container">
+            <div class="intro">
+                <div class="intro__title">
+                    High-Performance<br>
+                    <em>Textile Electrodes.</em>
+                </div>
+                <div class="intro__text el-subtitle">
+                    The Connectivity Standard for Textile Solutions.
+                </div>
+                <a href="" class="intro__btn btn btn--orange">
+                   <span>DISCOVER PRODUCTS</span>
+                   <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
+                       <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5px">
+                           <path fill-rule="evenodd" stroke-linejoin="round" d="M0 0h6.838v6.838" transform="translate(6.25 1.061) rotate(45 3.583 8.649)"/>
+                           <path d="M16.5 0L0 0" transform="translate(6.25 1.061) translate(-5.5 4.771)"/>
+                       </g>
+                   </svg>
+               </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Electroskin -->
+    <section data-theme="white" id="electroskin" class="section electroskin-section">
+            <div class="electroskin">
+                <div class="el-title el-title--black-orange">
+                    Electro<i>skin<sup>TM</sup></i>
+                </div>
+
+                <div class="electroskin__product">
+                    <div class="electroskin__feature  electroskin__feature--left">
+                        <ul>
+                            <li>
+                                <img src="img/corrosion-free.svg" alt="Corrosion Free" />
+                                <div class="el-subtitle">
+                                    Corrosion Free
+                                </div>
+                                <div class="text-group">
+                                    Best in class corrosion and sweat resistance
+                                </div>
+                            </li>
+
+                            <li>
+                                <img src="img/lamination-ready.svg" alt="Corrosion Free" />
+                                <div class="el-subtitle">
+                                    Lamination Ready
+                                </div>
+                                <div class="text-group">
+                                    Easy applicable to textile surfaces via lamination using hot pressing
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="electroskin__image">
+                        <div class="electroskin__image__grayCircle"></div>
+                        <div class="electroskin__image__orangeCircle"></div>
+                        <img src="img/products-electroskin.png" alt="Electroskin" />
+                    </div>
+
+                    <div class="electroskin__feature">
+
+                        <ul>
+                            <li>
+                                <img src="img/washable.svg" alt="Corrosion Free" />
+                                <div class="el-subtitle">
+                                    Washable
+                                </div>
+                                <div class="text-group">
+                                    Endures more than 100 washing cycles.
+                                </div>
+                            </li>
+
+                            <li>
+                                <img src="img/skin-friendly.svg" alt="Corrosion Free" />
+                                <div class="el-subtitle">
+                                    Skin Friendly
+                                </div>
+                                <div class="text-group">
+                                    Skin biocompatible ISO 10993-10
+                                </div>
+                            </li>
+
+                            <li>
+                                <img src="img/ultrathin.svg" alt="Corrosion Free" />
+                                <div class="el-subtitle">
+                                    Ultrathin
+                                </div>
+                                <div class="text-group">
+                                    Less than 1mm thin
+                                </div>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Our Range -->
+    <section data-theme="dark" id="our-range" class="section our-range-section">
+        <div class="container">
+            <div class="el-title el-title--white">
+                Our Range
+            </div>
+            <div class="our-range">
+                <a href="#" class="our-range__panel">
+                    <svg width="40" height="32" viewBox="0 0 40 32">
+                        <g>
+                            <g>
+                                <path class="icon-fill" d="M34.4 42.667L14 63.267l-8.4-8.4-5.6 5.6 14 14.2 26-26.2z" transform="translate(0 -42.667) translate(0 42.667) translate(0 -42.667)"/>
+                            </g>
+                        </g>
+                    </svg>
+
+                    <h3 class="black-orange">ELECTRO<span>SKIN</span><br>GECKO</h3>
+
+                    <div class="text-group">
+                        Developed for performance biosignal monitoring, including ECG, EEG and EMG. 
+                    </div>
+
+                    <span class="our-range__panel__arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
+                            <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5px">
+                                <path fill-rule="evenodd" stroke-linejoin="round" d="M0 0h6.838v6.838" transform="translate(6.25 1.061) rotate(45 3.583 8.649)"/>
+                                <path d="M16.5 0L0 0" transform="translate(6.25 1.061) translate(-5.5 4.771)"/>
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+                <a href="#" class="our-range__panel">
+                    <svg width="40" height="32" viewBox="0 0 40 32">
+                        <g>
+                            <g>
+                                <path class="icon-fill" d="M34.4 42.667L14 63.267l-8.4-8.4-5.6 5.6 14 14.2 26-26.2z" transform="translate(0 -42.667) translate(0 42.667) translate(0 -42.667)"/>
+                            </g>
+                        </g>
+                    </svg>
+
+                    <h3 class="black-orange">ELECTRO<span>SKIN</span><br>SENSE</h3>
+
+                    <div class="text-group">
+                        Engineered for biosignal monitoring, including ECG, EEG and EMG. 
+                    </div>
+
+                    <span class="our-range__panel__arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
+                            <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5px">
+                                <path fill-rule="evenodd" stroke-linejoin="round" d="M0 0h6.838v6.838" transform="translate(6.25 1.061) rotate(45 3.583 8.649)"/>
+                                <path d="M16.5 0L0 0" transform="translate(6.25 1.061) translate(-5.5 4.771)"/>
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+                <a href="#" class="our-range__panel">
+                    <svg width="40" height="32" viewBox="0 0 40 32">
+                        <g>
+                            <g>
+                                <path class="icon-fill" d="M34.4 42.667L14 63.267l-8.4-8.4-5.6 5.6 14 14.2 26-26.2z" transform="translate(0 -42.667) translate(0 42.667) translate(0 -42.667)"/>
+                            </g>
+                        </g>
+                    </svg>
+
+                    <h3 class="black-orange">ELECTRO<span>SKIN</span><br>STIM</h3>
+
+                    <div class="text-group">
+                        Developed for optimized and safe electrical stimulation.
+                    </div>
+
+                    <span class="our-range__panel__arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
+                            <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5px">
+                                <path fill-rule="evenodd" stroke-linejoin="round" d="M0 0h6.838v6.838" transform="translate(6.25 1.061) rotate(45 3.583 8.649)"/>
+                                <path d="M16.5 0L0 0" transform="translate(6.25 1.061) translate(-5.5 4.771)"/>
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+
+            <a href="" class="btn btn--orange">
+                <span>READ MORE</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
+                    <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5px">
+                        <path fill-rule="evenodd" stroke-linejoin="round" d="M0 0h6.838v6.838" transform="translate(6.25 1.061) rotate(45 3.583 8.649)"/>
+                        <path d="M16.5 0L0 0" transform="translate(6.25 1.061) translate(-5.5 4.771)"/>
+                    </g>
+                </svg>
+            </a>
+        </div>
+            
+    </section>
+
+    <!-- Why Electroskin -->
+    <section data-theme="white" id="why-electroskin" class="section section--smallp why-electroskin-section">
+        <div class="container">
+            <div class="why-electroskin">
+                <div class="why-electroskin__content">
+                    <h3 class="black-orange">Why <span>ELECTROSKIN?</span></h3>
+                    <div class="text-group">
+                        <p>Nanoleq is the creator of ElectroSkin, a hybrid polymer-textile electrode solution. It’s the only textile electrode on the market with consistently low skin impedance and strong signal quality from the first seconds of dry skin contact until >100 washing and wearing cycles. ElectroSkin is ultrathin, elastic and still performs outstandingly after many times washing and wearing. It can be integrated onto garments in a one-step lamination process. Connecting ElectroSkin is fast and reliable thanks to a smart connection interface. Textile manufacturers can now easily form electrical connections, without electronics expertise and without the need for crimping or soldering.</p>
+                    </div>
+
+                    <h3 class="black-orange">Electro<span>Skin</span> GECKO</h3>
+                    <div class="text-group">
+                        <p>Nanoleq’s flagship product is the ElectroSkin GECKO, which comes with a skin-adhesive surface. This GECKO effect causes the electrode to be naturally attracted to the skin. This prevents unwanted electrode lift-off and allows for excellent signal quality without making the garment overtight.</p>
+
+                        <p>The skin contact surface and elastic modulus of ElectroSkin STIM is optimal for comfortable electrostimulation for long lasting e-textiles.</p>
+
+                        <p>Be part of the future with ElectroSkin.</p>
+                    </div>
+                </div>
+                <div class="why-electroskin__image">
+                    <img src="img/why-electroskin.jpg" alt="Why Electroskin" />
+
+                    <div class="why-electroskin__controls">
+                        <a href="" class="btn btn--orange">
+                            <span>Download brochure</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="16.047" viewBox="0 0 11 16.047">
+                                <defs>
+                                    <style>
+                                        .cls-1{fill:#0f0f0f}
+                                    </style>
+                                </defs>
+                                <g id="_08_Cursor" transform="translate(-6.389 -5.23)">
+                                    <path id="Path_7841" d="M237.025 111.018a1.025 1.025 0 0 1-1.025-1.025v-9.528a1.025 1.025 0 0 1 2.05 0v9.528a1.025 1.025 0 0 1-1.025 1.025z" class="cls-1" transform="translate(-225.136 -94.21)"/>
+                                    <path id="Path_7842" d="M154.181 224.262a1.721 1.721 0 0 1-1.225-.507l-3.975-3.974a1.025 1.025 0 1 1 1.45-1.45l3.75 3.75 3.75-3.75a1.025 1.025 0 0 1 1.45 1.45l-3.975 3.974a1.721 1.721 0 0 1-1.225.507z" class="cls-1" transform="translate(-142.292 -206.723)"/>
+                                    <path id="Path_7843" d="M158.655 374.61h-8.95a1.025 1.025 0 1 1 0-2.05h8.95a1.025 1.025 0 0 1 0 2.05z" class="cls-1" transform="translate(-142.291 -353.333)"/>
+                                </g>
+                            </svg>
+                        </a>
+
+                        <a href="" class="btn btn--orange">
+                            <span>request a quote</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
+                                <g fill="none" stroke="#0f0f0f" stroke-linecap="round" stroke-width="1.5px">
+                                    <path fill-rule="evenodd" stroke-linejoin="round" d="M0 0h6.838v6.838" transform="translate(6.25 1.061) rotate(45 3.583 8.649)"/>
+                                    <path d="M16.5 0L0 0" transform="translate(6.25 1.061) translate(-5.5 4.771)"/>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combined Kit -->
+    <section data-theme="dark" id="combined-kit" class="section combined-kit-section combined-kit-section--dark">
+        <div class="container">
+            <div class="combined-kit  combined-kit--electroskin">
+                <div class="combined-kit__left">
+                    <div class="el-title el-title--white el-title--left">
+                        <i>ElectroSkin</i> Starter Kit
+                    </div>
+
+                    <div class="text-group text-group--white">
+                        <p>The ElectroSkin Starter Kit contains all you need to equip your e-textile with the best performing skin electrodes for textiles. ElectroSkin electrodes are light, thin and their skin impedance is even better than standard medical gel electrodes, without wetting and even after repeated washing. The kit comes with textile connector components and tools to laminate ElectroSkin electrodes onto textiles and connect them to your electronic module.</p>
+
+                        <p>Necessary textile workshop tools for handling lamination and buttons: Hot press or lamination machine (for starters, an iron works as well), textile button press & hole puncher.</p>
+
+                    </div>
+                    
+
+                    <h3 class="el-title--uppercase text-white">Ingredients:</h3>
+                    <ul class="nq-list nq-list--white">
+                        <li>12 ElectroSkin electrodes</li>
+                        <li>Insulation patches for connections to buttons</li>
+                        <li>Conductive snap buttons & tools</li>
+                        <li>Supporting tools for press buttons</li>
+                        <li>Laminated reference sample</li>
+                        <li>SOP documentation</li>
+                    </ul>
+                </div>
+
+                <div class="combined-kit__right">
+                    <div class="starter-kit-image">
+                        <img src="img/electroskin-starter-kit.png" alt="Combined Starter Kit" />
+                    </div>
+
+                    <div class="starter-kit-description">
+                        <div class="el-subtitle el-subtitle--black-orange">
+                            EUR <i>€880</i>
+                        </div>
+
+                        <div class="text-group">
+                            <p>Starter Kit orders include up to 1.5 hours of telephone support with an expert from Nanoleq who will help you with laminating and connecting PhantomTape and ElectroSkin.</p>
+                        </div>
+
+                        <a href="#" class="wishlist-btn wishlist-btn--small">order your kit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- footer -->
+<footer id="footer" class="footer-section">
+    <div class="container">
+        <div class="footer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="34.641" class="footer__logo">
+                <path fill="#fbb316"
+                      d="M15 34.641l-15-8.66V8.66l8.143-4.7 4.8 2.77a3.042 3.042 0 11-1.285 2.225L8.142 6.926 2.57 10.144V24.5l4.287 2.476V12.619l1.285-.742 12.43 7.177V6.185l-8.143-4.7L15 0l15 8.66v17.321l-8.143 4.7-4.8-2.769a3.042 3.042 0 111.285-2.225l3.512 2.027 5.575-3.214V10.144l-4.286-2.476v14.354l-1.285.742-12.43-7.177v12.869l8.142 4.7L15 34.641zm.315-10.358a1.136 1.136 0 10.983 1.7 1.136 1.136 0 00-.983-1.7zm-.63-16.2a1.136 1.136 0 10.567.152 1.14 1.14 0 00-.567-.152z"/>
+            </svg>
+            <ul class="footer__menu">
+                <li><a href="vital.html">THE VITAL SHIRT</a></li>
+                <li><a href="">PRODUCTS</a></li>
+                <li><a href="">JOURNAL</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="">PRESS</a></li>
+                <li><a href="">Contact Us</a></li>
+            </ul>
+            <!--socials-->
+            <div class="socials">
+                <a href="" class="socials__item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="41.326" height="47.753">
+                        <g id="Group_1215" transform="translate(-77.432 -489.845)">
+                            <path id="Fill_1_Copy_10" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"
+                                  d="M78.432 502.361v22.721l19.663 11.361 19.663-11.361v-22.721L98.095 491z" opacity=".2"/>
+                            <g id="linkedin_2_" transform="translate(91 505.721)">
+                                <path id="Path_7637"
+                                      d="M17.534 17.156v-5.135c0-2.512-.541-4.447-3.477-4.447a3.048 3.048 0 00-2.746 1.509h-.041V7.809H8.489v9.347h2.9v-4.629c0-1.219.231-2.4 1.74-2.4 1.487 0 1.509 1.391 1.509 2.475v4.551z"
+                                      class="cls-2" transform="translate(-3.537 -3.156)"/>
+                                <path id="Path_7638" d="M.4 7.977h2.9v9.347H.4z" class="cls-2" transform="translate(-.165 -3.324)"/>
+                                <path id="Path_7639" d="M1.681 0a1.689 1.689 0 101.681 1.681A1.682 1.682 0 001.681 0z"
+                                      class="cls-2"/>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+                <a href="" class="socials__item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="41.326" height="47.753">
+                        <path fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"
+                              d="M1 12.516v22.721l19.663 11.361 19.663-11.361V12.516L20.663 1.155z" opacity=".2"/>
+                        <path class="cls-2" d="M26.471 29.335h-10.83a2.074 2.074 0 01-2.057-2.086v-6.571a2.073 2.073 0 012.057-2.085h10.83a2.073 2.073 0 012.057 2.085v6.571a2.074 2.074 0 01-2.057 2.086zm-7.048-8.242v5.665l4.524-2.65z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="footer__bottom">
+                © 2021 - Nanoleq.com - All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="js/slick.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+
+</body>
+</html>

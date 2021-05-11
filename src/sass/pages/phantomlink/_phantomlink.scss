@@ -1,0 +1,56 @@
+.electroskin{
+    &__product{
+        align-items: center;
+    }
+    &--phantomlink{
+        .electroskin__image{
+            width: 34rem;
+            height: 34rem;
+            margin-right: 14rem;
+            margin-left: 14rem;
+
+            img{
+                max-width: 48rem;
+            }
+        }
+        .electroskin__feature{
+            ul{
+                li{
+                    margin-bottom: 6rem;
+                }
+            }
+        }
+    }
+}
+
+.phantomlink-banner{
+    background-color: #0f0f0f;
+    margin: 5.3rem 0;
+    padding: 3.6rem 5.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h6{
+        max-width: 70%;
+    }
+    @include custom-bp(1024){
+        flex-direction: column;
+        h6{
+            max-width: 100%;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+.phantomlink-description{
+    text-align: center;
+    .text-group{
+        max-width: 99rem;
+        margin: 0 auto 6rem auto;
+    }
+
+    .btn{
+        margin: 1rem 2rem;
+    }
+}

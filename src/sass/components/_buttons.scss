@@ -20,6 +20,12 @@
     border-top: 1px solid $orangey-yellow;
     border-bottom: 1px solid $orangey-yellow;
   }
+  &--small{
+    padding: 1rem 1.5rem;
+    span{
+      margin-right: 1rem !important;
+    }
+  }
   @media (min-width: 768px) {
     &:hover {
 
@@ -106,14 +112,19 @@
       }
     }
   }
+  &--small{
+    padding: 1.3rem 3.8rem;
+    font-size: 2rem;
+    min-width: auto;
+  }
 }
 
 .order-btn{
 	background-color: $orangey-yellow;
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 	color: #fff;
 	text-transform: uppercase;
-	padding: 1.3rem 2.8rem;
+	padding: 1rem 2.8rem;
 	@include transition(all 300ms ease-in-out);
 }
 

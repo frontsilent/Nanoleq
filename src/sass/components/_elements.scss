@@ -4,6 +4,9 @@
   line-height: 1.33;
   text-align: center;
   text-transform: uppercase;
+  sup{
+	  font-size: 1.7rem;
+  }
   @media (max-width: 1499px){
     font-size: 4.7rem;
   }
@@ -449,7 +452,7 @@ body .header-section.bg {
 		@include body-font(m);
 		font-size: 1.7rem;
 		padding-left: 40px;
-		line-height: 2;
+		line-height: 2.1;
 
 
 		&:before{
@@ -459,8 +462,8 @@ body .header-section.bg {
 			left: 0;
 			width: 2rem;
 			height: 2rem;
-			border-radius: 2rem;
-			background-color: $orangey-yellow;
+      		background: url('../img/tickmark.svg') no-repeat center center;
+			background-size: cover;
 		}
 	}
 	&--small{
@@ -476,6 +479,7 @@ body .header-section.bg {
 				height: 0.5rem;
 				border-radius: 0;
 				top: 11px;
+        		background-color: $orangey-yellow;
 			}
 		}
 	}
@@ -484,4 +488,21 @@ body .header-section.bg {
 		-webkit-columns: 2;
 		-moz-columns: 2;
 	}
+
+	&--white{
+		li{
+			color: $white;
+		}
+	}
+}
+
+sup{
+	vertical-align: top;
+}
+
+.text-white{
+	color: $white;
+}
+.text-center{
+  text-align: center;
 }
