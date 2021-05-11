@@ -25,18 +25,22 @@
     }
 
     &__content{
-        padding: 0 4rem 0 0;
+        padding: 0 8rem 0 0;
     }
 
     &__image{
         text-align: right;
+        img{
+           @include img(); 
+        }
+        
     }
 
     &--reverse{
         flex-direction: row-reverse;
 
         .our-services-row__content{
-            padding: 0 0 0 4rem;
+            padding: 0 0 0 8rem;
         }
         .our-services-row__image{
             text-align: left;

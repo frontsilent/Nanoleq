@@ -1,0 +1,42 @@
+.phantomtape-boxes{
+    display: flex;
+    justify-content: space-between;
+    margin: 11rem auto 0 auto;
+    max-width: 120rem;
+
+    &__box{
+        width: calc(50% - 2rem);
+        border: solid 1px #d5d5d5;
+        background-color: #f9f9f9;
+        padding: 5.5rem 5.5rem 10rem 5.5rem;
+
+        position: relative;
+
+        &__control{
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            position: absolute;
+            bottom: 4rem;
+            .btn{
+                margin-right: 2rem;
+                width: auto;
+                span{
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+
+
+    @include custom-bp(1000){
+        flex-direction: column;
+        max-width: 60rem;
+        padding: 0 2rem;
+        margin: 4rem auto 0 auto;
+        &__box{
+            width: 100%;
+            margin-bottom: 4rem;
+        }
+    }
+}
