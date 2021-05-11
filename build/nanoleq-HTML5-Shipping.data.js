@@ -173,6 +173,6 @@ Module['FS_createPath']('/nanoleq/Content', 'Paks', true, true);
   }
 
  }
- loadPackage({"files": [{"start": 0, "audio": 0, "end": 53, "filename": "/Manifest_NonUFSFiles_HTML5.txt"}, {"start": 53, "audio": 0, "end": 87, "filename": "/UE4CommandLine.txt"}, {"start": 87, "audio": 0, "end": 24725518, "filename": "/nanoleq/Content/Paks/nanoleq-HTML5.pak"}], "remote_package_size": 24725518, "package_uuid": "08736559-5ed6-4449-8041-e6f46c021dcf"});
+ loadPackage({"files": [{"start": 0, "audio": 0, "end": 53, "filename": "/Manifest_NonUFSFiles_HTML5.txt"}, {"start": 53, "audio": 0, "end": 87, "filename": "/UE4CommandLine.txt"}, {"start": 87, "audio": 0, "end": 24785454, "filename": "/nanoleq/Content/Paks/nanoleq-HTML5.pak"}], "remote_package_size": 24785454, "package_uuid": "f460efe3-e26d-4b2f-b7af-fa5241a0a002"});
 
 })();
