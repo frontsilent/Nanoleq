@@ -343,18 +343,31 @@ $("form").each(function () { //Change
         success: function () {},
     })
 });
+
 //Check input focus
 let inputs = $('.form-item__input');
 inputs.on('blur', function () {
     let ths = $(this),
-        thsParent = ths.closest('.form-item');
+        thsParent = ths.closest('.input-wrap');
     thsParent.removeClass('focus');
 
     (ths.val() === '') ? thsParent.removeClass('focus') : thsParent.addClass('focus');
 });
 inputs.on('focus', function () {
     let ths = $(this),
-        thsParent = ths.closest('.form-item');
+        thsParent = ths.closest('.input-wrap');
 
     thsParent.addClass('focus');
+});
+
+// quantity
+let quantityItem = $('.order-quantity__item');
+
+quantityItem.on('click', function () {
+
+    let ths = $(this);
+
+    ths.addClass('active');
+    ths.closest('.order-quantity').find('.order-quantity__item').removeClass('active');
+
 });

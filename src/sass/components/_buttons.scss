@@ -128,3 +128,14 @@
 	@include transition(all 300ms ease-in-out);
 }
 
+.order-btn-big{
+  background-color: $orangey-yellow;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  color: #fff;
+  letter-spacing: .18rem;
+  text-transform: uppercase;
+  padding: 1.3rem 2.8rem;
+  @include transition(all 300ms ease-in-out);
+}
+
