@@ -1,0 +1,103 @@
+@@include('./includes/_header.html')
+
+
+<!-- page body -->
+<div class="page-body page-body--white">
+    <!-- contacts-info -->
+    <section id="contacts-info" data-theme="dark" class="section contacts-info-section section--fixHeightIntro">
+        <div class="intro__img">
+            <img src="img/contacts-intro.jpg" alt="image">
+        </div>
+        <div class="container">
+           <div class="contacts-info">
+               <div class="intro__title">
+                   <em>Contact</em> Us
+               </div>
+              <div class="contacts-info__items">
+                  <div class="contacts-info__item contacts-info__item--address">
+                      <div class="contacts-info__item-icon">
+                          <img src="img/gps.svg" alt="pin">
+                      </div>
+                      <div class="contacts-info__item-text">
+                          Nanoleq AG, Räffelstrasse 26, 8045 Zurich, Switzerland
+                      </div>
+                  </div>
+                  <div class="contacts-info__item">
+                      <div class="contacts-info__item-icon">
+                          <img src="img/gps.svg" alt="pin">
+                      </div>
+                      <a href="tel:+41789751072" class="contacts-info__item-text">+41 78 975 10 72</a>
+                  </div>
+                  <div class="contacts-info__item contacts-info__item--email">
+                      <div class="contacts-info__item-icon">
+                          <img src="img/email-yellow.svg" alt="">
+                      </div>
+                      <a href="mailto:info@nanoleq.com" class="contacts-info__item-text">
+                          info@nanoleq.com
+                      </a>
+                  </div>
+              </div>
+               <form action="" class="contacts-info__form">
+                   <div class="contacts-info__form-title el-title el-title--black-orange">
+                       Contact <i>Form</i>
+                   </div>
+                   <div class="contacts-info__text">
+                       If you wish to receive some product information or be involved in any way with Nanoleq, please leave us your contact information below. We will get back to you as soon as we can!
+                   </div>
+                   <div class="form__items-title">
+                       <label class="form-item form-item--checkbox input-wrap">
+                           <input type="radio" name="contact-form-type" class="form-item__input" checked>
+                           <p>Work at Nanoleq</p>
+                       </label>
+                       <label class="form-item form-item--checkbox input-wrap">
+                           <input type="radio" name="contact-form-type" class="form-item__input">
+                           <p>Invest in Nanoleq</p>
+                       </label>
+                   </div>
+                   <div class="form__items">
+                       <div class="form__part form__part--left">
+                           <div class="form-item input-wrap">
+                               <label>Full Name <em>*</em></label>
+                               <input type="text" name="full_name" class="form-item__input" required>
+                           </div>
+                           <div class="form-item input-wrap">
+                               <label>Phone</label>
+                               <input type="tel" name="phone" class="form-item__input">
+                           </div>
+                           <div class="form-item input-wrap">
+                               <label>Email <em>*</em></label>
+                               <input type="email" name="full_name" class="form-item__input" required>
+                           </div>
+                           <div class="form-item input-wrap">
+                               <label>Company <em>*</em></label>
+                               <input type="text" name="company" class="form-item__input" required>
+                           </div>
+                       </div>
+                       <div class="form__part form__part--right">
+                           <div class="form-item form-item--textarea input-wrap">
+                               <label>Message <em>*</em></label>
+                               <textarea rows="5" name="message" class="form-item__input"></textarea>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="form__btn">
+                       <button type="submit" class="btn btn--small btn--orange">
+                           <span>send message</span>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
+                               <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="1.5px">
+                                   <path fill-rule="evenodd" stroke-linejoin="round" d="M0 0h6.838v6.838" transform="translate(6.25 1.061) rotate(45 3.583 8.649)"/>
+                                   <path d="M16.5 0L0 0" transform="translate(6.25 1.061) translate(-5.5 4.771)"/>
+                               </g>
+                           </svg>
+                       </button>
+                   </div>
+               </form>
+               <div class="map">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5404.9383192139585!2d8.512567!3d47.363761!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4790098c81520965%3A0x9ea914db00cc4c0f!2sR%C3%A4ffelstrasse%2026%2C%208045%20Z%C3%BCrich%2C%20Switzerland!5e0!3m2!1sen!2sus!4v1620825935214!5m2!1sen!2sus" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+               </div>
+           </div>
+        </div>
+    </section>
+</div>
+
+@@include('./includes/_footer.html')
