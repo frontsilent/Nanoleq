@@ -21,6 +21,21 @@
             }
         }
     }
+
+    @include custom-bp(768){
+        &--phantomlink{
+            .electroskin__image{
+                width: 34rem;
+                height: 34rem;
+                margin-right: 14rem;
+                margin-left: 14rem;
+
+                img{
+                    max-width: 120%;
+                }
+            }
+        }
+    }
 }
 
 .phantomlink-banner{
