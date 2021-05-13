@@ -359,15 +359,3 @@ inputs.on('focus', function () {
 
     thsParent.addClass('focus');
 });
-
-// quantity
-let quantityItem = $('.order-quantity__item');
-
-quantityItem.on('click', function () {
-
-    let ths = $(this);
-
-    ths.addClass('active');
-    ths.closest('.order-quantity').find('.order-quantity__item').removeClass('active');
-
-});
