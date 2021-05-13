@@ -29,13 +29,14 @@
         width: 100%;
         position: relative;
       }
-      img{
+      img, video{
         display: block;
         @include img();
       }
     }
     &-title{
       margin-bottom: 3rem;
+      text-align: left;
     }
     &-desc{
       width: 100%;
@@ -113,7 +114,7 @@
   .vital-advant__item-desc{
     max-width: 53rem;
     margin-left: auto;
-    @media (max-width: 1199px){
+    @media (max-width: 1499px){
       max-width: 45rem;
     }
     @media (max-width: 1023px){
@@ -136,6 +137,9 @@
       max-width: 46rem;
       @media (max-width: 1199px){
         max-width: 42rem;
+      }
+      @media (max-width: 425px){
+        max-width: 100%;
       }
     }
   }

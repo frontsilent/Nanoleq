@@ -15,7 +15,7 @@
   &__part{
     width: 33.33%;
     padding: 4rem;
-    min-height: 72rem;
+    min-height: 70rem;
     background: $white;
     @media (max-width: 1499px){
       padding: 4rem 2.5rem;
@@ -46,7 +46,8 @@
   }
   &__product{
     display: block;
-    width: 100%;
+    margin: 0 auto;
+    max-height: 38rem;
   }
   &__item{
     display: flex;

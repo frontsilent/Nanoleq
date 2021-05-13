@@ -21,4 +21,14 @@
       right: 0;
     }
   }
+  &__item{
+    position: relative;
+    padding-bottom: 100%;
+    img{
+      position: absolute;
+      left: 0;
+      top: 0;
+      @include img();
+    }
+  }
 }

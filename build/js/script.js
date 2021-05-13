@@ -32,21 +32,24 @@ function getVisiblePart(element) {
 }
 
 //MUTE-UNMUTE VIDEO
-var video = document.getElementById('intro-video'),
+let video = document.getElementById('intro-video'),
     videUnMute = document.querySelector('.intro-video__unmute'),
     videMute = document.querySelector('.intro-video__mute');
 
-videUnMute.addEventListener('click', function(e){
-    video.muted = !video.muted;
-    videUnMute.classList.add('active');
-    videMute.classList.remove('active');
-});
-
-videMute.addEventListener('click', function(e){
-    video.muted = true;
-    videMute.classList.add('active');
-    videUnMute.classList.remove('active');
-});
+if (typeof(videUnMute) != 'undefined' && videUnMute != null) {
+    videUnMute.addEventListener('click', function(e){
+        video.muted = !video.muted;
+        videUnMute.classList.add('active');
+        videMute.classList.remove('active');
+    });
+}
+if (typeof(videMute) != 'undefined' && videMute != null) {
+    videMute.addEventListener('click', function(e){
+        video.muted = true;
+        videMute.classList.add('active');
+        videUnMute.classList.remove('active');
+    });
+}
 
 //MENU SLIDE TOGGLE
 menuBurger.on('click', function () {
@@ -93,6 +96,8 @@ if (vitalSlider.length > 0) {
         dots: false,
         slidesToShow: 5,
         slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
         responsive: [
             {
                 breakpoint: 1024,
