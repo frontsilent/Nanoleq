@@ -328,19 +328,19 @@ body .header-section.bg {
 /* Orange Unordered list */
 
 .nq-list{
-	margin: 30px 0 30px 30px;
+	margin: 3rem 0 3rem 3rem;
 	li{
 		position: relative;
 		@include body-font(m);
 		font-size: 1.7rem;
-		padding-left: 40px;
+		padding-left: 4rem;
 		line-height: 2.1;
 
 
 		&:before{
 			content: '';
 			position: absolute;
-			top: 7px;
+			top: 0.7rem;
 			left: 0;
 			width: 2rem;
 			height: 2rem;
@@ -375,7 +375,11 @@ body .header-section.bg {
 		li{
 			color: $white;
 		}
-	}
+  }
+  
+  @include custom-bp(768){
+    margin: 4rem 2rem;
+  }
 }
 
 sup{
