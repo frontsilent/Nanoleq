@@ -31,6 +31,23 @@ function getVisiblePart(element) {
     }
 }
 
+//MUTE-UNMUTE VIDEO
+var video = document.getElementById('intro-video'),
+    videUnMute = document.querySelector('.intro-video__unmute'),
+    videMute = document.querySelector('.intro-video__mute');
+
+videUnMute.addEventListener('click', function(e){
+    video.muted = !video.muted;
+    videUnMute.classList.add('active');
+    videMute.classList.remove('active');
+});
+
+videMute.addEventListener('click', function(e){
+    video.muted = true;
+    videMute.classList.add('active');
+    videUnMute.classList.remove('active');
+});
+
 //MENU SLIDE TOGGLE
 menuBurger.on('click', function () {
     menuBurger.toggleClass('active');
