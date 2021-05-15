@@ -6,6 +6,7 @@
   width: 100%;
   margin: 0 auto;
   z-index: 99;
+  pointer-events: none;
   &.bg{
     background: rgba(#000, .9);
     @media (max-width: 767px){
@@ -32,6 +33,7 @@
   width: 10rem;
   text-align: center;
   flex-shrink: 0;
+  pointer-events: all;
   svg{
     display: block;
     width: 100%;
@@ -103,6 +105,7 @@
   border-bottom: 2px solid $white;
   margin-left: 2rem;
   cursor: pointer;
+  pointer-events: all;
   &.active {
     border-color: transparent;
     span{

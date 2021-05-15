@@ -14,10 +14,10 @@
     flex-wrap: wrap;
     padding: 8rem 0 0;
     @media (max-width: 1023px){
-      padding: 8rem 8rem 0;
+      padding: 0 8rem 0;
     }
     @media (max-width: 767px){
-      padding: 7rem 7rem 0;
+      padding: 0 7rem 0;
     }
     &-wrap{
       @media (max-width: 767px){
@@ -94,6 +94,7 @@
   width: 22rem;
   text-align: center;
   margin: 0 4rem 7.5rem;
+  cursor: pointer;
   @media (max-width: 1439px){
     margin: 0 1rem 7.5rem;
   }
@@ -176,7 +177,7 @@
     position: relative;
     z-index: 97;
     cursor: pointer;
-    @media (max-width: 767px){
+    @media (max-width: 1023px){
         z-index: 98;
       pointer-events: none;
     }
@@ -193,7 +194,7 @@
     transform: translateX(-50%);
     bottom: 0;
     opacity: 0;
-    @media (max-width: 767px){
+    @media (max-width: 1023px){
       display: none;
     }
     svg{
@@ -226,7 +227,7 @@
     &-wrap{
       position: relative;
       background: $black;
-      @media (max-width: 767px){
+      @media (max-width: 1023px){
         display: none;
       }
     }
@@ -241,6 +242,12 @@
     }
     @media (max-width: 1023px){
       padding-left: 0;
+    }
+    &--long{
+      padding-left: 0;
+      @media (max-width: 1439px){
+        padding-left: 0;
+      }
     }
     &-left{
       text-align: center;
@@ -286,8 +293,9 @@
 //leadershipSlider
 .leadership-slider{
   &__arrow{
-    display: none;
+    display: none !important;
     @media (max-width: 767px){
+      display: flex !important;
       top: calc(26rem / 2 - 2.1rem);
       &--prev{
         left: 0;
@@ -348,7 +356,7 @@
   }
   .about-leadership-member__name{
     color: $orangey-yellow;
-    @media (max-width: 767px){
+    @media (max-width: 1023px){
       color: $black;
     }
   }

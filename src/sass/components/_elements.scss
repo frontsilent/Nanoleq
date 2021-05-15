@@ -113,14 +113,13 @@
     text-transform: uppercase;
     padding-top: 2rem;
   }
-  svg{
-    path{
-      fill: none;
-      stroke: $white;
-    }
-    .cls-2{
-      fill:#fff;
-      stroke: none;
+  img{
+    opacity: .7;
+    @include transition();
+    @media (min-width: 768px) {
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 }
