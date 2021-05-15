@@ -14,12 +14,15 @@
     letter-spacing: 2.2px;
     text-align: left;
     color: $orangey-yellow;
+    text-transform: uppercase;
+    margin-right: 2rem;
   }
   &__date{
     font-size: 1.8rem;
     line-height: 1.33;
     text-transform: uppercase;
     color: #0f0f0f;
+    margin-left: auto;
     em{
       position: relative;
       padding-left: 2rem;
@@ -36,9 +39,7 @@
       }
     }
   }
-  &__title{
-
-  }
+  &__title{}
   &__info{
     &-top{
       display: flex;

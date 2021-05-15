@@ -98,13 +98,13 @@ h6{
         line-height: 1.6;
         text-align: center;
         color: #221e1f;
-        padding: 6rem 5rem 7rem;
+        padding: 6rem 5rem 0;
         max-width: 106rem;
         margin: 5rem auto 5rem;
         border-top: 1px solid #d5d5d5;
         border-bottom: 1px solid #d5d5d5;
         @media (max-width: 1023px){
-            padding: 3rem 4rem 6rem;
+            padding: 3rem 4rem 0;
         }
         &::before {
             content: '';
@@ -119,11 +119,7 @@ h6{
             background-position: center;
             background-repeat: no-repeat;
         }
-        span{
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 2rem;
+        p:last-of-type{
             font-size: 1.6rem;
             line-height: 1.63;
             letter-spacing: 0.16rem;
