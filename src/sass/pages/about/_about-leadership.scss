@@ -34,6 +34,7 @@
       }
     }
   }
+  //ADVISORS
   &__advisors{
     display: flex;
     justify-content: center;
@@ -75,13 +76,32 @@
         margin-bottom: 6rem;
       }
     }
-    .about-leadership-member{
-      margin: 0 8rem 7.5rem;
+    .about-leadership-tab__top-wrap{
+      width: 22rem;
+      margin: 0 8rem;
       @media (max-width: 1199px){
-        margin: 0 6rem 7.5rem;
+        margin: 0 6rem;
       }
       @media (max-width: 1023px){
-        margin: 0 2rem 7.5rem;
+        margin: 0 2rem;
+      }
+    }
+    .about-leadership-tab__top{
+      padding-bottom: 7.5rem;
+      @media (max-width: 1199px){
+        padding-bottom: 7.5rem;
+      }
+      @media (max-width: 1023px){
+        padding-bottom: 7.5rem;
+      }
+    }
+    .about-leadership-member{
+      margin-bottom: 0;
+      @media (max-width: 1199px){
+        margin-bottom: 0;
+      }
+      @media (max-width: 1023px){
+        margin-bottom: 0;
       }
     }
   }

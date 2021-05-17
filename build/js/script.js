@@ -141,6 +141,9 @@ aboutLeadershipTabTop.on('click', function () {
 
     aboutLeadershipTabBottom.removeClass('active');
     aboutLeadershipTabWrap.find('.about-leadership-tab__bottom[data-tab-bottom=' + thisIndex + ']').addClass('active');
+    $('html').animate({
+        'scrollTop': aboutLeadershipTabWrap.find('.about-leadership-tab__bottom[data-tab-bottom=' + thisIndex + ']').offset().top - aboutLeadershipTabBottom.outerHeight() - 50
+    }, 200);
 
 });
 // about tab close item
@@ -267,6 +270,8 @@ if (productSlider.length > 0) {
         dots: true,
     });
 }
+
+
 
 
 
