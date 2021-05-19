@@ -32,6 +32,8 @@ register_sidebar(
     )
 );
 
+require get_template_directory() . '/acf-blocks.php';
+
 //Пагинация
 add_filter('navigation_markup_template', 'my_navigation_template', 10, 2 );
 function my_navigation_template( $template, $class ){
