@@ -29,7 +29,7 @@
 <!-- header -->
 <header id="header" class="header-section
         <?php if( is_archive()
-                or is_single()
+                or is_singular('post')
                 or  basename( $template ) === 'page-compatibility.php' ): ?>
             header-section--dark
         <?php endif;?>
