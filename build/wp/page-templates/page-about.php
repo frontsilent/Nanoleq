@@ -3,7 +3,8 @@
 Template Name: About
 */
 get_header();
-$leadershipCount = 0;
+$leadershipCountTop = 1;
+$leadershipCountBottom = 1;
 ?>
 
 <div class="page-body">
@@ -42,7 +43,7 @@ $leadershipCount = 0;
                     <div class="about-leadership-tab__header">
                         <?php if( have_rows('leadership_items_1')) :?>
                             <?php while( have_rows('leadership_items_1')) : the_row(); ?>
-                                <div class="about-leadership-tab__top" data-tab-top="<?php echo get_row_index(); ?>">
+                                <div class="about-leadership-tab__top" data-tab-top="<?php echo $leadershipCountTop; ?>">
                                     <div class="about-leadership-member">
                                         <div class="about-leadership-member__img">
                                             <img src="<?php echo get_sub_field('image'); ?>" alt="lead">
@@ -59,7 +60,7 @@ $leadershipCount = 0;
                                         </svg>
                                     </div>
                                 </div>
-                            <?php endwhile; ?>
+                            <?php $leadershipCountTop++; endwhile; ?>
                         <?php endif;?>
                     </div>
                     <div class="slider-arrow slider-arrow--prev leadership-slider__arrow leadership-slider__arrow--prev">
@@ -86,7 +87,7 @@ $leadershipCount = 0;
             <div class="container">
                 <?php if( have_rows('leadership_items_1')) :?>
                     <?php while( have_rows('leadership_items_1')) : the_row(); ?>
-                        <div class="about-leadership-tab__bottom" data-tab-bottom="<?php echo get_row_index(); ?>">
+                        <div class="about-leadership-tab__bottom" data-tab-bottom="<?php echo $leadershipCountBottom; ?>">
                             <div class="about-leadership-tab__desc">
                                 <div class="about-leadership-tab__desc-left">
                                     <div class="about-leadership-tab__desc-name">
@@ -112,8 +113,7 @@ $leadershipCount = 0;
                                 </g>
                             </svg>
                         </div>
-                        <?php $leadershipCount = get_row_index() + 1; ?>
-                    <?php endwhile; ?>
+                    <?php $leadershipCountBottom++; endwhile; ?>
                 <?php endif;?>
             </div>
         </div>
@@ -123,7 +123,7 @@ $leadershipCount = 0;
                 <div class="about-leadership__team">
                     <?php if( have_rows('leadership_items_2')) :?>
                         <?php while( have_rows('leadership_items_2')) : the_row(); ?>
-                            <div class="about-leadership-tab__top" data-tab-top="<?php echo $leadershipCount;?>">
+                            <div class="about-leadership-tab__top" data-tab-top="<?php echo $leadershipCountTop;?>">
                                 <div class="about-leadership-member">
                                     <div class="about-leadership-member__img">
                                         <img src="<?php echo get_sub_field('image'); ?>" alt="lead">
@@ -140,7 +140,7 @@ $leadershipCount = 0;
                                     </svg>
                                 </div>
                             </div>
-                        <?php endwhile; ?>
+                        <?php $leadershipCountTop++;  endwhile; ?>
                     <?php endif;?>
                 </div>
             </div>
@@ -166,7 +166,7 @@ $leadershipCount = 0;
             <div class="container">
                 <?php if( have_rows('leadership_items_2')) :?>
                     <?php while( have_rows('leadership_items_2')) : the_row(); ?>
-                        <div class="about-leadership-tab__bottom" data-tab-bottom="4">
+                        <div class="about-leadership-tab__bottom" data-tab-bottom="<?php echo $leadershipCountBottom;?>">
                             <div class="about-leadership-tab__desc about-leadership-tab__desc--long">
                                 <div class="about-leadership-tab__desc-left">
                                     <div class="about-leadership-tab__desc-name">
@@ -192,8 +192,7 @@ $leadershipCount = 0;
                                 </g>
                             </svg>
                         </div>
-                    <?php endwhile; ?>
-                    <?php $leadershipCount = $leadershipCount + get_row_index(); ?>
+                    <?php $leadershipCountBottom++; endwhile; ?>
                 <?php endif;?>
             </div>
         </div>
@@ -208,7 +207,7 @@ $leadershipCount = 0;
                         <?php if( have_rows('leadership_items_3')) :?>
                             <?php while( have_rows('leadership_items_3')) : the_row(); ?>
                                 <div class="about-leadership-tab__top-wrap">
-                                    <div class="about-leadership-tab__top" data-tab-top="<?php echo $leadershipCount;?>">
+                                    <div class="about-leadership-tab__top" data-tab-top="<?php echo $leadershipCountTop;?>">
                                         <div class="about-leadership-member">
                                             <div class="about-leadership-member__img">
                                                 <img src="<?php echo get_sub_field('image'); ?>" alt="lead">
@@ -218,7 +217,7 @@ $leadershipCount = 0;
                                         </div>
                                     </div>
                                 </div>
-                            <?php endwhile; ?>
+                            <?php $leadershipCountTop++; endwhile; ?>
                         <?php endif;?>
                     </div>
                     <div class="slider-arrow slider-arrow--prev advisors-slider__arrow advisors-slider__arrow--prev">
@@ -245,7 +244,7 @@ $leadershipCount = 0;
             <div class="container">
                 <?php if( have_rows('leadership_items_3')) :?>
                     <?php while( have_rows('leadership_items_3')) : the_row(); ?>
-                        <div class="about-leadership-tab__bottom" data-tab-bottom="<?php echo $leadershipCount;?>">
+                        <div class="about-leadership-tab__bottom" data-tab-bottom="<?php echo $leadershipCountBottom;?>">
                             <div class="about-leadership-tab__desc about-leadership-tab__desc--long">
                                 <div class="about-leadership-tab__desc-left">
                                     <div class="about-leadership-tab__desc-name">
@@ -271,7 +270,7 @@ $leadershipCount = 0;
                                 </g>
                             </svg>
                         </div>
-                    <?php endwhile; ?>
+                    <?php $leadershipCountBottom++; endwhile; ?>
                 <?php endif;?>
             </div>
         </div>
