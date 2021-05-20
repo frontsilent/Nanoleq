@@ -77,6 +77,8 @@
       letter-spacing: -0.036rem;
       margin-bottom: .5rem;
       text-transform: uppercase;
+      color: inherit;
+      @include transition();
     }
     &-text{
       font-family: 'Roboto', serif;
@@ -119,6 +121,7 @@
     &-join{
       color: $orangey-yellow;
       padding-right: 1.5rem;
+      @include transition();
     }
     &-arrow{
       width: 4rem;
