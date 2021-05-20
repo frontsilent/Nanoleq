@@ -40,6 +40,7 @@
       }
     }
     &-img{
+      position: relative;
       width: 50%;
       height: 28rem;
       @media (max-width: 1199px){
@@ -52,6 +53,13 @@
       img, video{
         flex-shrink: 0;
         @include img();
+      }
+      svg{
+        width: 9rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
       }
     }
     //modifications

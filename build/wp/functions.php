@@ -59,6 +59,25 @@ add_action('after_setup_theme', function(){
     ) );
 });
 
+//Количество символов в сокращенном тексте записи
+function wpdocs_custom_excerpt_length( $length ) {
+    return 25;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+//Текст тега more
+function wpdocs_excerpt_more( $more ) {
+    return '...';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
+function trim_title_chars($count, $after) {
+    $title = get_the_title();
+    if (mb_strlen($title) > $count) $title = mb_substr($title,0,$count);
+    else $after = '';
+    echo $title . $after;
+}
+
 //Удаляет слово АРХИВЫ, РУБРИКИ
 add_filter( 'get_the_archive_title', function( $title ){
     return preg_replace('~^[^:]+: ~', '', $title );

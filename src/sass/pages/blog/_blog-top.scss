@@ -63,8 +63,10 @@
     }
   }
   &__date{
-    left: -4rem;
-    top: -4rem;
+    &.blog-date{
+      left: -4rem;
+      top: -4rem;
+    }
   }
   &__more{
     display: inline-block;

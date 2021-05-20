@@ -49,8 +49,15 @@
     @media (max-width: 767px){
       height: 28rem;
     }
-    img{
+    img, video{
       @include img();
+    }
+    svg{
+      width: 9rem;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
     }
   }
   &__cat{

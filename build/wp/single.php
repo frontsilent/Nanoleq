@@ -32,7 +32,11 @@ $postId = get_the_ID();
                 <div class="blog-article__info text-group text-group--black">
                     <h2 class="blog-article__title">
                         <div class="alignright">
-                            <img src="<?php echo get_field('post_img'); ?>" alt="blog">
+                            <?php if (!get_field('video')) : ?>
+                                <img src="<?php echo get_field('post_img'); ?>" alt="blog">
+                            <?php else: ?>
+                                <video src="<?php echo get_field('video_file'); ?>" autoplay muted loop></video>
+                            <?php endif; ?>
                         </div>
                         <span><?php the_title(); ?></span>
                     </h2>
@@ -85,23 +89,7 @@ $postId = get_the_ID();
                     <?php if ($query->have_posts()) : ?>
                         <?php while ($query->have_posts()) : $query->the_post(); ?>
                             <div class="blog-other__item blog-item blog-item--black">
-                                <a href="<?php echo get_permalink();?>"  class="blog-item__img">
-                                    <div class="blog-date blog-date--white">
-                                        <?php echo get_the_date('d'); ?>
-                                        <em><?php echo get_the_date('F, Y'); ?></em>
-                                    </div>
-                                    <img src="<?php echo get_field('post_img'); ?>" alt="blog">
-                                </a>
-                                <?php $terms = get_the_terms(get_the_ID(), $taxonomy_name, $args); ?>
-                                <?php if ($terms) : ?>
-                                    <?php foreach ($terms as $term): ?>
-                                        <?php $term_name = $term->name; ?>
-                                        <a class="blog-item__cat" href="<?php echo get_term_link($term);?>"><?php echo $term_name; ?></a>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-                                <a href="<?php echo get_permalink();?>"  class="blog-item__title"><?php the_title(); ?></a>
-                                <div class="blog-item__text"><?php echo get_field('post_description'); ?></div>
-                                <a href="<?php echo get_permalink();?>" class="blog-item__more">Read More</a>
+                                <?php echo get_template_part('template-parts/blog-item');?>
                             </div>
                         <?php endwhile; ?>
                     <?php endif; ?>
