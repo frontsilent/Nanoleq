@@ -80,6 +80,11 @@
                     <?php echo get_field('intro_text'); ?>
                 </div>
             <?php endif; ?>
+            <?php if (get_field('intro_bottom')) : ?>
+                <div class="intro__bottom text-group">
+                    <p><?php echo get_field('intro_bottom'); ?></p>
+                </div>
+            <?php endif; ?>
             <?php if (get_field('intro_btn')) : ?>
                 <?php
                 $link = get_field('intro_btn');
