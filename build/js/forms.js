@@ -77,15 +77,6 @@ $("form").each(function () { //Change
                 data: formData,
 
             }).done(function () {
-                ///Done Functions
-                $.fancybox.close();
-                $.fancybox.open({
-                    src: '#modal-thanks',
-                });
-
-                setTimeout(function() {
-                    $.fancybox.close();
-                }, 3000);
 
                 ths.trigger("reset");
             });
@@ -94,6 +85,18 @@ $("form").each(function () { //Change
         success: function () {},
     })
 });
+
+let submitBtn = $('.product-submit-btn'),
+    submitBtnEmail = submitBtn.attr('data-email'),
+    adminEmail = $('[name=admin_email]');
+
+submitBtn.on('click', function (){
+    let ths = $(this),
+        thsEmail = ths.attr('data-email');
+
+    adminEmail.val(thsEmail);
+})
+
 
 //Check input focus
 let inputs = $('.form-item__input');
@@ -106,7 +109,21 @@ inputs.on('blur', function () {
 });
 inputs.on('focus', function () {
     let ths = $(this),
-        thsParent = ths.closest('.input-wrap');
+        thsParent = ths.closest('.input-wrap'),
+        quantityWrapper = ths.closest('.order-quantity__items');
+
+    if(thsParent.hasClass('order-quantity__item--full')){
+        quantityWrapper.find('.order-quantity__item__input').prop('checked', false);
+    }
 
     thsParent.addClass('focus');
+});
+
+// check if quantity selected
+$('.order-quantity__item__input').on('click', function () {
+
+    let ths = $(this);
+    if(ths.prop('checked') == true){
+        ths.closest('.order-product-wrap').find('.order-product-input').prop('checked', true);
+    }
 });

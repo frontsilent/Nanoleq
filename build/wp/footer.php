@@ -35,7 +35,8 @@
 
 <?php if (is_front_page()) : ?>
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/nanoleq-HTML5-Shipping.UE4.js"></script>
-<?php elseif( basename( $template ) === 'page-contacts.php' ): ?>
+<?php elseif( basename( $template ) === 'page-contacts.php'
+    or  basename( $template ) === 'page-order.php' ): ?>
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/forms.js"></script>
 <?php endif; ?>
