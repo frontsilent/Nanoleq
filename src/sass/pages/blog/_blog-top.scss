@@ -54,12 +54,15 @@
       width: 32rem;
       height: 44rem;
     }
-    img{
+    img, video{
       @include img();
       transform: translateX(-4rem) translateY(-4rem);
       @media (max-width: 425px){
         transform: translateX(-3rem) translateY(-3rem);
       }
+    }
+    svg{
+      display: none;
     }
   }
   &__date{

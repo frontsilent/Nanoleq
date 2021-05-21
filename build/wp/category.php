@@ -1,17 +1,17 @@
 <?php
-/*
-Template Name: Blog
-*/
 get_header();
 
 $taxonomy_name = 'category';
 $args = array(
     'hide_empty' => true,
 );
+$current_term = get_queried_object()->term_id;
 
 ?>
 
 <div class="page-body">
+    <?php var_dump($current_term); ?>
+    <?php echo $current_term; ?>
     <!-- blog-top -->
     <section data-theme="dark" id="blog-top" class="section blog-top-section">
         <div class="container">
@@ -136,12 +136,12 @@ $args = array(
             <div class="container">
                 <div class="blog-list__top">
                     <ul class="blog-list__categories">
-                        <li class="active"><a href="<?php echo get_permalink();?>">All</a></li>
+                        <li><a href="<?php echo get_home_url();  ?>/blog">All</a></li>
                         <?php $terms = get_terms($taxonomy_name, $args); ?>
                         <?php if ($terms) : ?>
                             <?php foreach ($terms as $term): ?>
                                 <?php $term_name = $term->name; ?>
-                                <li><a href="<?php echo get_term_link($term);?>"><?php echo $term->name;?></a></li>
+                                <li <?php if ($term->term_id == $current_term) : ?>class="active"<?php endif; ?> ><a href="<?php echo get_term_link($term);?>"><?php echo $term->name;?></a></li>
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </ul>
@@ -162,6 +162,13 @@ $args = array(
                     'posts_per_page' => 9,
                     'order' => 'DESC',
                     'orderby' => 'date',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'category',
+                            'field' => 'id',
+                            'terms'    => $current_term
+                        )
+                    )
                 );
                 ?>
                 <?php $query = new WP_Query( $args ); ?>
