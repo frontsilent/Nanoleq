@@ -55,7 +55,8 @@ function my_navigation_template( $template, $class ){
 ## Поддержка меню
 add_action('after_setup_theme', function(){
     register_nav_menus( array(
-        'header_menu' => 'Меню в шапке'
+        'header_menu' => 'Header menu',
+        'footer_menu' => 'Footer menu',
     ) );
 });
 

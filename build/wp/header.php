@@ -58,29 +58,11 @@
         </a>
         <div class="main-menu-wrap">
             <ul class="main-menu">
-                <li class="menu-item-has-children">
-                    <span></span>
-                    <a href="vital.html">THE VITAL SHIRT</a>
-                    <ul class="sub-menu">
-                        <li><a href="run.html">RUN</a></li>
-                        <li><a href="training.html">GYM</a></li>
-                        <li><a href="ski.html">SKI</a></li>
-                        <li><a href="bike.html">BIKE</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <span></span>
-                    <a href="products.html">PRODUCTS</a>
-                    <ul class="sub-menu">
-                        <li><a href="electroskin.html">ElectroSkin™</a></li>
-                        <li><a href="phantomtape.html">PhantomTape™</a></li>
-                        <li><a href="phantomlink.html">PhantomLink</a></li>
-                        <li><a href="services.html">Services</a></li>
-                    </ul>
-                </li>
-                <li><a href="blog.html">JOURNAL</a></li>
-                <li><a href="about.html">ABOUT US</a></li>
-                <li><a href="contacts.html">CONTACT</a></li>
+                <?php wp_nav_menu([
+                    'theme_location' => 'header_menu',
+                    'menu_class' => 'main-menu',
+                    'container'       => false,
+                ]); ?>
             </ul>
         </div>
         <span class="tog-nav">

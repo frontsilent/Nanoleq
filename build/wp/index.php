@@ -90,65 +90,28 @@ get_header();
         <div class="container">
             <div class="shirts">
                 <div class="shirts__title el-title el-title--big el-title--white">
-                    <i>Advanced</i> textile Engineering
+                    <?php echo get_field('shirts_title'); ?>
                 </div>
                 <div class="shirts__items">
-                    <a href="" class="shirts__item">
-                        <div class="shirts__item-img">
-                            <img src="<?php bloginfo('template_url'); ?>/img/shirt-1.png" alt="product">
-                        </div>
-                        <div class="shirts__item-title">
-                            Vital Shirt
-                            <i>Run</i>
-                        </div>
-                        <div class="shirts__item-subtitle">Faster For Longer</div>
-                        <div class="shirts__item-bottom">
-                            <p>explore</p>
-                            <span><img src="<?php bloginfo('template_url'); ?>/img/arrow.svg" alt="arrow"></span>
-                        </div>
-                    </a>
-                    <a href="" class="shirts__item">
-                        <div class="shirts__item-img">
-                            <img src="<?php bloginfo('template_url'); ?>/img/shirt-2.png" alt="product">
-                        </div>
-                        <div class="shirts__item-title">
-                            Vital Shirt
-                            <i>Bike</i>
-                        </div>
-                        <div class="shirts__item-subtitle">Push More Watts</div>
-                        <div class="shirts__item-bottom">
-                            <p>explore</p>
-                            <span><img src="<?php bloginfo('template_url'); ?>/img/arrow.svg" alt="arrow"></span>
-                        </div>
-                    </a>
-                    <a href="" class="shirts__item">
-                        <div class="shirts__item-img">
-                            <img src="<?php bloginfo('template_url'); ?>/img/shirt-3.png" alt="product">
-                        </div>
-                        <div class="shirts__item-title">
-                            Vital Shirt
-                            <i>Ski</i>
-                        </div>
-                        <div class="shirts__item-subtitle">New Heights</div>
-                        <div class="shirts__item-bottom">
-                            <p>explore</p>
-                            <span><img src="<?php bloginfo('template_url'); ?>/img/arrow.svg" alt="arrow"></span>
-                        </div>
-                    </a>
-                    <a href="" class="shirts__item">
-                        <div class="shirts__item-img">
-                            <img src="<?php bloginfo('template_url'); ?>/img/shirt-4.png" alt="product">
-                        </div>
-                        <div class="shirts__item-title">
-                            Vital Shirt
-                            <i>Gym</i>
-                        </div>
-                        <div class="shirts__item-subtitle">Make Your Move</div>
-                        <div class="shirts__item-bottom">
-                            <p>explore</p>
-                            <span><img src="<?php bloginfo('template_url'); ?>/img/arrow.svg" alt="arrow"></span>
-                        </div>
-                    </a>
+                    <?php if( have_rows('shirts')) :?>
+                        <?php while( have_rows('shirts')) : the_row(); ?>
+                            <a href="<?php echo get_sub_field('link'); ?>" class="shirts__item">
+                                <div class="shirts__item-img">
+                                    <img src="<?php echo get_sub_field('image'); ?>" alt="product">
+                                </div>
+                                <div class="shirts__item-title">
+                                    <?php echo get_sub_field('title'); ?>
+                                </div>
+                                <?php if (get_sub_field('subtitle')) : ?>
+                                    <div class="shirts__item-subtitle"><?php echo get_sub_field('subtitle'); ?></div>
+                                <?php endif; ?>
+                                <div class="shirts__item-bottom">
+                                    <p>explore</p>
+                                    <span><img src="<?php bloginfo('template_url'); ?>/img/arrow.svg" alt="arrow"></span>
+                                </div>
+                            </a>
+                        <?php endwhile; ?>
+                    <?php endif;?>
                     <div class="shirts__caption">
                         <p>Engineered in <i>Switzerland</i></p>
                         <img src="<?php bloginfo('template_url'); ?>/img/made.png" alt="swiss">

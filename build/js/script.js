@@ -79,6 +79,8 @@ submenu.each(function () {
         submenuArrow = ths.find('span'),
         submenuList = ths.find('.sub-menu');
 
+    ths.append('<span></span>');
+
     submenuArrow.on('click', function () {
         submenuList.slideToggle();
     });
