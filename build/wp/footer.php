@@ -15,10 +15,10 @@
             </ul>
             <!--socials-->
             <div class="socials">
-                <a href="" class="socials__item">
+                <a href="https://www.linkedin.com/company/nanoleq/?originalSubdomain=ch" target="_blank" class="socials__item">
                     <img src="<?php bloginfo('template_url'); ?>/img/ln.svg" alt="ln">
                 </a>
-                <a href="" class="socials__item">
+                <a href="https://www.youtube.com/channel/UCdm8nVGd8fLCab_d7opqc4A" target="_blank" class="socials__item">
                     <img src="<?php bloginfo('template_url'); ?>/img/yt.svg" alt="yt">
                 </a>
             </div>
