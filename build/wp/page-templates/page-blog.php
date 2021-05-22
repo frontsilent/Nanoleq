@@ -122,7 +122,7 @@ $args = array(
         </div>
     </section>
     <!-- blog-list -->
-    <section id="blog-list" data-theme="white" class="section blog-list-section">
+    <section data-theme="white" class="section blog-list-section">
         <div class="blog-list__top-wrap">
             <div class="container">
                 <div class="blog-list__top">
@@ -146,11 +146,11 @@ $args = array(
             </div>
         </div>
         <div class="container">
-            <div class="blog-list">
+            <div class="blog-list" id="blog-list">
                 <?php
                 $args = array(
-                    'post_type' => '',
-                    'posts_per_page' => 9,
+                    'post_type' => 'post',
+                    'posts_per_page' => 2,
                     'order' => 'DESC',
                     'orderby' => 'date',
                 );
@@ -164,19 +164,28 @@ $args = array(
                     <?php endwhile; ?>
                 <?php endif; ?>
                 <?php wp_reset_postdata(); ?>
-                <div class="blog-list__more-wrap">
-                    <button type="button" class="blog-list__more">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                            <path id="Sync" d="M9.429,18A.714.714,0,0,1,8,18a10.014,10.014,0,0,1,17.143-7.019V8.714a.714.714,0,0,1,1.429,0V13a.714.714,0,0,1-.714.714H21.571a.714.714,0,1,1,0-1.429h2.841A8.588,8.588,0,0,0,9.429,18Zm17.857-.714a.714.714,0,0,0-.714.714,8.588,8.588,0,0,1-14.984,5.714h2.841a.714.714,0,1,0,0-1.429H10.143A.714.714,0,0,0,9.429,23v4.286a.714.714,0,1,0,1.429,0V25.019A10.014,10.014,0,0,0,28,18,.714.714,0,0,0,27.286,17.286Z" transform="translate(-8 -8)" fill="#fbb316"/>
-                        </svg>
-                        <span>Load More</span>
-                    </button>
-                </div>
+                <?php if (  $query->max_num_pages > 1 ) : ?>
+                    <script>
+                        var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
+                        var true_posts = '<?php echo serialize($query->query_vars); ?>';
+                        var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
+                        var max_pages = '<?php echo $query->max_num_pages; ?>';
+                    </script>
+                    <div class="blog-list__more-wrap">
+                        <button type="button" class="blog-list__more" id="loadmore">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                <path id="Sync" d="M9.429,18A.714.714,0,0,1,8,18a10.014,10.014,0,0,1,17.143-7.019V8.714a.714.714,0,0,1,1.429,0V13a.714.714,0,0,1-.714.714H21.571a.714.714,0,1,1,0-1.429h2.841A8.588,8.588,0,0,0,9.429,18Zm17.857-.714a.714.714,0,0,0-.714.714,8.588,8.588,0,0,1-14.984,5.714h2.841a.714.714,0,1,0,0-1.429H10.143A.714.714,0,0,0,9.429,23v4.286a.714.714,0,1,0,1.429,0V25.019A10.014,10.014,0,0,0,28,18,.714.714,0,0,0,27.286,17.286Z" transform="translate(-8 -8)" fill="#fbb316"/>
+                            </svg>
+                            <span>Load More</span>
+                        </button>
+                    </div>
+                <?php endif; ?>
+
             </div>
         </div>
     </section>
     <!-- blog-dates -->
-    <section id="blog-dates" class="section blog-dates-section">
+    <section id="blog-dates" data-theme="white" class="section blog-dates-section">
         <div class="container">
             <div class="blog-dates">
                 <?php if (get_field('blog_dates_title')) : ?>
