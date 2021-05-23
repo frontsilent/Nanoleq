@@ -273,6 +273,25 @@ if (productSlider.length > 0) {
     });
 }
 
+// searchForm
+if($('#searchform').length) {
+    $(document).on('submit','#searchform',function(e) {
+        e.preventDefault();
+        var $form = $('#searchform');
+        var formdata = $form.serializeArray();
+
+        $.ajax({
+            url: $form.attr('action'),
+            data: formdata,
+            method: 'POST',
+            success: function (res) {
+                $('form').trigger("reset");
+                $('#blog-list').html(res);
+            }
+        });
+    });
+}
+
 
 
 

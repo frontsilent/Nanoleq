@@ -123,16 +123,16 @@ $args = array(
         <div class="blog-list__top-wrap">
             <div class="container">
                 <div class="blog-list__top">
-                        <ul class="blog-list__categories">
-                            <li class="active"><a href="<?php echo get_permalink();?>">All</a></li>
-                            <?php $terms = get_terms($taxonomy_name, $args); ?>
-                            <?php if ($terms) : ?>
-                                <?php foreach ($terms as $term): ?>
-                                    <?php $term_name = $term->name; ?>
-                                    <li><a href="<?php echo get_term_link($term);?>"><?php echo $term->name;?></a></li>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-                        </ul>
+                    <ul class="blog-list__categories">
+                        <li class="active"><a href="<?php echo get_permalink();?>">All</a></li>
+                        <?php $terms = get_terms($taxonomy_name, $args); ?>
+                        <?php if ($terms) : ?>
+                            <?php foreach ($terms as $term): ?>
+                                <?php $term_name = $term->name; ?>
+                                <li><a href="<?php echo get_term_link($term);?>"><?php echo $term->name;?></a></li>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </ul>
                     <?php get_search_form(); ?>
                 </div>
             </div>

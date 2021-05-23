@@ -120,7 +120,7 @@ $current_term = get_queried_object()->term_id;
         </div>
     </section>
     <!-- blog-list -->
-    <section id="blog-list" data-theme="white" class="section blog-list-section">
+    <section data-theme="white" class="section blog-list-section">
         <div class="blog-list__top-wrap">
             <div class="container">
                 <div class="blog-list__top">
@@ -139,10 +139,10 @@ $current_term = get_queried_object()->term_id;
             </div>
         </div>
         <div class="container">
-            <div class="blog-list">
+            <div class="blog-list" id="blog-list">
                 <?php
                 $args = array(
-                    'post_type' => '',
+                    'post_type' => 'post',
                     'order' => 'DESC',
                     'orderby' => 'date',
                     'tax_query' => array(
