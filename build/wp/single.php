@@ -35,7 +35,7 @@ $postId = get_the_ID();
                             <?php if (!get_field('video')) : ?>
                                 <img src="<?php echo get_field('post_img'); ?>" alt="blog">
                             <?php else: ?>
-                                <video src="<?php echo get_field('video_file'); ?>" autoplay muted loop></video>
+                                <video src="<?php echo get_field('video_file'); ?>" autoplay loop autobuffer muted playsinline></video>
                             <?php endif; ?>
                         </div>
                         <span><?php the_title(); ?></span>

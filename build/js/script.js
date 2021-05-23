@@ -76,10 +76,11 @@ let submenu = $('.menu-item-has-children');
 submenu.each(function () {
 
     let ths = $(this),
-        submenuArrow = ths.find('span'),
         submenuList = ths.find('.sub-menu');
 
     ths.append('<span></span>');
+
+    let submenuArrow = ths.find('span');
 
     submenuArrow.on('click', function () {
         submenuList.slideToggle();

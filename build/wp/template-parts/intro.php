@@ -2,11 +2,18 @@
 <section data-theme="dark" id="intro" class="section intro-section">
     <?php if (get_field('intro_img')) : ?>
         <div class="intro__img">
-            <img src="<?php echo get_field('intro_img'); ?>" alt="image">
+            <picture>
+                <source srcset="<?php echo get_field('intro_img'); ?>" media="(min-width: 768px)">
+                <?php if (get_field('intro_img_mobile')) : ?>
+                    <img src="<?php echo get_field('intro_img_mobile'); ?>" alt="intro">
+                <?php else: ?>
+                    <img src="<?php echo get_field('intro_img'); ?>" alt="intro">
+                <?php endif; ?>
+            </picture>
         </div>
     <?php endif; ?>
     <?php if (get_field('intro_video')) : ?>
-        <video class="intro-video" id="intro-video" src="<?php echo get_field('intro_video'); ?>" muted autoplay loop></video>
+        <video class="intro-video" id="intro-video" src="<?php echo get_field('intro_video'); ?>" autoplay loop autobuffer muted playsinline></video>
     <?php endif; ?>
     <img src="<?php bloginfo('template_url'); ?>/img/scroll-btn.svg" alt="scroll" class="intro__scroll">
     <?php if (get_field('intro_video')) : ?>

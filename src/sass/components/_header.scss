@@ -7,9 +7,14 @@
   margin: 0 auto;
   z-index: 99;
   pointer-events: none;
+  @media (max-width: 767px){
+    pointer-events: all;
+  }
   &.bg{
+    pointer-events: all;
     background: rgba(#000, .9);
     @media (max-width: 767px){
+      pointer-events: all;
       background: rgba(#000, .9);
     }
   }
@@ -287,12 +292,17 @@
         color: $white;
         font-size: 2rem;
         padding: 2rem;
-        pointer-events: none;
       }
       &.menu-item-has-children{
+        > a {
+          padding-right: 0;
+        }
         span{
-          position: static;
+          position: relative;
+          top: 0;
+          bottom: 0;
           order: 1;
+          margin-left: 2rem;
           border-width: .8rem .8rem 0 .8rem;
         }
       }

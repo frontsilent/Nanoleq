@@ -96,6 +96,11 @@
 }
 
 .vital-advant__item--2{
+  .vital-advant__item{
+    @media (max-width: 1023px){
+        flex-direction: column-reverse;
+    }
+  }
   .vital-advant__item-desc{
     max-width: 49rem;
     @media (max-width: 1023px){

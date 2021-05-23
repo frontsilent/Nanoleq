@@ -93,7 +93,7 @@ get_header();
                                     <img src="<?php echo get_sub_field('img'); ?>" alt="image">
                                 <?php endif; ?>
                                 <?php if (get_sub_field('video')) : ?>
-                                    <video src="<?php echo get_sub_field('video'); ?>" muted autoplay loop></video>
+                                    <video src="<?php echo get_sub_field('video'); ?>" autoplay loop autobuffer muted playsinline></video>
                                 <?php endif; ?>
                             </div>
                             <div class="vital-advant__item-desc">
@@ -119,7 +119,7 @@ get_header();
                                     <img src="<?php echo get_sub_field('img'); ?>" alt="image">
                                 <?php endif; ?>
                                 <?php if (get_sub_field('video')) : ?>
-                                    <video src="<?php echo get_sub_field('video'); ?>" muted autoplay loop></video>
+                                    <video src="<?php echo get_sub_field('video'); ?>" autoplay loop autobuffer muted playsinline></video>
                                 <?php endif; ?>
                             </div>
                             <div class="vital-advant__item-desc">

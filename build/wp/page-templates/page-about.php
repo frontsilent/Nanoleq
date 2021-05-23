@@ -18,7 +18,7 @@ $leadershipCountBottom = 1;
                 <div class="about-desc__info">
                     <div class="about-desc__img">
                         <?php if (get_field('about_desc_video')) : ?>
-                            <video src="<?php echo get_field('about_desc_video'); ?>" autoplay muted loop></video>
+                            <video src="<?php echo get_field('about_desc_video'); ?>" playsinline autoplay muted loop></video>
                         <?php endif; ?>
                         <?php if (get_field('about_desc_img')) : ?>
                             <img src="<?php echo get_field('about_desc_img'); ?>" alt="about-img">
