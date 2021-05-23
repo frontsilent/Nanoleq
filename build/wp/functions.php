@@ -182,4 +182,73 @@ function loadmore_ajax_handler()
 add_action('wp_ajax_loadmore', 'loadmore_ajax_handler'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore', 'loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
 
+//search
+
+function wpdocs_my_search_form( $form ) {
+    $form = '<form role="search" method="get" id="searchform" class="blog-list__search" action="' . home_url( '/' ) . '" >
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18.644" viewBox="0 0 18 18.644">
+        <path fill="#fff" d="M18.71 16.982l-4.437-4.615a7.525 7.525 0 1 0-5.761 2.688 7.447 7.447 0 0 0 4.313-1.362l4.471 4.65a.982.982 0 1 0 1.415-1.361zM8.512 1.964a5.564 5.564 0 1 1-5.564 5.564 5.57 5.57 0 0 1 5.564-5.564z" transform="translate(-.984)"/>
+    </svg>
+    <input type="hidden" name="post_type" value="post" />
+    <input name="s" value="' . get_search_query() . '" type="text" id="s" placeholder="Search" />
+    </form>';
+
+    return $form;
+}
+add_filter( 'get_search_form', 'wpdocs_my_search_form' );
+
+function __search_by_title_only($search, $wp_query)
+{
+    global $wpdb;
+    if (empty($search)) return $search;
+    $q = $wp_query->query_vars;
+    $n = !empty($q['exact']) ? '' : '%';
+    $search = $searchand = '';
+    foreach ((array)$q['search_terms'] as $term) {
+        $term = esc_sql(like_escape($term));
+        $search .= "{$searchand}($wpdb->posts.post_title LIKE '{$n}{$term}{$n}')";
+        $searchand = ' AND ';
+    }
+    if (!empty($search)) {
+        $search = " AND ({$search}) ";
+        if (!is_user_logged_in()) $search .= " AND ($wpdb->posts.post_password = '') ";
+    }
+    return $search;
+}
+
+add_filter('posts_search', '__search_by_title_only', 500, 2);
+
+
+//searchLive
+function ba_ajax_search(){
+    $args = array(
+        's' => $_POST['term'],
+        'post_type' => 'post',
+        'posts_per_page' => -1,
+        'order' => 'DESC',
+        'orderby' => 'date',
+    );
+    $the_query = new WP_Query($args);
+    if ($the_query->have_posts()) {
+        while ($the_query->have_posts()) {
+            $the_query->the_post();
+            ?>
+            <div class="blog-list__item blog-item blog-item--black">
+                <?php echo get_template_part('template-parts/blog-item');?>
+            </div>
+            <?php
+        }
+    } else {
+        ?>
+        <div class="text-group text-group--black">
+            <h3><?php _e( 'Sorry, no posts matched your criteria.' ); ?></h3>
+        </div>
+        <?php
+    }
+    exit;
+}
+add_action('wp_ajax_nopriv_ba_ajax_search','ba_ajax_search');
+add_action('wp_ajax_ba_ajax_search','ba_ajax_search');
+
+
 ?>

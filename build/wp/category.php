@@ -10,8 +10,6 @@ $current_term = get_queried_object()->term_id;
 ?>
 
 <div class="page-body">
-    <?php var_dump($current_term); ?>
-    <?php echo $current_term; ?>
     <!-- blog-top -->
     <section data-theme="dark" id="blog-top" class="section blog-top-section">
         <div class="container">
@@ -136,12 +134,7 @@ $current_term = get_queried_object()->term_id;
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </ul>
-                    <form action="" class="blog-list__search">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18.644" viewBox="0 0 18 18.644">
-                            <path fill="#fff" d="M18.71 16.982l-4.437-4.615a7.525 7.525 0 1 0-5.761 2.688 7.447 7.447 0 0 0 4.313-1.362l4.471 4.65a.982.982 0 1 0 1.415-1.361zM8.512 1.964a5.564 5.564 0 1 1-5.564 5.564 5.57 5.57 0 0 1 5.564-5.564z" transform="translate(-.984)"/>
-                        </svg>
-                        <input name="s" type="text" placeholder="Search">
-                    </form>
+                    <?php get_search_form(); ?>
                 </div>
             </div>
         </div>
@@ -150,7 +143,6 @@ $current_term = get_queried_object()->term_id;
                 <?php
                 $args = array(
                     'post_type' => '',
-                    'posts_per_page' => 9,
                     'order' => 'DESC',
                     'orderby' => 'date',
                     'tax_query' => array(
@@ -171,14 +163,22 @@ $current_term = get_queried_object()->term_id;
                     <?php endwhile; ?>
                 <?php endif; ?>
                 <?php wp_reset_postdata(); ?>
-                <div class="blog-list__more-wrap">
-                    <button type="button" class="blog-list__more">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                            <path id="Sync" d="M9.429,18A.714.714,0,0,1,8,18a10.014,10.014,0,0,1,17.143-7.019V8.714a.714.714,0,0,1,1.429,0V13a.714.714,0,0,1-.714.714H21.571a.714.714,0,1,1,0-1.429h2.841A8.588,8.588,0,0,0,9.429,18Zm17.857-.714a.714.714,0,0,0-.714.714,8.588,8.588,0,0,1-14.984,5.714h2.841a.714.714,0,1,0,0-1.429H10.143A.714.714,0,0,0,9.429,23v4.286a.714.714,0,1,0,1.429,0V25.019A10.014,10.014,0,0,0,28,18,.714.714,0,0,0,27.286,17.286Z" transform="translate(-8 -8)" fill="#fbb316"/>
-                        </svg>
-                        <span>Load More</span>
-                    </button>
-                </div>
+                <?php if (  $query->max_num_pages > 1 ) : ?>
+                    <script>
+                        var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
+                        var true_posts = '<?php echo serialize($query->query_vars); ?>';
+                        var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
+                        var max_pages = '<?php echo $query->max_num_pages; ?>';
+                    </script>
+                    <div class="blog-list__more-wrap" id="loadmore">
+                        <button type="button" class="blog-list__more">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                <path id="Sync" d="M9.429,18A.714.714,0,0,1,8,18a10.014,10.014,0,0,1,17.143-7.019V8.714a.714.714,0,0,1,1.429,0V13a.714.714,0,0,1-.714.714H21.571a.714.714,0,1,1,0-1.429h2.841A8.588,8.588,0,0,0,9.429,18Zm17.857-.714a.714.714,0,0,0-.714.714,8.588,8.588,0,0,1-14.984,5.714h2.841a.714.714,0,1,0,0-1.429H10.143A.714.714,0,0,0,9.429,23v4.286a.714.714,0,1,0,1.429,0V25.019A10.014,10.014,0,0,0,28,18,.714.714,0,0,0,27.286,17.286Z" transform="translate(-8 -8)" fill="#fbb316"/>
+                            </svg>
+                            <span>Load More</span>
+                        </button>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>

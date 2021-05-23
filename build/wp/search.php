@@ -123,54 +123,54 @@ $args = array(
         <div class="blog-list__top-wrap">
             <div class="container">
                 <div class="blog-list__top">
-                        <ul class="blog-list__categories">
-                            <li class="active"><a href="<?php echo get_permalink();?>">All</a></li>
-                            <?php $terms = get_terms($taxonomy_name, $args); ?>
-                            <?php if ($terms) : ?>
-                                <?php foreach ($terms as $term): ?>
-                                    <?php $term_name = $term->name; ?>
-                                    <li><a href="<?php echo get_term_link($term);?>"><?php echo $term->name;?></a></li>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-                        </ul>
+                    <ul class="blog-list__categories">
+                        <li class="active"><a href="<?php echo get_permalink();?>">All</a></li>
+                        <?php $terms = get_terms($taxonomy_name, $args); ?>
+                        <?php if ($terms) : ?>
+                            <?php foreach ($terms as $term): ?>
+                                <?php $term_name = $term->name; ?>
+                                <li><a href="<?php echo get_term_link($term);?>"><?php echo $term->name;?></a></li>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </ul>
                     <?php get_search_form(); ?>
+                    <?php echo get_template_part('template-parts/searchLive');?>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="blog-list" id="blog-list">
                 <?php
-                $args = array(
-                    'post_type' => 'post',
-                    'order' => 'DESC',
-                    'orderby' => 'date',
-                );
-                ?>
-                <?php $query = new WP_Query( $args ); ?>
-                <?php if ($query->have_posts()) : ?>
-                    <?php while ($query->have_posts()) : $query->the_post(); ?>
+                global $query_string;
+                $query_args = explode("&", $query_string);
+                $search_query = array();
+
+
+                foreach($query_args as $key => $string) {
+                    $query_split = explode("=", $string);
+                    $search_query[$query_split[0]] = urldecode($query_split[1]);
+                } // foreach
+
+
+                $the_query = new WP_Query($search_query);
+                if ( $the_query->have_posts() ) :
+                    ?>
+                    <!-- the loop -->
+                    <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
                         <div class="blog-list__item blog-item blog-item--black">
                             <?php echo get_template_part('template-parts/blog-item');?>
                         </div>
                     <?php endwhile; ?>
-                <?php endif; ?>
-                <?php wp_reset_postdata(); ?>
-                <?php if (  $query->max_num_pages > 1 ) : ?>
-                    <script>
-                        var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
-                        var true_posts = '<?php echo serialize($query->query_vars); ?>';
-                        var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
-                        var max_pages = '<?php echo $query->max_num_pages; ?>';
-                    </script>
-                    <div class="blog-list__more-wrap" id="loadmore">
-                        <button type="button" class="blog-list__more">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                                <path id="Sync" d="M9.429,18A.714.714,0,0,1,8,18a10.014,10.014,0,0,1,17.143-7.019V8.714a.714.714,0,0,1,1.429,0V13a.714.714,0,0,1-.714.714H21.571a.714.714,0,1,1,0-1.429h2.841A8.588,8.588,0,0,0,9.429,18Zm17.857-.714a.714.714,0,0,0-.714.714,8.588,8.588,0,0,1-14.984,5.714h2.841a.714.714,0,1,0,0-1.429H10.143A.714.714,0,0,0,9.429,23v4.286a.714.714,0,1,0,1.429,0V25.019A10.014,10.014,0,0,0,28,18,.714.714,0,0,0,27.286,17.286Z" transform="translate(-8 -8)" fill="#fbb316"/>
-                            </svg>
-                            <span>Load More</span>
-                        </button>
+                    <!-- end of the loop -->
+
+                    <?php wp_reset_postdata(); ?>
+
+                <?php else : ?>
+                    <div class="text-group text-group--black">
+                        <h3><?php _e( 'Sorry, no posts matched your criteria.' ); ?></h3>
                     </div>
                 <?php endif; ?>
+
             </div>
         </div>
     </section>
