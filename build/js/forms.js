@@ -87,7 +87,6 @@ $("form").each(function () { //Change
 });
 
 let submitBtn = $('.product-submit-btn'),
-    submitBtnEmail = submitBtn.attr('data-email'),
     adminEmail = $('[name=admin_email]');
 
 submitBtn.on('click', function (){

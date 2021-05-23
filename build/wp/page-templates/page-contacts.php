@@ -41,7 +41,13 @@ get_header();
                         </a>
                     </div>
                 </div>
-                <form action="" class="contacts__form">
+                <form id="contacts-form" method="post" action="<?php bloginfo('url'); ?>/wp-admin/admin-ajax.php" class="contacts__form">
+
+                    <input type="hidden" name="action" value="contacts">
+                    <input type="hidden" name="project_name" value="Nanoleq">
+                    <input type="hidden" name="form_subject" value="Request from contacts page">
+                    <input type="hidden" name="admin_email" value="ridderbusch@nanoleq.com">
+
                     <div class="contacts__form-title el-title el-title--black-orange">
                         <?php echo get_field('contacts_form_title'); ?>
                     </div>
@@ -52,11 +58,11 @@ get_header();
                     <?php endif; ?>
                     <div class="form__items-title">
                         <label class="form-item form-item--radio input-wrap">
-                            <input type="radio" name="contact-form-type" class="form-item__input" checked>
+                            <input type="radio" value="Work at Nanoleq" name="contact-form-type" class="form-item__input" checked>
                             <p>Work at Nanoleq</p>
                         </label>
                         <label class="form-item form-item--radio input-wrap">
-                            <input type="radio" name="contact-form-type" class="form-item__input">
+                            <input type="radio" value="Invest in Nanoleq" name="contact-form-type" class="form-item__input">
                             <p>Invest in Nanoleq</p>
                         </label>
                     </div>
@@ -87,7 +93,7 @@ get_header();
                         </div>
                     </div>
                     <div class="form__btn">
-                        <button type="submit" class="btn btn--small btn--orange">
+                        <button type="submit" class="btn btn--small btn--orange-black">
                             <span>send message</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
                                 <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="1.5px">

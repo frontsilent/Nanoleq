@@ -7,14 +7,32 @@
 
 function nanoleq_scripts() {
 
-    wp_enqueue_style( 'nanoleq-style', get_stylesheet_uri() );
+    // отменяем зарегистрированный jQuery
+    wp_deregister_script('jquery-core');
+    wp_deregister_script('jquery');
 
+    wp_enqueue_style( 'nanoleq-style', get_stylesheet_uri() );
 
     wp_enqueue_style( 'nanoleq-custom-st', get_template_directory_uri() . '/css/main.css', array(), '1.0');
 
-    wp_enqueue_script( 'nanoleq-slick-js', get_template_directory_uri().'/js/slick.min.js', array(), '', true );
+    wp_enqueue_script( 'nanoleq-slick-js', get_template_directory_uri().'/js/slick.min.js', array(), '1.0', true );
 
     wp_enqueue_script( 'nanoleq-scripts', get_template_directory_uri() . '/js/script.js', array(), '1.0', true );
+
+    global $wp_query;
+    // register our main script but do not enqueue it yet
+    wp_register_script( 'loadmore', get_stylesheet_directory_uri() . '/js/loadmore.js', array('jquery') );
+
+    // we have to pass parameters to myloadmore.js script but we can get the parameters values only in PHP
+    // you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
+    wp_localize_script( 'loadmore', 'loadmore_params', array(
+        'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+        'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
+        'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+        'max_page' => $wp_query->max_num_pages
+    ) );
+
+    wp_enqueue_script( 'loadmore' );
 
 
 }
@@ -36,23 +54,8 @@ register_sidebar(
 
 require get_template_directory() . '/acf-blocks.php';
 
-//Пагинация
-add_filter('navigation_markup_template', 'my_navigation_template', 10, 2 );
-function my_navigation_template( $template, $class ){
-    /*
-    Вид базового шаблона:
-    <nav class="navigation %1$s" role="navigation">
-        <h2 class="screen-reader-text">%2$s</h2>
-        <div class="nav-links">%3$s</div>
-    </nav>
-    */
 
-    return '
-		<a >%3$s</a>
-	';
-}
-
-## Поддержка меню
+//menu support
 add_action('after_setup_theme', function(){
     register_nav_menus( array(
         'header_menu' => 'Header menu',
@@ -96,7 +99,7 @@ if( function_exists('acf_add_options_page') ) {
 
 }
 
-//Оформление заказа
+//get order
 function getOrder(){
 
     $c = true;
@@ -129,27 +132,40 @@ function getOrder(){
 add_action('wp_ajax_nopriv_order', 'getOrder');
 add_action('wp_ajax_order', 'getOrder');
 
-//loadMore
-function load_more_scripts() {
+//get contacts
+function getContacts(){
 
-    global $wp_query;
-    // register our main script but do not enqueue it yet
-    wp_register_script( 'loadmore', get_stylesheet_directory_uri() . '/js/loadmore.js', array('jquery') );
+    $c = true;
+    $project_name = trim($_POST["project_name"]);
+    $admin_email  = trim($_POST["admin_email"]);
+    $form_subject = trim($_POST["form_subject"]);
+    foreach ( $_POST as $key => $value ) {
+        if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" && $key != "action" && $key != 'request_type' ) {
+            $message .= "
+      " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
+      <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
+      <td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
+      </tr>";
+        }
+    }
+    $message = "<table style='width: 100%;'>$message</table>";
+    function adopt($text) {
+        return '=?UTF-8?B?'.base64_encode($text).'?=';
+    }
+    $headers = "MIME-Version: 1.0" . PHP_EOL .
+        "Content-Type: text/html; charset=utf-8" . PHP_EOL .
+        'From: '.adopt($project_name).' <info@'.$_SERVER['HTTP_HOST'].'>' . PHP_EOL .
+        'Reply-To: '.$admin_email.'' . PHP_EOL;
+    mail($admin_email, adopt($form_subject), $message, $headers );
 
-    // we have to pass parameters to myloadmore.js script but we can get the parameters values only in PHP
-    // you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
-    wp_localize_script( 'loadmore', 'loadmore_params', array(
-        'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
-        'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
-        'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
-        'max_page' => $wp_query->max_num_pages
-    ) );
+    die();
 
-    wp_enqueue_script( 'loadmore' );
 }
 
-add_action( 'wp_enqueue_scripts', 'load_more_scripts' );
+add_action('wp_ajax_nopriv_contacts', 'getContacts');
+add_action('wp_ajax_contacts', 'getContacts');
 
+//loadMore
 function loadmore_ajax_handler()
 {
 
