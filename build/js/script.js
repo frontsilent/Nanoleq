@@ -99,8 +99,8 @@ if (vitalSlider.length > 0) {
         dots: false,
         slidesToShow: 5,
         slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 4000,
+        // autoplay: true,
+        // autoplaySpeed: 4000,
         responsive: [
             {
                 breakpoint: 1024,
@@ -171,8 +171,6 @@ if (leadershipSlider.length > 0) {
         prevArrow: $('.leadership-slider__arrow--prev'),
         nextArrow: $('.leadership-slider__arrow--next'),
         dots: false,
-        autoplay: true,
-        autoplaySpeed: 4000,
         responsive: [
             {
                 breakpoint: 9999,
@@ -206,8 +204,6 @@ if (teamSlider.length > 0) {
         prevArrow: $('.team-slider__arrow--prev'),
         nextArrow: $('.team-slider__arrow--next'),
         dots: false,
-        autoplay: true,
-        autoplaySpeed: 3500,
         responsive: [
             {
                 breakpoint: 9999,
@@ -239,8 +235,6 @@ if (advisorsSlider.length > 0) {
         prevArrow: $('.advisors-slider__arrow--prev'),
         nextArrow: $('.advisors-slider__arrow--next'),
         dots: false,
-        autoplay: true,
-        autoplaySpeed: 3200,
         responsive: [
             {
                 breakpoint: 9999,
@@ -263,6 +257,16 @@ if (advisorsSlider.length > 0) {
         ]
     });
 }
+
+// teamSLiderChange
+function teamSLiderChange(sliderName){
+    sliderName.on("beforeChange", function (){
+        $('.about-leadership-tab__bottom').removeClass('active');
+    })
+}
+teamSLiderChange(teamSlider);
+teamSLiderChange(leadershipSlider);
+teamSLiderChange(advisorsSlider);
 
 
 //Products Page

@@ -14,7 +14,7 @@
     flex-wrap: wrap;
     padding: 8rem 0 0;
     @media (max-width: 1023px){
-      padding: 0 8rem 0;
+      padding: 6rem 8rem 0;
     }
     @media (max-width: 767px){
       padding: 0 7rem 0;
@@ -23,7 +23,6 @@
       @media (max-width: 767px){
         max-width: 600px;
         margin: 0 auto;
-        padding-bottom: 7rem;
         position: relative;
         .slick-list{
           margin: 0 -2rem;
@@ -53,6 +52,9 @@
     &-wrapper{
       padding: 8rem 0 3rem;
       background: #fff;
+      @media (max-width: 1023px){
+        padding-bottom: 0;
+      }
       @media (max-width: 767px){
         padding: 7rem 0 0 ;
       }
@@ -60,7 +62,7 @@
     &-slider-wrap{
       @media (max-width: 767px){
         position: relative;
-        padding: 0 7rem 3rem;
+        padding: 0 7rem;
         .slick-list{
           margin: 0 -2rem;
         }
@@ -94,6 +96,9 @@
       @media (max-width: 1023px){
         padding-bottom: 7.5rem;
       }
+      @media (max-width: 767px){
+        padding-bottom: 0;
+      }
     }
     .about-leadership-member{
       margin-bottom: 0;
@@ -102,6 +107,12 @@
       }
       @media (max-width: 1023px){
         margin-bottom: 0;
+      }
+    }
+    .about-leadership-tab__arrow{
+      display: none;
+      @media (max-width: 767px){
+        display: flex;
       }
     }
   }
@@ -125,6 +136,7 @@
     width: 22rem;
     margin: 0 auto;
       z-index: 98;
+    padding-bottom: 8rem;
   }
   &__img{
     position: relative;
@@ -160,6 +172,7 @@
     letter-spacing: 0.11rem;
     @media (max-width: 600px){
         letter-spacing: 0.05rem;
+      min-height: 3.7rem;
     }
   }
 }
@@ -199,7 +212,6 @@
     cursor: pointer;
     @media (max-width: 1023px){
         z-index: 98;
-      pointer-events: none;
     }
   }
   &__arrow{
@@ -217,6 +229,9 @@
     @media (max-width: 1023px){
       display: none;
     }
+    @media (max-width: 767px){
+      display: flex;
+    }
     svg{
       transform: rotate(90deg);
     }
@@ -226,7 +241,7 @@
     &-left{
       width: 26rem;
       padding-right: 4rem;
-      @media (max-width: 1023px){
+      @media (max-width: 767px){
         display: none;
       }
     }
@@ -246,8 +261,8 @@
     &-wrap{
       position: relative;
       background: $black;
-      @media (max-width: 1023px){
-        display: none;
+      @media (max-width: 767px){
+        margin-bottom: 4rem;
       }
     }
   }
@@ -261,6 +276,9 @@
     }
     @media (max-width: 1023px){
       padding-left: 0;
+    }
+    @media (max-width: 767px){
+      padding-top: 6rem;
     }
     &--long{
       padding-left: 4rem;
@@ -368,9 +386,6 @@
   .about-leadership-member__img{
     &::before{
       background: $orangey-yellow;
-      @media (max-width: 767px){
-        background: $black;
-      }
     }
   }
   .about-leadership-member__name{
