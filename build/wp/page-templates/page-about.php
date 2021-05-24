@@ -215,6 +215,14 @@ $leadershipCountBottom = 1;
                                             <div class="about-leadership-member__name el-subtitle"><?php echo get_sub_field('name'); ?></div>
                                             <div class="about-leadership-member__position"><?php echo get_sub_field('position_1'); ?></div>
                                         </div>
+                                        <div class="about-leadership-tab__arrow">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791">
+                                                <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5">
+                                                    <path stroke-linejoin="round" d="M13.415 1.06l4.835 4.836-4.835 4.835"/>
+                                                    <path d="M17.25 5.832H.75"/>
+                                                </g>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             <?php $leadershipCountTop++; endwhile; ?>
