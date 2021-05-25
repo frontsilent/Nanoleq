@@ -12,7 +12,10 @@ get_header();
     <section data-theme="orange" id="main-desc" class="section main-desc-section" style="background-image: url('<?php bloginfo('template_url'); ?>/img/main-desc-bg.jpg')">
         <div class="container">
             <div class="main-desc">
-                <img class="main-desc__decor" src="<?php bloginfo('template_url'); ?>/img/main-desc.svg" alt="image">
+                <svg width="253" height="85.526">
+                    <path fill="none" class="ecg" d="M1.5 51.686h20.541l12.218-17.622 10.438 17.622h8.961l8.875 22.744L69.286 1.5l6.856 82.526 6.342-32.34h12.059l6.529-9.705 6.7 9.705h30.337l11.963-15.941 10.814 15.941h14.832l8.643 14.23 6.855-62.98 7.1 78.857 5.945-30.107h11.656l6.133-9.705 6.555 8.663H251.5"/>
+                </svg>
+
                 <div class="main-desc__title el-title el-title--big el-title--black el-title--left">
                     <?php if (get_field('main_desc_title')) : ?>
                         <?php echo get_field('main_desc_title'); ?>
@@ -170,7 +173,7 @@ get_header();
                     <div class="features-brands__items">
                         <?php if( have_rows('features_brands')) :?>
                             <?php while( have_rows('features_brands')) : the_row(); ?>
-                                <a href="<?php echo get_sub_field('link'); ?>" class="features-brands__item">
+                                <a href="<?php echo ( get_sub_field('link') ? get_sub_field('link') : 'javascript:void(0);' ); ?>" class="features-brands__item">
                                     <img src="<?php echo get_sub_field('logo'); ?>" alt="" class="features-brands__logo">
                                 </a>
                             <?php endwhile; ?>

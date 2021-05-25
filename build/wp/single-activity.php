@@ -68,7 +68,7 @@ get_header();
                             <!--PRODUCT-->
                             <div class="activity-performance__part activity-performance__part--image">
                                 <img class="activity-performance__image" src="<?php echo get_sub_field('activity_performance_product'); ?>" alt="product">
-                                <img class="activity-performance__circles" src="<?php bloginfo('template_url'); ?>/img/circle-lines.svg" alt="image">
+                                <img class="activity-performance__circles" src="<?php bloginfo('template_url'); ?>/img/circle-lines.gif" alt="image">
                                 <img class="activity-performance__swiss activity-performance__swiss--run" src="<?php bloginfo('template_url'); ?>/img/swiss-transparent.png" alt="swiss">
                                 <?php if( have_rows('activity_performance_center_items')) :?>
                                     <?php while( have_rows('activity_performance_center_items')) : the_row(); ?>
@@ -282,7 +282,7 @@ get_header();
                             <!--PRODUCT-->
                             <div class="activity-performance__part activity-performance__part--image">
                                 <img class="activity-performance__image" src="<?php echo get_sub_field('activity_performance_product'); ?>" alt="product">
-                                <img class="activity-performance__circles" src="<?php bloginfo('template_url'); ?>/img/circle-lines.svg" alt="image">
+                                <img class="activity-performance__circles" src="<?php bloginfo('template_url'); ?>/img/circle-lines.gif" alt="image">
                                 <img class="activity-performance__swiss activity-performance__swiss--run" src="<?php bloginfo('template_url'); ?>/img/swiss-transparent.png" alt="swiss">
                                 <?php if( have_rows('activity_performance_center_items')) :?>
                                     <?php while( have_rows('activity_performance_center_items')) : the_row(); ?>

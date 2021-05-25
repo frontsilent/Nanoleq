@@ -19,16 +19,14 @@ get_header();
                 </div>
                 <form id="order-form" method="post" action="<?php bloginfo('url'); ?>/wp-admin/admin-ajax.php" class="order__info">
 
-                    <?php
-                    $prod_starter = $_GET['prod_kit'];
+                    <?php 
+                        $prod_starter = $_GET['prod_kit'];
                     ?>
 
                     <input type="hidden" name="action" value="order">
                     <input type="hidden" name="project_name" value="Nanoleq">
                     <input type="hidden" name="form_subject" value="Request from order page">
                     <input type="hidden" name="admin_email" value="">
-                    <input type="hidden" name="request_type" value="">
-
                     <div class="order__title">Select components for your smart textile application <em>*</em></div>
                     <div class="order__top">
                         <div class="order-top__element">
@@ -74,7 +72,7 @@ get_header();
                             </div>
                             <!--ElectroSkin Starter Kit-->
                             <label class="order-top-item-wrap input-wrap">
-                                <input type="checkbox" name="product-1-kit" value="ElectroSkin starter kit" class="order-top-item__input">
+                                <input type="checkbox" name="product-1-kit" value="ElectroSkin starter kit" class="order-top-item__input" <?php echo ($prod_starter == 'electroskin' ? 'checked' : ''); ?>>
                                 <div class="order-top-item">
                                     <div class="order-checkbox">
                                         <img src="<?php bloginfo('template_url'); ?>/img/checked-icon-w.svg" alt="checked">
@@ -134,7 +132,7 @@ get_header();
                             </div>
                             <!--PhantomTape Starter Kit-->
                             <label class="order-top-item-wrap input-wrap">
-                                <input type="checkbox" name="product-2-kit" value="PhantomTape Starter Kit" class="order-top-item__input">
+                                <input type="checkbox" name="product-2-kit" value="PhantomTape Starter Kit" class="order-top-item__input" <?php echo ($prod_starter == 'phantomtape' ? 'checked' : ''); ?>>
                                 <div class="order-top-item">
                                     <div class="order-checkbox">
                                         <img src="<?php bloginfo('template_url'); ?>/img/checked-icon-w.svg" alt="checked">
@@ -194,7 +192,7 @@ get_header();
                             </div>
                             <!--Combined Starter kit-->
                             <label class="order-top-item-wrap input-wrap">
-                                <input type="checkbox" name="product-3-kit" value="Combined Starter kit" class="order-top-item__input">
+                                <input type="checkbox" name="product-3-kit" value="Combined Starter kit" class="order-top-item__input" <?php echo ($prod_starter == 'phantomlink' ? 'checked' : ''); ?>>
                                 <div class="order-top-item">
                                     <div class="order-checkbox">
                                         <img src="<?php bloginfo('template_url'); ?>/img/checked-icon-w.svg" alt="checked">
@@ -215,12 +213,12 @@ get_header();
                     <div class="order__title">Select your Vital Shirts <em>*</em></div>
                     <div class="order__bottom">
                         <?php
-                        $activity = $_GET['act'];
+                            $activity = $_GET['act'];
                         ?>
                         <!--running-->
                         <div class="order-bottom__element">
                             <div class="order-bottom-item-wrap order-product-wrap input-wrap">
-                                <input type="checkbox" id="prod-4" name="shirt-1" value="Running" class="order-bottom-item__input order-product-input" checked>
+                                <input type="checkbox" id="prod-4" name="shirt-1" value="Running" class="order-bottom-item__input order-product-input" <?php echo (isset($activity) ? ($activity == 'run' ? 'checked' : '' ) : 'checked'); ?>>
                                 <div class="order-bottom-item">
                                     <label for="prod-4">
                                         <div class="order-checkbox">
@@ -258,7 +256,7 @@ get_header();
                         <!--cycling-->
                         <div class="order-bottom__element">
                             <div class="order-bottom-item-wrap order-product-wrap input-wrap">
-                                <input type="checkbox" id="prod-5" name="shirt-2" value="Cycling" class="order-bottom-item__input order-product-input">
+                                <input type="checkbox" id="prod-5" name="shirt-2" value="Cycling" class="order-bottom-item__input order-product-input"  <?php echo ($activity == 'bike' ? 'checked' : '' ); ?>>
                                 <div class="order-bottom-item">
                                     <label for="prod-5">
                                         <div class="order-checkbox">
@@ -296,7 +294,7 @@ get_header();
                         <!--skiing-->
                         <div class="order-bottom__element">
                             <div class="order-bottom-item-wrap order-product-wrap input-wrap">
-                                <input type="checkbox" id="prod-6" name="shirt-3" value="Skiing" class="order-bottom-item__input order-product-input">
+                                <input type="checkbox" id="prod-6" name="shirt-3" value="Skiing" class="order-bottom-item__input order-product-input"  <?php echo ($activity == 'ski' ? 'checked' : '' ); ?>>
                                 <div class="order-bottom-item">
                                     <label for="prod-6">
                                         <div class="order-checkbox">
@@ -334,7 +332,7 @@ get_header();
                         <!--GYM-->
                         <div class="order-bottom__element">
                             <div class="order-bottom-item-wrap order-product-wrap input-wrap">
-                                <input type="checkbox" id="prod-7" name="shirt-4" value="GYM" class="order-bottom-item__input order-product-input">
+                                <input type="checkbox" id="prod-7" name="shirt-4" value="GYM" class="order-bottom-item__input order-product-input"  <?php echo ($activity == 'training' ? 'checked' : '' ); ?>>
                                 <div class="order-bottom-item">
                                     <label for="prod-7">
                                         <div class="order-checkbox">
@@ -460,10 +458,8 @@ get_header();
                     </div>
 
                     <div class="order__buttons">
-<!--                        <button class="btn order-btn-big product-submit-btn" data-email="sales@nanoleq.com" data-request-type="order" type="submit">order Now</button>-->
-<!--                        <button class="btn btn--orange product-submit-btn" data-email="info@nanoleq.com" data-request-type="request" type="submit">-->
-                        <button class="btn order-btn-big product-submit-btn" data-email="rudartem12@gmail.com" data-request-type="order" type="submit">order Now</button>
-                        <button class="btn btn--orange product-submit-btn" data-email="rudartem12@gmail.com" data-request-type="request" type="submit">
+                        <button class="btn order-btn-big product-submit-btn" data-email="sales@nanoleq.com" type="submit">order Now</button>
+                        <button class="btn btn--orange product-submit-btn" data-email="info@nanoleq.com" type="submit">
                             <span>request a quote</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
                                 <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="1.5px">
