@@ -46,7 +46,7 @@ get_header();
                     <input type="hidden" name="action" value="contacts">
                     <input type="hidden" name="project_name" value="Nanoleq">
                     <input type="hidden" name="form_subject" value="Request from contacts page">
-                    <input type="hidden" name="admin_email" value="info@nanoleq.com">
+                    <input type="hidden" name="admin_email" value="<?php echo get_field('contacts_email','option'); ?>">
 
                     <div class="contacts__form-title el-title el-title--black-orange">
                         <?php echo get_field('contacts_form_title'); ?>

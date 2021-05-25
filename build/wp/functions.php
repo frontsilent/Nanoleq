@@ -99,6 +99,14 @@ if( function_exists('acf_add_options_page') ) {
         'redirect'		=> false
     ));
 
+    acf_add_options_page(array(
+        'page_title' 	=> 'Admin options',
+        'menu_title'	=> 'Admin options',
+        'menu_slug' 	=> 'admin-settings',
+        'capability'	=> 'edit_posts',
+        'redirect'		=> false
+    ));
+
 }
 
 add_action( 'init', 'register_post_types' );
@@ -278,12 +286,26 @@ function getOrder(){
     $company = $_POST['company'];
     $message = $_POST['message'];
     $type = $_POST['request_type'];
+    $product = '';
 
     $post_data = array(
-        'post_title' => $name . ', ' . $pageTitle,
+        'post_title' => $name . ', ' . $email,
         'post_type' => 'orders',
         'post_status' => 'publish',
     );
+
+    $d = true;
+
+    foreach ( $_POST as $key => $value ) {
+        if ( $value != "" && (substr( $key, 0, 7 )  === 'product') || ($value != "" && substr( $key, 0, 5 ) == 'shirt') )  {
+            $product .= "
+      " . ( ($d = !$d) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
+      <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
+      <td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
+      </tr>";
+        }
+    }
+    $product = "<table style='width: 100%;'>$product</table>";
 
 
     $post_id = wp_insert_post($post_data);
@@ -298,15 +320,15 @@ function getOrder(){
         'email' => $email,
         'company' => $company,
         'message' => $message,
-        'products_info' => $name,
+        'products_info' => $product,
     );
 
     $clientInfoArr[] = $clientInfo;
 
 
-    update_field("order_date", get_the_date('j.m.Y', $post), $post);
+    update_field("order_date_order", get_the_date('j.m.Y', $post), $post);
 
-    update_field("client_info", $clientInfoArr, $post);
+    update_field("client_info_order", $clientInfoArr, $post);
 
     $c = true;
     $project_name = trim($_POST["project_name"]);

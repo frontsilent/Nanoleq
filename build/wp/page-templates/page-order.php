@@ -19,14 +19,16 @@ get_header();
                 </div>
                 <form id="order-form" method="post" action="<?php bloginfo('url'); ?>/wp-admin/admin-ajax.php" class="order__info">
 
-                    <?php 
-                        $prod_starter = $_GET['prod_kit'];
+                    <?php
+                    $prod_starter = $_GET['prod_kit'];
                     ?>
 
                     <input type="hidden" name="action" value="order">
                     <input type="hidden" name="project_name" value="Nanoleq">
                     <input type="hidden" name="form_subject" value="Request from order page">
                     <input type="hidden" name="admin_email" value="">
+                    <input type="hidden" name="request_type" value="">
+
                     <div class="order__title">Select components for your smart textile application <em>*</em></div>
                     <div class="order__top">
                         <div class="order-top__element">
@@ -213,7 +215,7 @@ get_header();
                     <div class="order__title">Select your Vital Shirts <em>*</em></div>
                     <div class="order__bottom">
                         <?php
-                            $activity = $_GET['act'];
+                        $activity = $_GET['act'];
                         ?>
                         <!--running-->
                         <div class="order-bottom__element">
@@ -458,8 +460,8 @@ get_header();
                     </div>
 
                     <div class="order__buttons">
-                        <button class="btn order-btn-big product-submit-btn" data-email="sales@nanoleq.com" type="submit">order Now</button>
-                        <button class="btn btn--orange product-submit-btn" data-email="info@nanoleq.com" type="submit">
+                        <button class="btn order-btn-big product-submit-btn" data-email="<?php echo get_field('order_email', 'option'); ?>" type="submit">order Now</button>
+                        <button class="btn btn--orange-black product-submit-btn" data-email="<?php echo get_field('order_request_email', 'option'); ?>" type="submit">
                             <span>request a quote</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
                                 <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="1.5px">
