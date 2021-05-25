@@ -1,3 +1,16 @@
 @import "about-desc";
 @import "about-leadership";
 @import "about-updates";
+
+.about-leadership--mobile{
+  @media (max-width: 767px){
+    display: none;
+  }
+}
+
+.about-leadership--desk{
+  display: none;
+  @media (max-width: 767px){
+    display: block;
+  }
+}

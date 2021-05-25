@@ -6,12 +6,12 @@
         </div>
     <?php endif; ?>
     <?php if (get_field('intro_video')) : ?>
-        <video class="intro-video" id="intro-video" src="<?php echo get_field('intro_video'); ?>" playsinline muted autoplay loop></video>
+        <video class="intro-video" id="intro-video" src="<?php echo get_field('intro_video'); ?>" playsinline autoplay loop></video>
     <?php endif; ?>
     <img src="<?php bloginfo('template_url'); ?>/img/scroll-btn.svg" alt="scroll" class="intro__scroll">
     <?php if (get_field('intro_video')) : ?>
         <div class="intro-video__buttons">
-            <svg class="intro-video__unmute" xmlns="http://www.w3.org/2000/svg" width="23.57" height="22"
+            <svg class="intro-video__unmute active" xmlns="http://www.w3.org/2000/svg" width="23.57" height="22"
                  viewBox="0 0 23.57 22">
                 <defs>
                     <style>
@@ -44,7 +44,7 @@
                     </g>
                 </g>
             </svg>
-            <svg class="intro-video__mute active" xmlns="http://www.w3.org/2000/svg" width="27.436" height="22"
+            <svg class="intro-video__mute" xmlns="http://www.w3.org/2000/svg" width="27.436" height="22"
                  viewBox="0 0 27.436 22">
                 <defs>
                     <style>

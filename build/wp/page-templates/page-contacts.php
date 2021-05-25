@@ -65,6 +65,10 @@ get_header();
                             <input type="radio" value="Invest in Nanoleq" name="contact_form_type" class="form-item__input">
                             <p>Invest in Nanoleq</p>
                         </label>
+                        <label class="form-item form-item--radio input-wrap">
+                            <input type="radio" id="contact-order-nanoleq" value="Order From Nanoleq" name="contact_form_type" class="form-item__input">
+                            <p>Order From Nanoleq</p>
+                        </label>
                     </div>
                     <div class="form__items">
                         <div class="form__part form__part--left">

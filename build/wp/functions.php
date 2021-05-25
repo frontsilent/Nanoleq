@@ -106,12 +106,12 @@ function register_post_types(){
         'labels' => [
             'name'               => 'Contacts', // основное название для типа записи
             'singular_name'      => 'Contacts request', // название для одной записи этого типа
-            'add_new'            => 'Add contacts request', // для добавления новой записи
-            'add_new_item'       => 'Add contacts request', // заголовка у вновь создаваемой записи в админ-панели.
-            'edit_item'          => 'Edit contacts request', // для редактирования типа записи
-            'new_item'           => 'New contacts request', // текст новой записи
-            'view_item'          => 'See contacts request', // для просмотра записи этого типа.
-            'search_items'       => 'Find contacts request', // для поиска по этим типам записи
+            'add_new'            => 'Add contact', // для добавления новой записи
+            'add_new_item'       => 'Add contact', // заголовка у вновь создаваемой записи в админ-панели.
+            'edit_item'          => 'Edit contact', // для редактирования типа записи
+            'new_item'           => 'New contact', // текст новой записи
+            'view_item'          => 'See contact', // для просмотра записи этого типа.
+            'search_items'       => 'Find contact', // для поиска по этим типам записи
             'not_found'          => 'Not found', // если в результате поиска ничего не было найдено
             'not_found_in_trash' => 'Not found in basket', // если не было найдено в корзине
             'parent_item_colon'  => '', // для родителей (у древовидных типов)
@@ -206,7 +206,7 @@ function getContacts(){
 
 
     $post_data = array(
-        'post_title' => $name . ', ' . $pageTitle,
+        'post_title' => $name . ', ' . $email,
         'post_type' => 'contacts',
         'post_status' => 'publish',
     );
