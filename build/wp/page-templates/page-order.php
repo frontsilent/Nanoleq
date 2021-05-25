@@ -460,8 +460,8 @@ get_header();
                     </div>
 
                     <div class="order__buttons">
-                        <button class="btn order-btn-big product-submit-btn" data-email="<?php echo get_field('order_email', 'option'); ?>" type="submit">order Now</button>
-                        <button class="btn btn--orange-black product-submit-btn" data-email="<?php echo get_field('order_request_email', 'option'); ?>" type="submit">
+                        <button class="btn order-btn-big product-submit-btn" data-request-type="order" data-email="<?php echo get_field('order_email', 'option'); ?>" type="submit">order Now</button>
+                        <button class="btn btn--orange-black product-submit-btn" data-request-type="request" data-email="<?php echo get_field('order_request_email', 'option'); ?>" type="submit">
                             <span>request a quote</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
                                 <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="1.5px">
