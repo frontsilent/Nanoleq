@@ -19,6 +19,8 @@ function nanoleq_scripts() {
 
     wp_enqueue_script( 'nanoleq-scripts', get_template_directory_uri() . '/js/script.js', array(), '1.0', true );
 
+    wp_enqueue_script( 'animation-scripts', get_template_directory_uri() . '/js/animation.js', array(), '1.0', true );
+
     global $wp_query;
     // register our main script but do not enqueue it yet
     wp_register_script( 'loadmore', get_stylesheet_directory_uri() . '/js/loadmore.js', array('jquery') );
