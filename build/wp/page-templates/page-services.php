@@ -18,7 +18,7 @@ get_header();
             $os_subheading = get_field('os_subheading');
 
             echo ( $os_heading ? '<div class="el-title">'.$os_heading.'</div>' : '');
-            echo ( $os_subheading ? ' <h5>'.$os_heading.'</h5>' : '');
+            echo ( $os_subheading ? ' <h5>'.$os_subheading.'</h5>' : '');
 
 
             if( have_rows('os_services') ):
@@ -31,7 +31,7 @@ get_header();
                         $service_title = get_sub_field('title');
                         $service_link = get_sub_field('link');
 
-                        echo '<a href="'.( $service_link ? $service_link : '#').'" class="our-services__panel">';
+                        echo '<a href="#get-in-touch" class="our-services__panel">';
                         if($service_icon){
                             echo '<div class="our-services__panel__icon">';
                                  echo file_get_contents( $service_icon ); 
@@ -62,7 +62,7 @@ get_header();
 
     <!-- Nanoleq Technology -->
     <section data-theme="dark" id="nanoleq-technology" class="section nanoleq-technology-section">
-        <div class="nanoleq-technology">
+        <div  id="get-in-touch" class="nanoleq-technology">
             <?php
                 $nt_title = get_field('nt_title');
                 $nt_button = get_field('nt_button');;

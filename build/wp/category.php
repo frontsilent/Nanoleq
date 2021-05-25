@@ -142,7 +142,7 @@ $current_term = get_queried_object()->term_id;
             <div class="blog-list" id="blog-list">
                 <?php
                 $args = array(
-                    'post_type' => 'post',
+                    'post_type' => '',
                     'order' => 'DESC',
                     'orderby' => 'date',
                     'tax_query' => array(

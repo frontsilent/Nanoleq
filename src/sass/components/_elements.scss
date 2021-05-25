@@ -396,3 +396,12 @@ sup{
     top: 0;
   }
 }
+
+//Links
+a[href="javascript:void(0);"]{
+  cursor: default;
+}
+
+.wp-block-embed__wrapper:before {
+    padding-top: 0 !important;
+}

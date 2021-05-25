@@ -1,0 +1,187 @@
+.shirts{
+  &-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, #000000, #151515);
+    overflow: hidden;
+  }
+  &__title{
+    text-align: center;
+    margin-bottom: 11rem;
+    @media (max-width: 1199px){
+      margin-bottom: 8rem;
+    }
+  }
+  &__items{
+    display: flex;
+    position: relative;
+    margin: 0 -1.5rem;
+    @media (max-width: 1439px){
+      padding: 0 2rem;
+    }
+    @media (max-width: 1023px){
+        flex-wrap: wrap;
+    }
+    @media (max-width: 767px){
+      padding: 0;
+    }
+    @media (max-width: 600px){
+      margin: 0 auto;
+    }
+  }
+  &__item{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: calc(25% - 3rem);
+    margin: 0 1.5rem;
+    box-shadow: 0 4rem 8rem 0 rgba(0, 0, 0, 0.2);
+    background-color: #1a1a1a;
+    text-align: center;
+    @include transition();
+    @media (max-width: 1023px){
+      width: calc(50% - 3rem);
+      margin: 0 1.5rem 3rem;
+    }
+    @media (max-width: 600px){
+      width: 100%;
+      max-width: 48rem;
+      margin: 0 auto 3rem;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: .5rem;
+      background: $orangey-yellow;
+      opacity: 0;
+      @include transition();
+    }
+    &-img{
+      height: 34.5rem;
+      padding-top: 2rem;
+      margin-bottom: 1rem;
+      @media (max-width: 1199px){
+        height: 29rem;
+      }
+      img{
+        max-height: 100%;
+      }
+    }
+    &-title{
+      font-size: 3rem;
+      color: $white;
+      line-height: 1.33;
+      letter-spacing: -0.03rem;
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+      @include transition();
+      i{
+        color: $orangey-yellow;
+      }
+    }
+    &-subtitle{
+      font-family: 'Roboto';
+      font-size: 1.4rem;
+      line-height: 1.25;
+      color: #d5d5d5;
+      margin-bottom: 4.5rem;
+      @include transition();
+    }
+    &-bottom{
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      margin-top: auto;
+      opacity: 0;
+      @include transition();
+      p{
+        font-size: 1.6rem;
+        line-height: 1.25;
+        letter-spacing: .16rem;
+        margin-right: 1.5rem;
+        text-transform: uppercase;
+        color: $orangey-yellow;
+      }
+      span{
+        width: 4.5rem;
+        height: 6rem;
+        line-height: 6rem;
+        background: $orangey-yellow;
+      }
+      img{
+        display: inline-block;
+        vertical-align: middle;
+        width: 2rem;
+      }
+    }
+  }
+  &__caption{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: -2rem;
+    top: 11.5rem;
+    transform-origin: 100% 50%;
+    transform: rotate(90deg) translateY(-50%) scale(-1,-1);
+    width: 26rem;
+    font-size: 1.4rem;
+    line-height: 1.21;
+    letter-spacing: 0.14rem;
+    color: #fff;
+    text-transform: uppercase;
+    @media (max-width: 1499px){
+      right: 1rem;
+    }
+    @media (max-width: 1299px){
+      right: 2.5rem;
+    }
+    @media (max-width: 1199px){
+      top: 9.5rem;
+    }
+    @media (max-width: 767px){
+      position: static;
+      transform: none;
+      justify-content: center;
+      width: 100%;
+    }
+    p{
+      margin-right: 1.5rem;
+      @media (max-width: 767px){
+        margin-right: 0;
+      }
+    }
+    i{
+      color: #eb2422;
+    }
+    img{
+      transform: rotate(90deg) scale(1,1);
+      @media (max-width: 767px){
+        transform: none;
+        order: -1;
+        margin-right: 2rem;
+      }
+    }
+  }
+}
+//hover
+.shirts__item:hover{
+  background: $white;
+  text-decoration: none;
+  &::before{
+    opacity: 1;
+  }
+  .shirts__item-title{
+      color: #0f0f0f;
+  }
+  .shirts__item-subtitle{
+    color: #3c3c3c;
+  }
+  .shirts__item-bottom{
+    opacity: 1;
+  }
+}

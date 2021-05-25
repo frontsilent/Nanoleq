@@ -327,12 +327,14 @@ get_header();
                                 <?php if (get_sub_field('wishlist_btn')) : ?>
                                     <div class="activity-performance__btn activity-performance__btn--desc wishlist-btn-wrap">
                                         <?php
+                                        global $post;
+                                        $page_slug = $post->post_name;
                                         $link = get_sub_field('wishlist_btn');
                                         $link_url = $link['url'];
                                         $link_title = $link['title'];
                                         $link_target = $link['target'] ? $link['target'] : '_self';
                                         ?>
-                                        <a class="wishlist-btn" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
+                                        <a class="wishlist-btn" href="<?php echo site_url().'/order?act='.$page_slug.''; ?>">
                                             <svg class="wishlist-btn__mail" xmlns="http://www.w3.org/2000/svg" width="32" height="22.5" viewBox="0 0 32 22.5">
                                                 <g>
                                                     <g>
@@ -343,7 +345,6 @@ get_header();
                                             <span><?php echo esc_html( $link_title ); ?></span>
                                             <span class="wishlist-btn__arrow">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791"><g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="M13.415 1.06l4.835 4.836-4.835 4.835"/><path d="M17.25 5.832H.75"/></g></svg>
-                                        </span>
                                         </a>
                                         <div class="wishlist-btn__text">
                                             <?php echo get_sub_field('wishlist_btn_text'); ?>

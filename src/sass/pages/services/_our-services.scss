@@ -60,6 +60,10 @@
             opacity: 0;
             @include transition(all 200ms ease-in-out);
 
+            svg{
+                transform: rotate(90deg);
+            }
+
             &:hover{
                 width: 6rem;
             }

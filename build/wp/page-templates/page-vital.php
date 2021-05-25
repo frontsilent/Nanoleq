@@ -22,8 +22,8 @@ get_header();
             <img src="<?php bloginfo('template_url'); ?>/img/vital-desc-4.png" alt="image" class="vital-desc__img vital-desc__img--4">
             <img src="<?php bloginfo('template_url'); ?>/img/vital-desc-5.png" alt="image" class="vital-desc__img vital-desc__img--5">
             <div class="vital-desc__images">
-                <img src="<?php bloginfo('template_url'); ?>/img/vital-desc-1.png" alt="image" class="vital-desc__img vital-desc__img--1">
-                <img src="<?php bloginfo('template_url'); ?>/img/vital-desc-3.png" alt="image" class="vital-desc__img vital-desc__img--3">
+                <img src="<?php bloginfo('template_url'); ?>/img/vital-desc-1.gif" alt="image" class="vital-desc__img vital-desc__img--1">
+                <img src="<?php bloginfo('template_url'); ?>/img/vital-desc-3.gif" alt="image" class="vital-desc__img vital-desc__img--3">
             </div>
             <div class="vital-desc-connect">
                 <div class="vital-desc-connect__title">
@@ -53,7 +53,7 @@ get_header();
                     <div class="works__subtitle el-subtitle"><?php echo get_field('works_subtitle'); ?></div>
                 <?php endif; ?>
                 <div class="btn-wrap">
-                    <a href="" class="works__btn btn btn--orange-black">
+                    <!-- <a href="" class="works__btn btn btn--orange-black">
                         <span>step by step manual</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="11.791" height="15.811" viewBox="0 0 11.791 15.811">
                             <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="1.5px">
@@ -61,7 +61,7 @@ get_header();
                                 <path d="M12 0L0 0" transform="rotate(90 1837.989 447.239) translate(1391.5 2279.268)"/>
                             </g>
                         </svg>
-                    </a>
+                    </a> -->
                 </div>
                 <div class="works__items">
                     <?php if( have_rows('works')) :?>
@@ -228,7 +228,13 @@ get_header();
                 <div class="activities__items">
                     <?php if( have_rows('activities')) :?>
                         <?php while( have_rows('activities')) : the_row(); ?>
-                            <?php $activity = get_sub_field('item'); ?>
+                            <?php 
+                                $activity = get_sub_field('item'); 
+                                global $post;
+                                $page_slug = $post->post_name;
+                                $activity_waitlist_url = get_site_url().'/order?act='.$activity->post_name.'';
+                            
+                            ?>
                             <div class="activities__item">
                                 <a href="<?php echo get_permalink($activity);?>" class="activities__item-img">
                                     <img src="<?php echo get_sub_field('image'); ?>" alt="img">
@@ -240,7 +246,7 @@ get_header();
                                     <?php endif; ?>
                                     <div class="activities__item-details">
                                         <a href="<?php echo get_permalink($activity);?>" class="activities__item-more">More Infos</a>
-                                        <a href="<?php echo get_permalink($activity);?>" class="activities__item-join">Join Waitlist</a>
+                                        <a href="<?php echo $activity_waitlist_url;?>" class="activities__item-join">Join Waitlist</a>
                                         <div class="activities__item-arrow">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791">
                                                 <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5">

@@ -1,31 +1,86 @@
 .main-desc{
-  max-width: 60rem;
-  margin-left: auto;
-  @media (max-width: 1023px){
-    max-width: 100%;
-  }
-  &-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100vh;
-    background-position: center;
-    background-size: cover;
-    @media (max-width: 1023px){
-      background-image: none !important;
-      background: $orangey-yellow;
-    }
-  }
-  &__decor{
-    display: block;
-    width: 25rem;
-    margin-bottom: 2rem;
-  }
-  &__title{
-    letter-spacing: -.06rem;
-    margin-bottom: 2rem;
-  }
-  &__text{
+	max-width: 60rem;
+	margin-left: auto;
+	@media (max-width: 1023px){
+		max-width: 100%;
+	}
+	&-section{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 100vh;
+		background-position: center;
+		background-size: cover;
+		@media (max-width: 1023px){
+			background-image: none !important;
+			background: $orangey-yellow;
 
-  }
+			svg{
+				margin: 3rem 0;
+				max-width: 100%;
+
+			}
+
+		}
+	}
+	&__decor{
+		display: block;
+		width: 25rem;
+		margin-bottom: 2rem;
+	}
+	&__title{
+		letter-spacing: -.06rem;
+		margin-bottom: 2rem;
+	}
+	&__text{
+
+	}
+  //ECG animation
+
+	svg{
+		position: relative;
+		transition: all 0.5s ease-in-out;
+		.ecg{
+			fill: none;
+			stroke: #fff;
+			stroke-width: 3;
+			stroke-linecap: round;
+			stroke-linejoin: miter;
+			opacity: 0;
+			stroke-dashoffset: 1000;
+			stroke-dasharray: 1000;
+			animation: ecg 1.5s linear reverse infinite;
+		}
+	}
+	
+	@include custom-bp(768){
+		&,
+		.el-title{
+			text-align: center;
+		}
+
+		&__text{
+			text-align: left;
+		}
+		
+	}
+}
+
+@keyframes ecg {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    50% {
+      stroke-dashoffset: 2000;
+    }
+    99% {
+      opacity: 0;
+      stroke-dashoffset: 3000;
+    }
+    100% {
+      stroke-dashoffset: 1000;
+    }
 }

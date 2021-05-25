@@ -99,8 +99,139 @@ if( function_exists('acf_add_options_page') ) {
 
 }
 
-//get order
-function getOrder(){
+add_action( 'init', 'register_post_types' );
+function register_post_types(){
+    register_post_type( 'contacts', [
+        'label'  => null,
+        'labels' => [
+            'name'               => 'Contacts', // основное название для типа записи
+            'singular_name'      => 'Contacts request', // название для одной записи этого типа
+            'add_new'            => 'Add contacts request', // для добавления новой записи
+            'add_new_item'       => 'Add contacts request', // заголовка у вновь создаваемой записи в админ-панели.
+            'edit_item'          => 'Edit contacts request', // для редактирования типа записи
+            'new_item'           => 'New contacts request', // текст новой записи
+            'view_item'          => 'See contacts request', // для просмотра записи этого типа.
+            'search_items'       => 'Find contacts request', // для поиска по этим типам записи
+            'not_found'          => 'Not found', // если в результате поиска ничего не было найдено
+            'not_found_in_trash' => 'Not found in basket', // если не было найдено в корзине
+            'parent_item_colon'  => '', // для родителей (у древовидных типов)
+            'menu_name'          => 'Contacts', // название меню
+        ],
+        'description'         => '',
+        'public'              => true,
+        'show_in_menu'        => null, // показывать ли в меню адмнки
+        'show_in_rest'        => null, // добавить в REST API. C WP 4.7
+        'rest_base'           => null, // $post_type. C WP 4.7
+        'menu_position'       => null,
+        'menu_icon'           => null,
+        'hierarchical'        => true,
+        'supports'            => [ 'title', 'editor' ], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'taxonomies'          => [],
+        'has_archive'         => false,
+        'rewrite'             => true,
+        'query_var'           => true,
+    ] );
+    register_post_type( 'orders', [
+        'label'  => null,
+        'labels' => [
+            'name'               => 'Orders', // основное название для типа записи
+            'singular_name'      => 'Order', // название для одной записи этого типа
+            'add_new'            => 'Add order', // для добавления новой записи
+            'add_new_item'       => 'Add order', // заголовка у вновь создаваемой записи в админ-панели.
+            'edit_item'          => 'Edit order', // для редактирования типа записи
+            'new_item'           => 'New order', // текст новой записи
+            'view_item'          => 'See order', // для просмотра записи этого типа.
+            'search_items'       => 'Find order', // для поиска по этим типам записи
+            'not_found'          => 'Not found', // если в результате поиска ничего не было найдено
+            'not_found_in_trash' => 'Not found in basket', // если не было найдено в корзине
+            'parent_item_colon'  => '', // для родителей (у древовидных типов)
+            'menu_name'          => 'Orders', // название меню
+        ],
+        'description'         => '',
+        'public'              => true,
+        'show_in_menu'        => null, // показывать ли в меню адмнки
+        'show_in_rest'        => null, // добавить в REST API. C WP 4.7
+        'rest_base'           => null, // $post_type. C WP 4.7
+        'menu_position'       => null,
+        'menu_icon'           => null,
+        'hierarchical'        => true,
+        'supports'            => [ 'title', 'editor' ], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'taxonomies'          => [],
+        'has_archive'         => false,
+        'rewrite'             => true,
+        'query_var'           => true,
+    ] );
+}
+
+function themes_taxonomy() {
+    register_taxonomy(
+        'requests_type',  // The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
+        'contacts',             // post type name
+        array(
+            'hierarchical' => true,
+            'label' => 'Request type', // display name
+            'query_var' => true,
+            'rewrite' => array(
+                'slug' => '',    // This controls the base slug that will display before each term
+                'with_front' => false  // Don't display the category base before
+            )
+        )
+    );
+    register_taxonomy(
+        'requests_type_orders',  // The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
+        'orders',             // post type name
+        array(
+            'hierarchical' => true,
+            'label' => 'Request type', // display name
+            'query_var' => true,
+            'rewrite' => array(
+                'slug' => '',    // This controls the base slug that will display before each term
+                'with_front' => false  // Don't display the category base before
+            )
+        )
+    );
+}
+add_action( 'init', 'themes_taxonomy');
+
+//get contacts
+function getContacts(){
+
+    $pageTitle = $_POST['form_subject'];
+    $name = $_POST['full_name'];
+    $phoneNumber = $_POST['phone'];
+    $email = $_POST['email'];
+    $company = $_POST['company'];
+    $message = $_POST['message'];
+    $type = $_POST['contact_form_type'];
+
+
+    $post_data = array(
+        'post_title' => $name . ', ' . $pageTitle,
+        'post_type' => 'contacts',
+        'post_status' => 'publish',
+    );
+
+
+    $post_id = wp_insert_post($post_data);
+
+    wp_set_object_terms( $post_id, $type, 'requests_type' );
+
+    $post = get_post($post_id);
+
+    $clientInfo = array(
+        'full_name' => $name,
+        'phone' => $phoneNumber,
+        'email' => $email,
+        'company' => $company,
+        'message' => $message,
+    );
+
+    $clientInfoArr[] = $clientInfo;
+
+
+    update_field("order_date", get_the_date('j.m.Y', $post), $post);
+
+    update_field("client_info", $clientInfoArr, $post);
 
     $c = true;
     $project_name = trim($_POST["project_name"]);
@@ -123,7 +254,84 @@ function getOrder(){
         "Content-Type: text/html; charset=utf-8" . PHP_EOL .
         'From: '.adopt($project_name).' <info@'.$_SERVER['HTTP_HOST'].'>' . PHP_EOL .
         'Reply-To: '.$admin_email.'' . PHP_EOL;
-    mail($admin_email, adopt($form_subject), $message, $headers );
+    $mail_sent = mail($admin_email, adopt($form_subject), $message, $headers );
+
+    if($mail_sent){
+        setcookie('order_user_name', $_POST['full_name'], time()+3600, COOKIEPATH, COOKIE_DOMAIN);
+    }
+    die();
+
+}
+
+add_action('wp_ajax_nopriv_contacts', 'getContacts');
+add_action('wp_ajax_contacts', 'getContacts');
+
+//get order
+function getOrder(){
+
+    $pageTitle = $_POST['form_subject'];
+    $name = $_POST['full_name'];
+    $phoneNumber = $_POST['phone'];
+    $email = $_POST['email'];
+    $company = $_POST['company'];
+    $message = $_POST['message'];
+    $type = $_POST['request_type'];
+
+    $post_data = array(
+        'post_title' => $name . ', ' . $pageTitle,
+        'post_type' => 'orders',
+        'post_status' => 'publish',
+    );
+
+
+    $post_id = wp_insert_post($post_data);
+
+    wp_set_object_terms( $post_id, $type, 'requests_type_orders' );
+
+    $post = get_post($post_id);
+
+    $clientInfo = array(
+        'full_name' => $name,
+        'phone' => $phoneNumber,
+        'email' => $email,
+        'company' => $company,
+        'message' => $message,
+        'products_info' => $name,
+    );
+
+    $clientInfoArr[] = $clientInfo;
+
+
+    update_field("order_date", get_the_date('j.m.Y', $post), $post);
+
+    update_field("client_info", $clientInfoArr, $post);
+
+    $c = true;
+    $project_name = trim($_POST["project_name"]);
+    $admin_email  = trim($_POST["admin_email"]);
+    $form_subject = trim($_POST["form_subject"]);
+    foreach ( $_POST as $key => $value ) {
+        if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" && $key != "action" && $key != 'request_type' ) {
+            $message .= "
+      " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
+      <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
+      <td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
+      </tr>";
+        }
+    }
+    $message = "<table style='width: 100%;'>$message</table>";
+    function adopt($text) {
+        return '=?UTF-8?B?'.base64_encode($text).'?=';
+    }
+    $headers = "MIME-Version: 1.0" . PHP_EOL .
+        "Content-Type: text/html; charset=utf-8" . PHP_EOL .
+        'From: '.adopt($project_name).' <info@'.$_SERVER['HTTP_HOST'].'>' . PHP_EOL .
+        'Reply-To: '.$admin_email.'' . PHP_EOL;
+    $mail_sent = mail($admin_email, adopt($form_subject), $message, $headers );
+
+    if($mail_sent){
+        setcookie('order_user_name', $_POST['full_name'], time()+3600, COOKIEPATH, COOKIE_DOMAIN);
+    }
 
     die();
 
@@ -131,39 +339,6 @@ function getOrder(){
 
 add_action('wp_ajax_nopriv_order', 'getOrder');
 add_action('wp_ajax_order', 'getOrder');
-
-//get contacts
-function getContacts(){
-
-    $c = true;
-    $project_name = trim($_POST["project_name"]);
-    $admin_email  = trim($_POST["admin_email"]);
-    $form_subject = trim($_POST["form_subject"]);
-    foreach ( $_POST as $key => $value ) {
-        if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" && $key != "action" && $key != 'request_type' ) {
-            $message .= "
-      " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
-      <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
-      <td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
-      </tr>";
-        }
-    }
-    $message = "<table style='width: 100%;'>$message</table>";
-    function adopt($text) {
-        return '=?UTF-8?B?'.base64_encode($text).'?=';
-    }
-    $headers = "MIME-Version: 1.0" . PHP_EOL .
-        "Content-Type: text/html; charset=utf-8" . PHP_EOL .
-        'From: '.adopt($project_name).' <info@'.$_SERVER['HTTP_HOST'].'>' . PHP_EOL .
-        'Reply-To: '.$admin_email.'' . PHP_EOL;
-    mail($admin_email, adopt($form_subject), $message, $headers );
-
-    die();
-
-}
-
-add_action('wp_ajax_nopriv_contacts', 'getContacts');
-add_action('wp_ajax_contacts', 'getContacts');
 
 //loadMore
 function loadmore_ajax_handler()

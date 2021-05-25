@@ -1,0 +1,39 @@
+.intro-section--thanks{
+
+}
+
+.nq-thanks{
+    background: #fff;
+    @include center-x-y;
+    z-index: 10;
+    padding: 7.6rem 6rem;
+    background-color: #ffffff;
+    max-width: 60rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    .el-subtitle{
+        margin: 3rem 0 6rem 0;
+        position: relative;
+        &:after{
+            content: '';
+            @include center-x;
+            width: 5rem;
+            height: 0.2rem;
+            background-color: $black;
+            bottom: -3rem;
+
+        }
+    }
+
+    @include custom-bp(768){
+        max-width: 100%;
+        width: calc(100% - 4rem);
+        margin: 0 auto;
+        padding: 5rem 4rem;
+
+    }
+}

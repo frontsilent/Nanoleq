@@ -227,12 +227,6 @@
       }
       @media (max-width: 1023px){
         left: 50%;
-        
-      }
-      @include custom-bp(768){
-        margin-left: 2rem;
-        margin-top: 9rem;
-        max-width: 170%;
       }
     }
     .activity-advantages__image-app{
@@ -262,11 +256,6 @@
       }
       @media (max-width: 1023px){
         left: 50%;
-      }
-      @include custom-bp(768){
-        margin-left: 2rem;
-        margin-top: 9rem;
-        max-width: 170%;
       }
     }
     .activity-advantages__image-app{

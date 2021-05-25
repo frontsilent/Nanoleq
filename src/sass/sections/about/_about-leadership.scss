@@ -12,16 +12,18 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+    padding: 8rem 0 0;
     @media (max-width: 1023px){
-      padding: 6rem 8rem 0;
+      padding: 8rem 8rem 0;
     }
     @media (max-width: 767px){
-      padding: 0 7rem 0;
+      padding: 7rem 7rem 0;
     }
     &-wrap{
       @media (max-width: 767px){
         max-width: 600px;
         margin: 0 auto;
+        padding-bottom: 7rem;
         position: relative;
         .slick-list{
           margin: 0 -2rem;
@@ -32,7 +34,6 @@
       }
     }
   }
-  //ADVISORS
   &__advisors{
     display: flex;
     justify-content: center;
@@ -51,9 +52,6 @@
     &-wrapper{
       padding: 8rem 0 3rem;
       background: #fff;
-      @media (max-width: 1023px){
-        padding-bottom: 0;
-      }
       @media (max-width: 767px){
         padding: 7rem 0 0 ;
       }
@@ -61,7 +59,7 @@
     &-slider-wrap{
       @media (max-width: 767px){
         position: relative;
-        padding: 0 7rem;
+        padding: 0 7rem 3rem;
         .slick-list{
           margin: 0 -2rem;
         }
@@ -77,41 +75,13 @@
         margin-bottom: 6rem;
       }
     }
-    .about-leadership-tab__top-wrap{
-      width: 22rem;
-      margin: 0 8rem;
-      @media (max-width: 1199px){
-        margin: 0 6rem;
-      }
-      @media (max-width: 1023px){
-        margin: 0 2rem;
-      }
-    }
-    .about-leadership-tab__top{
-      padding-bottom: 7.5rem;
-      @media (max-width: 1199px){
-        padding-bottom: 7.5rem;
-      }
-      @media (max-width: 1023px){
-        padding-bottom: 7.5rem;
-      }
-      @media (max-width: 767px){
-        padding-bottom: 0;
-      }
-    }
     .about-leadership-member{
-      margin-bottom: 0;
+      margin: 0 8rem 7.5rem;
       @media (max-width: 1199px){
-        margin-bottom: 0;
+        margin: 0 6rem 7.5rem;
       }
       @media (max-width: 1023px){
-        margin-bottom: 0;
-      }
-    }
-    .about-leadership-tab__arrow{
-      display: none;
-      @media (max-width: 767px){
-        display: flex;
+        margin: 0 2rem 7.5rem;
       }
     }
   }
@@ -124,7 +94,6 @@
   width: 22rem;
   text-align: center;
   margin: 0 4rem 7.5rem;
-  cursor: pointer;
   @media (max-width: 1439px){
     margin: 0 1rem 7.5rem;
   }
@@ -135,7 +104,6 @@
     width: 22rem;
     margin: 0 auto;
       z-index: 98;
-    padding-bottom: 8rem;
   }
   &__img{
     position: relative;
@@ -171,7 +139,6 @@
     letter-spacing: 0.11rem;
     @media (max-width: 600px){
         letter-spacing: 0.05rem;
-      min-height: 3.7rem;
     }
   }
 }
@@ -209,8 +176,9 @@
     position: relative;
     z-index: 97;
     cursor: pointer;
-    @media (max-width: 1023px){
+    @media (max-width: 767px){
         z-index: 98;
+      pointer-events: none;
     }
   }
   &__arrow{
@@ -225,11 +193,8 @@
     transform: translateX(-50%);
     bottom: 0;
     opacity: 0;
-    @media (max-width: 1023px){
-      display: none;
-    }
     @media (max-width: 767px){
-      display: flex;
+      display: none;
     }
     svg{
       transform: rotate(90deg);
@@ -240,12 +205,13 @@
     &-left{
       width: 26rem;
       padding-right: 4rem;
-      @media (max-width: 767px){
+      @media (max-width: 1023px){
         display: none;
       }
     }
     &-right{
       width: calc(100% - 26rem);
+      padding-left: 4rem;
       @media (max-width: 1023px){
         width: 100%;
         padding-left: 0;
@@ -261,7 +227,7 @@
       position: relative;
       background: $black;
       @media (max-width: 767px){
-        margin-bottom: 4rem;
+        display: none;
       }
     }
   }
@@ -269,21 +235,12 @@
     display: flex;
     align-items: flex-start;
     min-height: 39rem;
-    padding: 6rem 0 6rem 12rem;
+    padding: 6rem 0 6rem 8rem;
     @media (max-width: 1439px){
       padding: 4rem 0 4rem 4rem;
     }
     @media (max-width: 1023px){
       padding-left: 0;
-    }
-    @media (max-width: 767px){
-      padding-top: 6rem;
-    }
-    &--long{
-      padding-left: 4rem;
-      @media (max-width: 1439px){
-        padding-left: 0;
-      }
     }
     &-left{
       text-align: center;
@@ -329,9 +286,8 @@
 //leadershipSlider
 .leadership-slider{
   &__arrow{
-    display: none !important;
+    display: none;
     @media (max-width: 767px){
-      display: flex !important;
       top: calc(26rem / 2 - 2.1rem);
       &--prev{
         left: 0;
@@ -385,11 +341,14 @@
   .about-leadership-member__img{
     &::before{
       background: $orangey-yellow;
+      @media (max-width: 767px){
+        background: $black;
+      }
     }
   }
   .about-leadership-member__name{
     color: $orangey-yellow;
-    @media (max-width: 1023px){
+    @media (max-width: 767px){
       color: $black;
     }
   }

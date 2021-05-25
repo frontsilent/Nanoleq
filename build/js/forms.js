@@ -1,24 +1,29 @@
 // VALIDATION
+var getCookie = function (name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
+};
 $.validator.setDefaults({
     ignore: []
 });
-$.validator.addMethod("letters", function(value, element) {
+$.validator.addMethod("letters", function (value, element) {
     return this.optional(element) || /^[^1-9!@#\$%\^&\*\(\)\[\]:;,.?=+_<>`~\\\/"]+$/i.test(value);
 });
-$.validator.addMethod("email", function(value) {
+$.validator.addMethod("email", function (value) {
     if (value == '') return true;
     var regexp = /[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     return regexp.test(value);
 });
-$.validator.addMethod("digits", function(value, element) {
+$.validator.addMethod("digits", function (value, element) {
     return this.optional(element) || /^(\+?\d+)?\s*(\(\d+\))?[\s-]*([\d-]*)$/i.test(value);
 });
-$.validator.addMethod("dateFormat", function(value, element) {
+$.validator.addMethod("dateFormat", function (value, element) {
     return this.optional(element) || /^\d{1,2}\/\d{1,2}\/\d{4}$/i.test(value);
 });
 
 $("form").each(function () { //Change
-    let ths= $(this),
+    let ths = $(this),
         id = ths.attr('id');
 
     ths.validate({
@@ -28,7 +33,7 @@ $("form").each(function () { //Change
         unhighlight: function (element) {
             $(element).closest('div').removeClass("error");
         },
-        errorPlacement: function (error, element) {},
+        errorPlacement: function (error, element) { },
         errorClass: "error-text",
         rules: {
             name: {
@@ -75,21 +80,26 @@ $("form").each(function () { //Change
                 processData: false,
                 contentType: false,
                 data: formData,
-
-            }).done(function () {
+            }).done(function (data) {
+                var userName = getCookie('order_user_name');
+                if (userName) {
+                    window.location.replace('/thank-you');
+                } else {
+                    alert('no cookie');
+                }
 
                 ths.trigger("reset");
             });
             return false;
         },
-        success: function () {},
+        success: function () { },
     })
 });
 
 let submitBtn = $('.product-submit-btn'),
     adminEmail = $('[name=admin_email]');
 
-submitBtn.on('click', function (){
+submitBtn.on('click', function () {
     let ths = $(this),
         thsEmail = ths.attr('data-email');
 
@@ -111,7 +121,7 @@ inputs.on('focus', function () {
         thsParent = ths.closest('.input-wrap'),
         quantityWrapper = ths.closest('.order-quantity__items');
 
-    if(thsParent.hasClass('order-quantity__item--full')){
+    if (thsParent.hasClass('order-quantity__item--full')) {
         quantityWrapper.find('.order-quantity__item__input').prop('checked', false);
     }
 
@@ -122,7 +132,7 @@ inputs.on('focus', function () {
 $('.order-quantity__item__input').on('click', function () {
 
     let ths = $(this);
-    if(ths.prop('checked') == true){
+    if (ths.prop('checked') == true) {
         ths.closest('.order-product-wrap').find('.order-product-input').prop('checked', true);
     }
 });

@@ -1,0 +1,24 @@
+.vital-slider{
+  &-section{
+    padding: 2px 0 0;
+    overflow: hidden;
+    .slick-list{
+      margin: 0 -1px;
+    }
+    .slick-slide{
+      margin: 0 1px;
+    }
+  }
+  &__arrow{
+    top: 2px;
+    &--prev{
+      left: 0;
+      svg{
+        transform: scale(-1, 1);
+      }
+    }
+    &--next{
+      right: 0;
+    }
+  }
+}

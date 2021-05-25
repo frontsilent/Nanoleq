@@ -34,7 +34,7 @@
                     echo '<div class="starter-kit-description">';
                         echo ($cs_price ? '<div class="el-subtitle el-subtitle--black-orange">EUR <i>'.$cs_price.'</i></div>' : '');
                         echo ($cs_s_description ? '<div class="text-group">'.$cs_s_description.'</div>' : '');
-                        echo ($cs_order_link ? '<a href="'.$cs_order_link.'" class="order-btn">order your kit</a>' : '');
+                        echo '<a href="/order?prod_kit='.$pageName.'" class="order-btn">order your kit</a>';
                     echo '</div>';
                 echo '</div>';
             echo '</div>';

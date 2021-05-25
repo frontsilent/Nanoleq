@@ -3,7 +3,7 @@
 @import "components/mixins";
 
 // LIBS
-@import "../cssLibs/slick.min.css";
+@import "../lib/slick-carousel/slick/slick.scss";
 
 // BASE
 @import "components/fonts";
@@ -34,3 +34,4 @@
 @import "pages/phantomlink/phantomlink";
 @import "pages/contacts/contacts";
 @import "pages/order/order";
+@import "pages/thankyou/thankyou";

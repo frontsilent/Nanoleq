@@ -22,7 +22,7 @@ $args = array(
                             <a class="blog-top__category" href="<?php echo get_term_link($term); ?>"><?php echo $term_name; ?></a>
                         <?php endforeach; ?>
                     <?php endif; ?>
-                    <a class="blog-top__title el-title el-title--white"><?php echo get_the_title($topArticle);?></a>
+                    <a href="<?php echo get_permalink($topArticle);?>" class="blog-top__title el-title el-title--white"><?php echo get_the_title($topArticle);?></a>
                     <div class="blog-top__text text-group text-group--white">
                         <?php $articleText = get_field('post_text', $topArticle); ?>
                         <p><?php echo mb_strimwidth(strip_tags($articleText), 0, 503, "..."); ?></p>
@@ -59,7 +59,7 @@ $args = array(
                                         <a class="blog-item__cat" href="<?php echo get_term_link($term);?>"><?php echo $term_name; ?></a>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
-                                <a class="blog-item__title"><?php echo get_the_title($articleLeft); ?></a>
+                                <a href="<?php echo get_permalink($articleLeft); ?>" class="blog-item__title"><?php echo get_the_title($articleLeft); ?></a>
                                 <div class="blog-item__text"><?php echo get_field('post_description', $articleLeft);?></div>
                                 <a href="<?php echo get_permalink($articleLeft); ?>" class="blog-item__more">Read More</a>
                             </div>
@@ -92,7 +92,7 @@ $args = array(
                                         <a class="blog-item__cat" href="<?php echo get_term_link($term);?>"><?php echo $term_name; ?></a>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
-                                <a class="blog-item__title"><?php echo get_the_title($articleRight); ?></a>
+                                <a href="<?php echo get_permalink($articleRight); ?>" class="blog-item__title"><?php echo get_the_title($articleRight); ?></a>
                                 <div class="blog-item__text"><?php echo get_field('post_description', $articleRight);?></div>
                                 <a href="<?php echo get_permalink($articleRight); ?>" class="blog-item__more">Read More</a>
                             </div>
