@@ -22,8 +22,8 @@ get_header();
             <img src="<?php bloginfo('template_url'); ?>/img/vital-desc-4.png" alt="image" class="vital-desc__img vital-desc__img--4">
             <img src="<?php bloginfo('template_url'); ?>/img/vital-desc-5.png" alt="image" class="vital-desc__img vital-desc__img--5">
             <div class="vital-desc__images">
-                <img src="<?php bloginfo('template_url'); ?>/img/vital-desc-1.gif" alt="image" class="vital-desc__img vital-desc__img--1">
-                <img src="<?php bloginfo('template_url'); ?>/img/vital-desc-3.gif" alt="image" class="vital-desc__img vital-desc__img--3">
+                <img src="<?php bloginfo('template_url'); ?>/img/vital-desc-1.png" alt="image" class="vital-desc__img vital-desc__img--1">
+                <img src="<?php bloginfo('template_url'); ?>/img/vital-desc-3.png" alt="image" class="vital-desc__img vital-desc__img--3">
             </div>
             <div class="vital-desc-connect">
                 <div class="vital-desc-connect__title">

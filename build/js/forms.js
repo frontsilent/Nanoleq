@@ -47,10 +47,6 @@ $("form").each(function () { //Change
                 required: true,
                 email: true
             },
-            date: {
-                required: true,
-                dateFormat: true
-            }
         },
         messages: {
             name: {
@@ -63,10 +59,6 @@ $("form").each(function () { //Change
             email: {
                 required: "Required field",
                 email: "Invalid input, please enter the correct data"
-            },
-            date: {
-                required: "Required field",
-                dateFormat: "Invalid input, please enter the correct data"
             },
         },
         submitHandler: function (form) {
@@ -97,13 +89,16 @@ $("form").each(function () { //Change
 });
 
 let submitBtn = $('.product-submit-btn'),
+    requestType = $('[name=request_type]'),
     adminEmail = $('[name=admin_email]');
 
 submitBtn.on('click', function () {
     let ths = $(this),
-        thsEmail = ths.attr('data-email');
+        thsEmail = ths.attr('data-email'),
+        thsRequestType = ths.attr('data-request-type');
 
     adminEmail.val(thsEmail);
+    requestType.val(thsRequestType);
 })
 
 
