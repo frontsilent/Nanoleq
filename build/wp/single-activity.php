@@ -526,9 +526,15 @@ get_header();
                             <div class="activity-advantages__partners">
                                 <?php if( have_rows('activity_partners')) :?>
                                     <?php while( have_rows('activity_partners')) : the_row(); ?>
-                                        <a href="<?php echo get_sub_field('link'); ?>">
-                                            <img src="<?php echo get_sub_field('icon'); ?>" alt="adidas">
-                                        </a>
+                                        <?php if (get_sub_field('link')) : ?>
+                                            <a href="<?php echo get_sub_field('link'); ?>">
+                                                <img src="<?php echo get_sub_field('icon'); ?>" alt="adidas">
+                                            </a>
+                                        <?php else: ?>
+                                            <span>
+                                                <img src="<?php echo get_sub_field('icon'); ?>" alt="adidas">
+                                            </span>
+                                        <?php endif; ?>
                                     <?php endwhile; ?>
                                 <?php endif;?>
                                 <?php if (get_field('activity_more')) : ?>

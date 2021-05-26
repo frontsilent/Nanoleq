@@ -5,6 +5,7 @@ var blocks = Array.from(document.querySelectorAll('.section')),
     headerSection = $('.header-section'),
     mainMenuWrap = $('.main-menu-wrap'),
     menuBurger = $('.tog-nav');
+
 window.addEventListener('scroll', function () {
     if (window.scrollY > 200) {
         headerSection.removeClass('bg');
@@ -32,8 +33,6 @@ function getVisiblePart(element) {
 var video = document.getElementById('intro-video'),
     videUnMute = document.querySelector('.intro-video__unmute'),
     videMute = document.querySelector('.intro-video__mute');
-
-document.addEventListener('DOMContentLoaded', function () {
 
     function triggerEvent(el, type) {
         // IE9+ and other modern browsers
@@ -66,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     triggerEvent(videUnMute, 'click');
-});
 
 //MENU SLIDE TOGGLE
 
