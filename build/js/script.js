@@ -161,36 +161,6 @@ aboutLeadershipTabClose.on('click', function () {
     thsBottomActiveTab.removeClass('active');
     thsTopActiveTab.removeClass('active');
 });
-// leadershipSliders mobile
-
-// var leadershipSliderDesk = $('.about-leadership-tab__header--desk');
-//
-// if (leadershipSliderDesk.length > 0) {
-//     leadershipSliderDesk.slick({
-//         arrows: true,
-//         prevArrow: $('.leadership-slider__arrow--prev'),
-//         nextArrow: $('.leadership-slider__arrow--next'),
-//         dots: false,
-//         responsive: [{
-//             breakpoint: 9999,
-//             settings: "unslick"
-//         }, {
-//             breakpoint: 768,
-//             settings: {
-//                 slidesToShow: 2,
-//                 slidesToScroll: 1,
-//                 arrows: true
-//             }
-//         }, {
-//             breakpoint: 550,
-//             settings: {
-//                 slidesToShow: 1,
-//                 slidesToScroll: 1,
-//                 arrows: true
-//             }
-//         }]
-//     });
-// }
 
 var leadershipSliderMob = $('.about-leadership-tab__header--mob');
 
@@ -324,58 +294,58 @@ $(document).on('click', '#product-show-details', function (e) {
 $(document).on('click', '#contact-order-nanoleq', function (e) {
     window.location.replace('/order');
 });
-// function initVitalShirtsAnimation() {
-//     function checkDistanceState() {
-//         var width = $(window).width();
-//         var headerDistance = $('#header').offset().top;
-//         var blockDistance = $('#vital-desc').offset().top;
-//         var distanceBetween = blockDistance - headerDistance;
-//         if(distanceBetween < 400 && !$('.vital-desc__img--1, .vital-desc__img--2, .vital-desc__img--3, .vital-desc__img--4, .vital-desc__img--5').hasClass('animate')) {
-//             $('.vital-desc__img--1, .vital-desc__img--2, .vital-desc__img--3, .vital-desc__img--4, .vital-desc__img--5').addClass('animate');
-//         }
-//     }
-//     checkDistanceState();
-//     $(window).scroll(checkDistanceState);
-// }
-//
-// function initProductAnimation() {
-//     function checkDistanceState() {
-//         var width = $(window).width();
-//         var headerDistance = $('#header').offset().top;
-//         $('.activity-performance-section').each(function() {
-//             var blockDistance = $(this).offset().top;
-//             var distanceBetween = blockDistance - headerDistance;
-//             if(distanceBetween < 400 && !$(this).find('.activity-performance__item, .activity-performance__part--image').hasClass('animate')) {
-//                 $(this).find('.activity-performance__item, .activity-performance__part--image').addClass('animate');
-//             }
-//         })
-//     }
-//     checkDistanceState();
-//     $(window).scroll(checkDistanceState);
-// }
-//
-// function initProductTableAnimation() {
-//     function checkDistanceState() {
-//         var width = $(window).width();
-//         var headerDistance = $('#header').offset().top;
-//         var blockDistance = $('.activity-metrics-section').offset().top;
-//         var distanceBetween = blockDistance - headerDistance;
-//         if(distanceBetween < 700 && !$('.activity-metrics__part').hasClass('animate')) {
-//             $('.activity-metrics__part').addClass('animate');
-//         }
-//     }
-//     checkDistanceState();
-//     $(window).scroll(checkDistanceState);
-// }
-//
-// $(document).ready(function() {
-//     if($('#vital-desc').length) {
-//         initVitalShirtsAnimation();
-//     }
-//     if($('.activity-performance-section').length) {
-//         initProductAnimation();
-//     }
-//     if($('.activity-metrics-section')) {
-//         initProductTableAnimation();
-//     }
-// })
+function initVitalShirtsAnimation() {
+    function checkDistanceState() {
+        var width = $(window).width();
+        var headerDistance = $('#header').offset().top;
+        var blockDistance = $('#vital-desc').offset().top;
+        var distanceBetween = blockDistance - headerDistance;
+        if(distanceBetween < 400 && !$('.vital-desc__img--1, .vital-desc__img--2, .vital-desc__img--3, .vital-desc__img--4, .vital-desc__img--5').hasClass('animate')) {
+            $('.vital-desc__img--1, .vital-desc__img--2, .vital-desc__img--3, .vital-desc__img--4, .vital-desc__img--5').addClass('animate');
+        }
+    }
+    checkDistanceState();
+    $(window).scroll(checkDistanceState);
+}
+
+function initProductAnimation() {
+    function checkDistanceState() {
+        var width = $(window).width();
+        var headerDistance = $('#header').offset().top;
+        $('.activity-performance-section').each(function() {
+            var blockDistance = $(this).offset().top;
+            var distanceBetween = blockDistance - headerDistance;
+            if(distanceBetween < 400 && !$(this).find('.activity-performance__item, .activity-performance__part--image').hasClass('animate')) {
+                $(this).find('.activity-performance__item, .activity-performance__part--image').addClass('animate');
+            }
+        })
+    }
+    checkDistanceState();
+    $(window).scroll(checkDistanceState);
+}
+
+function initProductTableAnimation() {
+    function checkDistanceState() {
+        var width = $(window).width();
+        var headerDistance = $('#header').offset().top;
+        var blockDistance = $('.activity-metrics-section').offset().top;
+        var distanceBetween = blockDistance - headerDistance;
+        if(distanceBetween < 700 && !$('.activity-metrics__part').hasClass('animate')) {
+            $('.activity-metrics__part').addClass('animate');
+        }
+    }
+    checkDistanceState();
+    $(window).scroll(checkDistanceState);
+}
+
+$(document).ready(function() {
+    if($('#vital-desc').length) {
+        initVitalShirtsAnimation();
+    }
+    if($('.activity-performance-section').length) {
+        initProductAnimation();
+    }
+    if($('.activity-metrics-section')) {
+        initProductTableAnimation();
+    }
+})
