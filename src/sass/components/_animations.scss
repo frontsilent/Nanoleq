@@ -3,3 +3,232 @@
     transform: scale(1.1);
   }
 }
+@-webkit-keyframes ecg {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    stroke-dashoffset: 2000;
+  }
+  99% {
+    opacity: 0;
+    stroke-dashoffset: 3000;
+  }
+  100% {
+    stroke-dashoffset: 1000;
+  }
+}
+@keyframes ecg {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    stroke-dashoffset: 2000;
+  }
+  99% {
+    opacity: 0;
+    stroke-dashoffset: 3000;
+  }
+  100% {
+    stroke-dashoffset: 1000;
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes showTopImg {
+  from {
+    opacity: 0;
+    transform: translate(0, -160%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+}
+@keyframes showTopImgMob {
+  from {
+    opacity: 0;
+    top: 0;
+  }
+  to {
+    opacity: 1;
+    top: 35rem;
+  }
+}
+@keyframes showTopImgMobRight {
+  from {
+    opacity: 0;
+    top: 0;
+  }
+  to {
+    opacity: 1;
+    top: 42rem;
+  }
+}
+@keyframes showBottomImg {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes showBottomImgMob {
+  from {
+    opacity: 0;
+    top: -30rem;
+  }
+  to {
+    opacity: 1;
+    top: 4rem;
+  }
+}
+@keyframes showBottomArr {
+  from {
+    opacity: 0;
+    transform: translateY(30rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes showFromOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes showTableFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes floating {
+  0%,
+  100% {
+    -webkit-transform: translatey(0);
+    transform: translatey(0);
+  }
+  50% {
+    -webkit-transform: translatey(-20px);
+    transform: translatey(-20px);
+  }
+}
+@keyframes floating {
+  0%,
+  100% {
+    -webkit-transform: translatey(0);
+    transform: translatey(0);
+  }
+  50% {
+    -webkit-transform: translatey(-20px);
+    transform: translatey(-20px);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+}
+
+.main-desc svg .ecg {
+  animation: ecg 1.5s linear reverse infinite;
+}
+.glyphicon-spin {
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+.vital-desc__img--1.animate {
+  animation: showTopImg 1s linear forwards;
+}
+.vital-desc__img--2.animate {
+  animation: showBottomImg 1s linear forwards;
+}
+.vital-desc__img--3.animate {
+  animation: showTopImg 1s linear forwards;
+}
+.vital-desc__img--4.animate {
+  animation: showBottomArr 1s linear forwards;
+}
+.vital-desc__img--5.animate {
+  animation: showBottomArr 1s linear forwards;
+}
+.activity-performance__part--image.animate {
+  animation: showFromOpacity 1s linear forwards;
+}
+.activity-performance__item.animate {
+  animation: showFromOpacity 1s linear 1.2s forwards;
+}
+.activity-metrics__part.animate:nth-child(1) {
+  animation: showTableFromTop 1s linear forwards;
+}
+.activity-metrics__part.animate:nth-child(2) {
+  animation: showTableFromTop 1s linear 0.5s forwards;
+}
+.activity-metrics__part.animate:nth-child(3) {
+  animation: showTableFromTop 1s linear 1s forwards;
+}
+.products-slider__leftImage,
+.products-slider__rightImage {
+  animation: floating 7s ease-in-out infinite;
+}
+.products-slider__leftImage .floating-hexagon,
+.products-slider__rightImage .floating-hexagon {
+  animation: spin 20s linear 0s infinite;
+}
+
+.products-slider__rightImage {
+  animation-delay: 0.6s;
+}
+
+@media (max-width: 767px){
+  .vital-desc__img--1.animate {
+    animation: showTopImgMob 1s linear forwards;
+  }
+  .vital-desc__img--2.animate {
+    animation: showBottomImgMob 1s linear forwards;
+  }
+  .vital-desc__img--3.animate {
+    animation: showTopImgMobRight 1s linear forwards;
+  }
+}
