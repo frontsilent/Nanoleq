@@ -6,7 +6,7 @@
         </div>
     <?php endif; ?>
     <?php if (get_field('intro_video')) : ?>
-        <video class="intro-video" id="intro-video" src="<?php echo get_field('intro_video'); ?>" playsinline autoplay loop></video>
+        <video class="intro-video" id="intro-video" src="<?php echo get_field('intro_video'); ?>" autoplay muted loop playsinline></video>
     <?php endif; ?>
     <img src="<?php bloginfo('template_url'); ?>/img/scroll-btn.svg" alt="scroll" class="intro__scroll">
     <?php if (get_field('intro_video')) : ?>

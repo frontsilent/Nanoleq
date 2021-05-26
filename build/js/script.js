@@ -33,21 +33,42 @@ var video = document.getElementById('intro-video'),
     videUnMute = document.querySelector('.intro-video__unmute'),
     videMute = document.querySelector('.intro-video__mute');
 
-if (typeof videUnMute != 'undefined' && videUnMute != null) {
-    videUnMute.addEventListener('click', function (e) {
-        video.muted = !video.muted;
-        videUnMute.classList.add('active');
-        videMute.classList.remove('active');
-    });
-}
+document.addEventListener('DOMContentLoaded', function () {
 
-if (typeof videMute != 'undefined' && videMute != null) {
-    videMute.addEventListener('click', function (e) {
-        video.muted = true;
-        videMute.classList.add('active');
-        videUnMute.classList.remove('active');
-    });
-} //MENU SLIDE TOGGLE
+    function triggerEvent(el, type) {
+        // IE9+ and other modern browsers
+        if ('createEvent' in document) {
+            var e = document.createEvent('HTMLEvents');
+            e.initEvent(type, false, true);
+            el.dispatchEvent(e);
+        } else {
+            // IE8
+            var e = document.createEventObject();
+            e.eventType = type;
+            el.fireEvent('on' + e.eventType, e);
+        }
+    }
+
+
+    if (typeof video != 'undefined' && video != null) {
+
+        videUnMute.addEventListener('click', function (e) {
+            video.muted = !video.muted;
+            videUnMute.classList.add('active');
+            videMute.classList.remove('active');
+        });
+
+        videMute.addEventListener('click', function (e) {
+            video.muted = true;
+            videMute.classList.add('active');
+            videUnMute.classList.remove('active');
+        });
+    }
+
+    triggerEvent(videUnMute, 'click');
+});
+
+//MENU SLIDE TOGGLE
 
 
 menuBurger.on('click', function () {
@@ -305,58 +326,58 @@ $(document).on('click', '#product-show-details', function (e) {
 $(document).on('click', '#contact-order-nanoleq', function (e) {
     window.location.replace('/order');
 });
-function initVitalShirtsAnimation() {
-    function checkDistanceState() {
-        var width = $(window).width();
-        var headerDistance = $('#header').offset().top;
-        var blockDistance = $('#vital-desc').offset().top;
-        var distanceBetween = blockDistance - headerDistance;
-        if(distanceBetween < 400 && !$('.vital-desc__img--1, .vital-desc__img--2, .vital-desc__img--3, .vital-desc__img--4, .vital-desc__img--5').hasClass('animate')) {
-            $('.vital-desc__img--1, .vital-desc__img--2, .vital-desc__img--3, .vital-desc__img--4, .vital-desc__img--5').addClass('animate');
-        }
-    }
-    checkDistanceState();
-    $(window).scroll(checkDistanceState);
-}
-
-function initProductAnimation() {
-    function checkDistanceState() {
-        var width = $(window).width();
-        var headerDistance = $('#header').offset().top;
-        $('.activity-performance-section').each(function() {
-            var blockDistance = $(this).offset().top;
-            var distanceBetween = blockDistance - headerDistance;
-            if(distanceBetween < 400 && !$(this).find('.activity-performance__item, .activity-performance__part--image').hasClass('animate')) {
-                $(this).find('.activity-performance__item, .activity-performance__part--image').addClass('animate');
-            }
-        })
-    }
-    checkDistanceState();
-    $(window).scroll(checkDistanceState);
-}
-
-function initProductTableAnimation() {
-    function checkDistanceState() {
-        var width = $(window).width();
-        var headerDistance = $('#header').offset().top;
-        var blockDistance = $('.activity-metrics-section').offset().top;
-        var distanceBetween = blockDistance - headerDistance;
-        if(distanceBetween < 700 && !$('.activity-metrics__part').hasClass('animate')) {
-            $('.activity-metrics__part').addClass('animate');
-        }
-    }
-    checkDistanceState();
-    $(window).scroll(checkDistanceState);
-}
-
-$(document).ready(function() {
-    if($('#vital-desc').length) {
-        initVitalShirtsAnimation();
-    }
-    if($('.activity-performance-section').length) {
-        initProductAnimation();
-    }
-    if($('.activity-metrics-section')) {
-        initProductTableAnimation();
-    }
-})
+// function initVitalShirtsAnimation() {
+//     function checkDistanceState() {
+//         var width = $(window).width();
+//         var headerDistance = $('#header').offset().top;
+//         var blockDistance = $('#vital-desc').offset().top;
+//         var distanceBetween = blockDistance - headerDistance;
+//         if(distanceBetween < 400 && !$('.vital-desc__img--1, .vital-desc__img--2, .vital-desc__img--3, .vital-desc__img--4, .vital-desc__img--5').hasClass('animate')) {
+//             $('.vital-desc__img--1, .vital-desc__img--2, .vital-desc__img--3, .vital-desc__img--4, .vital-desc__img--5').addClass('animate');
+//         }
+//     }
+//     checkDistanceState();
+//     $(window).scroll(checkDistanceState);
+// }
+//
+// function initProductAnimation() {
+//     function checkDistanceState() {
+//         var width = $(window).width();
+//         var headerDistance = $('#header').offset().top;
+//         $('.activity-performance-section').each(function() {
+//             var blockDistance = $(this).offset().top;
+//             var distanceBetween = blockDistance - headerDistance;
+//             if(distanceBetween < 400 && !$(this).find('.activity-performance__item, .activity-performance__part--image').hasClass('animate')) {
+//                 $(this).find('.activity-performance__item, .activity-performance__part--image').addClass('animate');
+//             }
+//         })
+//     }
+//     checkDistanceState();
+//     $(window).scroll(checkDistanceState);
+// }
+//
+// function initProductTableAnimation() {
+//     function checkDistanceState() {
+//         var width = $(window).width();
+//         var headerDistance = $('#header').offset().top;
+//         var blockDistance = $('.activity-metrics-section').offset().top;
+//         var distanceBetween = blockDistance - headerDistance;
+//         if(distanceBetween < 700 && !$('.activity-metrics__part').hasClass('animate')) {
+//             $('.activity-metrics__part').addClass('animate');
+//         }
+//     }
+//     checkDistanceState();
+//     $(window).scroll(checkDistanceState);
+// }
+//
+// $(document).ready(function() {
+//     if($('#vital-desc').length) {
+//         initVitalShirtsAnimation();
+//     }
+//     if($('.activity-performance-section').length) {
+//         initProductAnimation();
+//     }
+//     if($('.activity-metrics-section')) {
+//         initProductTableAnimation();
+//     }
+// })

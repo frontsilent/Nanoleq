@@ -64,10 +64,13 @@
     &-img{
       display: flex;
       justify-content: center;
-      height: 34.5rem;
+      height: 34rem;
       padding-top: 3rem;
-      max-width: 92%;
+      max-width: 90%;
       margin: 0 auto 1rem;
+      @media (max-width: 1499px){
+        height: 33rem;
+      }
       @media (max-width: 1199px){
         height: 29rem;
         align-items: center;
@@ -75,6 +78,10 @@
       }
       img{
         max-height: 27rem;
+        object-fit: contain;
+        @media (max-width: 1499px){
+          max-height: 24rem;
+        }
         @media (max-width: 1199px){
           max-height: 21rem;
         }
