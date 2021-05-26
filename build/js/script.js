@@ -34,18 +34,23 @@ var video = document.getElementById('intro-video'),
     videUnMute = document.querySelector('.intro-video__unmute'),
     videMute = document.querySelector('.intro-video__mute');
 
-    function triggerEvent(el, type) {
-        // IE9+ and other modern browsers
-        if ('createEvent' in document) {
-            var e = document.createEvent('HTMLEvents');
-            e.initEvent(type, false, true);
-            el.dispatchEvent(e);
-        } else {
-            // IE8
-            var e = document.createEventObject();
-            e.eventType = type;
-            el.fireEvent('on' + e.eventType, e);
+
+    if (typeof video != 'undefined' && video != null) {
+        function triggerEvent(el, type) {
+            // IE9+ and other modern browsers
+            if ('createEvent' in document) {
+                var e = document.createEvent('HTMLEvents');
+                e.initEvent(type, false, true);
+                el.dispatchEvent(e);
+            } else {
+                // IE8
+                var e = document.createEventObject();
+                e.eventType = type;
+                el.fireEvent('on' + e.eventType, e);
+            }
         }
+
+        triggerEvent(videUnMute, 'click');
     }
 
 
@@ -63,8 +68,6 @@ var video = document.getElementById('intro-video'),
             videUnMute.classList.remove('active');
         });
     }
-
-    triggerEvent(videUnMute, 'click');
 
 //MENU SLIDE TOGGLE
 
