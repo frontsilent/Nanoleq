@@ -12,6 +12,9 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+    @media (max-width: 1499px){
+      justify-content: center;
+    }
     @media (max-width: 1023px){
       padding: 6rem 8rem 0;
     }
@@ -37,12 +40,14 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 0 1rem;
-    margin: 0 -8rem;
-    @media (max-width: 1199px){
-      margin: 0 -6rem;
+    margin: 0 -4rem;
+    padding: 0 8rem;
+    @media (max-width: 1499px){
+      padding: 0 6rem;
+      margin: 0 -1rem;
     }
     @media (max-width: 1023px){
+      padding: 0;
       margin: 0 -2rem;
     }
     @media (max-width: 767px){
@@ -79,9 +84,9 @@
     }
     .about-leadership-tab__top-wrap{
       width: 22rem;
-      margin: 0 8rem;
-      @media (max-width: 1199px){
-        margin: 0 6rem;
+      margin: 0 4rem;
+      @media (max-width: 1499px){
+        margin: 0 1rem;
       }
       @media (max-width: 1023px){
         margin: 0 2rem;
@@ -100,12 +105,15 @@
       }
     }
     .about-leadership-member{
-      margin-bottom: 0;
+      margin: 0 auto 0;
+      @media (max-width: 1499px){
+        margin: 0 auto;
+      }
       @media (max-width: 1199px){
-        margin-bottom: 0;
+        margin: 0 auto 0;
       }
       @media (max-width: 1023px){
-        margin-bottom: 0;
+        margin: 0 auto 0;
       }
     }
     .about-leadership-tab__arrow{
@@ -125,11 +133,11 @@
   text-align: center;
   margin: 0 4rem 7.5rem;
   cursor: pointer;
-  @media (max-width: 1439px){
+  @media (max-width: 1499px){
     margin: 0 1rem 7.5rem;
   }
   @media (max-width: 1023px){
-    width: 20rem;
+    margin: 0 2rem 7.5rem;
   }
   @media (max-width: 767px){
     width: 22rem;
@@ -181,7 +189,7 @@
   &__header{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 8rem;
     &-wrap{
       @media (max-width: 767px){
@@ -195,7 +203,7 @@
         }
       }
     }
-    @media (max-width: 1439px){
+    @media (max-width: 1499px){
       padding: 0 3rem;
     }
     @media (max-width: 1023px){
@@ -270,7 +278,7 @@
     align-items: flex-start;
     min-height: 39rem;
     padding: 6rem 0 6rem 12rem;
-    @media (max-width: 1439px){
+    @media (max-width: 1499px){
       padding: 4rem 0 4rem 4rem;
     }
     @media (max-width: 1023px){
@@ -281,7 +289,7 @@
     }
     &--long{
       padding-left: 4rem;
-      @media (max-width: 1439px){
+      @media (max-width: 1499px){
         padding-left: 0;
       }
     }

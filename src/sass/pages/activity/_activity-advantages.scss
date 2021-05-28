@@ -66,10 +66,15 @@
     transform: translateY(-50%);
     top: 50%;
     @media (max-width: 1023px){
-      top: 7rem !important;
+      max-width: 85rem;
+      top: 0;
       left: 50% !important;
       right: auto !important;
       transform: translateX(-50%) !important;
+    }
+    @media (max-width: 768px){
+      max-width: 65rem;
+      top: 5rem;
     }
   }
   &__image-app{
@@ -229,11 +234,7 @@
         left: 50%;
         
       }
-      @include custom-bp(768){
-        margin-left: 2rem;
-        margin-top: 9rem;
-        max-width: 170%;
-      }
+
     }
     .activity-advantages__image-app{
       right: calc(50% + 3rem);
@@ -263,11 +264,7 @@
       @media (max-width: 1023px){
         left: 50%;
       }
-      @include custom-bp(768){
-        margin-left: 2rem;
-        margin-top: 9rem;
-        max-width: 170%;
-      }
+ 
     }
     .activity-advantages__image-app{
       left: calc(100% - 12rem);
