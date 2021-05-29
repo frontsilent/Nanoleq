@@ -58,15 +58,15 @@ get_header();
                     <?php endif; ?>
                     <div class="form__items-title">
                         <label class="form-item form-item--radio input-wrap">
-                            <input type="radio" value="Work at Nanoleq" name="contact_form_type" class="form-item__input" checked>
+                            <input type="radio" value="Work at Nanoleq" data-form-type="work" name="contact_form_type" class="form-item__input" checked>
                             <p>Work at Nanoleq</p>
                         </label>
                         <label class="form-item form-item--radio input-wrap">
-                            <input type="radio" value="Invest in Nanoleq" name="contact_form_type" class="form-item__input">
+                            <input type="radio" value="Invest in Nanoleq" data-form-type="invest" name="contact_form_type" class="form-item__input">
                             <p>Invest in Nanoleq</p>
                         </label>
                         <label class="form-item form-item--radio input-wrap">
-                            <input type="radio" id="contact-order-nanoleq" value="Order From Nanoleq" name="contact_form_type" class="form-item__input">
+                            <input type="radio" id="contact-order-nanoleq" value="Order From Nanoleq" data-form-type="order" name="contact_form_type" class="form-item__input">
                             <p>Order From Nanoleq</p>
                         </label>
                     </div>

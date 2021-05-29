@@ -3,6 +3,9 @@
 Template Name: Order
 */
 get_header();
+$request_quote = $_GET['request_quote'];
+$prod_starter = $_GET['prod_kit'];
+$activity = $_GET['act'];
 ?>
 
 <div class="page-body page-body--white">
@@ -19,10 +22,6 @@ get_header();
                 </div>
                 <form id="order-form" method="post" action="<?php bloginfo('url'); ?>/wp-admin/admin-ajax.php" class="order__info">
 
-                    <?php
-                    $prod_starter = $_GET['prod_kit'];
-                    ?>
-
                     <input type="hidden" name="action" value="order">
                     <input type="hidden" name="project_name" value="Nanoleq">
                     <input type="hidden" name="form_subject" value="Request from order page">
@@ -34,7 +33,7 @@ get_header();
                         <div class="order-top__element">
                             <!--Electroskin-->
                             <div class="order-top-item-wrap order-product-wrap input-wrap">
-                                <input type="checkbox" id="prod-1" name="product-1" value="ElectroSkin"  class="order-product-input order-top-item__input" checked>
+                                <input type="checkbox" id="prod-1" name="product-1" value="ElectroSkin"  class="order-product-input order-top-item__input" <?php echo (!$activity && !$prod_starter ? ($request_quote !== "phantomlink" && $request_quote !=="phantomtape" ? 'checked' : '') : ''); ?>>
                                 <div class="order-top-item">
                                     <label for="prod-1">
                                         <div class="order-checkbox">
@@ -74,7 +73,7 @@ get_header();
                             </div>
                             <!--ElectroSkin Starter Kit-->
                             <label class="order-top-item-wrap input-wrap">
-                                <input type="checkbox" name="product-1-kit" value="ElectroSkin starter kit" class="order-top-item__input" <?php echo ($prod_starter == 'electroskin' ? 'checked' : ''); ?>>
+                                <input type="checkbox" name="product-1-kit" value="ElectroSkin starter kit" class="order-top-item__input" <?php echo ($prod_starter == 'electroskin' || $request_quote == 'electroskin' ? 'checked' : ''); ?>>
                                 <div class="order-top-item">
                                     <div class="order-checkbox">
                                         <img src="<?php bloginfo('template_url'); ?>/img/checked-icon-w.svg" alt="checked">
@@ -94,7 +93,7 @@ get_header();
                         <div class="order-top__element">
                             <!--PhantomTape-->
                             <div class="order-top-item-wrap order-product-wrap input-wrap">
-                                <input type="checkbox" id="prod-2" name="product-2" value="PhantomTape" class="order-top-item__input order-product-input">
+                                <input type="checkbox" id="prod-2" name="product-2" value="PhantomTape" class="order-top-item__input order-product-input"  <?php echo ($request_quote == 'phantomtape' ? 'checked' : ''); ?>>
                                 <div class="order-top-item">
                                     <label for="prod-2">
                                         <div class="order-checkbox">
@@ -134,7 +133,7 @@ get_header();
                             </div>
                             <!--PhantomTape Starter Kit-->
                             <label class="order-top-item-wrap input-wrap">
-                                <input type="checkbox" name="product-2-kit" value="PhantomTape Starter Kit" class="order-top-item__input" <?php echo ($prod_starter == 'phantomtape' ? 'checked' : ''); ?>>
+                                <input type="checkbox" name="product-2-kit" value="PhantomTape Starter Kit" class="order-top-item__input" <?php echo ($request_quote == 'phantomtape' || $prod_starter == 'phantomtape' ? 'checked' : ''); ?>>
                                 <div class="order-top-item">
                                     <div class="order-checkbox">
                                         <img src="<?php bloginfo('template_url'); ?>/img/checked-icon-w.svg" alt="checked">
@@ -154,7 +153,7 @@ get_header();
                         <div class="order-top__element">
                             <!--Phantomlink-->
                             <div class="order-top-item-wrap order-product-wrap input-wrap">
-                                <input type="checkbox" id="prod-3" name="product-3" value="Phantomlink" class="order-top-item__input order-product-input">
+                                <input type="checkbox" id="prod-3" name="product-3" value="Phantomlink" class="order-top-item__input order-product-input" <?php echo ($request_quote == 'phantomlink' ? 'checked' : ''); ?>>
                                 <div class="order-top-item">
                                     <label for="prod-3">
                                         <div class="order-checkbox">
@@ -194,7 +193,7 @@ get_header();
                             </div>
                             <!--Combined Starter kit-->
                             <label class="order-top-item-wrap input-wrap">
-                                <input type="checkbox" name="product-3-kit" value="Combined Starter kit" class="order-top-item__input" <?php echo ($prod_starter == 'phantomlink' ? 'checked' : ''); ?>>
+                                <input type="checkbox" name="product-3-kit" value="Combined Starter kit" class="order-top-item__input" <?php echo ($prod_starter == 'products' || $prod_starter == 'phantomlink' || $request_quote == 'phantomlink'  ? 'checked' : ''); ?>>
                                 <div class="order-top-item">
                                     <div class="order-checkbox">
                                         <img src="<?php bloginfo('template_url'); ?>/img/checked-icon-w.svg" alt="checked">
@@ -214,13 +213,10 @@ get_header();
                     </div>
                     <div class="order__title">Select your Vital Shirts <em>*</em></div>
                     <div class="order__bottom">
-                        <?php
-                        $activity = $_GET['act'];
-                        ?>
                         <!--running-->
                         <div class="order-bottom__element">
                             <div class="order-bottom-item-wrap order-product-wrap input-wrap">
-                                <input type="checkbox" id="prod-4" name="shirt-1" value="Running" class="order-bottom-item__input order-product-input" <?php echo (isset($activity) ? ($activity == 'run' ? 'checked' : '' ) : 'checked'); ?>>
+                                <input type="checkbox" id="prod-4" name="shirt-1" value="Running" class="order-bottom-item__input order-product-input" <?php echo (!isset($prod_starter) && !isset($request_quote) ? (isset($activity) ? ($activity == 'run' ? 'checked' : '' ) : 'checked') : '' ); ?>>
                                 <div class="order-bottom-item">
                                     <label for="prod-4">
                                         <div class="order-checkbox">

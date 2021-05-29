@@ -17,6 +17,8 @@ get_header();
             <?php 
                 $heading = get_field('or_title');
                 $read_more = get_field('read_more_link');
+                $product_description = get_field('p_description');
+                echo ( $product_description ? '<h6 class="text-white">'.$product_description.'</h6>' : '');
                 echo ( $heading ? '<div class="el-title el-title--white">'.$heading.'</div>' : '');
                 if( have_rows('ranges') ):
                     echo '<div class="our-range">';

@@ -196,7 +196,7 @@ $args = array(
                     </a>
                     <a href="https://www.nature.com/articles/srep25641" target="_blank" class="blog-dates__item">
                         <div class="blog-dates__item-date">2016</div>
-                        <div class="blog-dates__item-title">Multilayer Patterning of High Resolution Intrinsically Stretchable Electronics.</div>
+                        <div class="blog-dates__item-title">Multilayer Patterning of High Resolution Intrinsically Stretchable Electronics</div>
                         <div class="blog-dates__item-text">Stauffer, et al. Nature Scientific reports 6</div>
                     </a>
                 </div>

@@ -37,9 +37,10 @@
                 if($product_image){
                     echo '<div class="electroskin__image">';
                     if($pageName !== 'phantomtape'){
-                        echo '<div class="electroskin__image__grayCircle"></div>';
-                        echo '<div class="electroskin__image__orangeCircle"></div>';
+                        
                     } 
+                    echo '<div class="electroskin__image__grayCircle"></div>';
+                    echo '<div class="electroskin__image__orangeCircle"></div>';
                     echo '<img src="'.$product_image.'" alt="'.($product_title ? $product_title : '').'" />';
                     echo '</div>';
                 }
@@ -67,38 +68,29 @@
             echo '</div>';
         echo '</div>';
         
-        
-            
+        if($pageName == 'phantomtape' || $pageName == 'phantomlink'){
             echo '<div class="container">';
                 /* PhantomTape and PhantomLink Special Section */
-                if($pageName == 'phantomtape' || $pageName == 'phantomlink'){
-                    $banner_heading = get_field('banner_heading');
-                    $banner_link = get_field('banner_link');
-                    $download_brochure_link = get_field('download_brochure_link');
-                    $request_quote_link = get_field('request_quote_link');
-                    echo '<div class="phantomlink-banner">';
-                        echo ( $banner_heading ? '<h6 class="text-white">'. $banner_heading.'</h6>' : '');
-                        if($banner_link){
-                            echo '<a href="javascript" id="product-show-details"  class="btn btn--orange btn--small">
-                                <span>SHOW DETAILS</span> 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
-                                    <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5px">
-                                        <path fill-rule="evenodd" stroke-linejoin="round" d="M0 0h6.838v6.838" transform="translate(6.25 1.061) rotate(45 3.583 8.649)"/>
-                                        <path d="M16.5 0L0 0" transform="translate(6.25 1.061) translate(-5.5 4.771)"/>
-                                    </g>
-                                </svg>
-                            </a>';
-                        }
-                    echo '</div>';
-                }
-
-
-
-
+                $banner_heading = get_field('banner_heading');
+                $banner_link = get_field('banner_link');
+                $download_brochure_link = get_field('download_brochure_link');
+                $request_quote_link = get_field('request_quote_link');
+                echo '<div class="phantomlink-banner">';
+                    echo ( $banner_heading ? '<h6 class="text-white">'. $banner_heading.'</h6>' : '');
+                    if($banner_link){
+                        echo '<a href="javascript" id="product-show-details"  class="btn btn--orange btn--small">
+                            <span>SHOW DETAILS</span> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19.311" height="11.791" viewBox="0 0 19.311 11.791">
+                                <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5px">
+                                    <path fill-rule="evenodd" stroke-linejoin="round" d="M0 0h6.838v6.838" transform="translate(6.25 1.061) rotate(45 3.583 8.649)"/>
+                                    <path d="M16.5 0L0 0" transform="translate(6.25 1.061) translate(-5.5 4.771)"/>
+                                </g>
+                            </svg>
+                        </a>';
+                    }
+                echo '</div>';
                 echo '<div '.($pageName == 'phantomtape' || $pageName == 'phantomlink' ? 'id="details-description"' : '').' class="phantomlink-description">';
                     echo ( $product_description ? '<div class="text-group">'.$product_description.'</div>' : '');
-
-
                     if($download_brochure_link){
                        echo '<a href="'.$download_brochure_link.'" class="btn btn--orange-black btn--small">
                             <span>Download brochure</span>
@@ -111,8 +103,6 @@
                             </svg>
                         </a>'; 
                     }
-
-
                     if($request_quote_link){
                         echo '<a href="'.$request_quote_link.'" class="btn btn--orange-black btn--small">
                             <span>request a quote</span>
@@ -124,11 +114,10 @@
                             </svg>
                         </a>';
                     }
-
-
                 echo '</div>';
+            
             echo '</div>';
-        
+        }
     echo '</section>';
 ?>
         

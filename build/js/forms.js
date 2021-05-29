@@ -47,6 +47,10 @@ $("form").each(function () { //Change
                 required: true,
                 email: true
             },
+            date: {
+                required: true,
+                dateFormat: true
+            }
         },
         messages: {
             name: {
@@ -59,6 +63,10 @@ $("form").each(function () { //Change
             email: {
                 required: "Required field",
                 email: "Invalid input, please enter the correct data"
+            },
+            date: {
+                required: "Required field",
+                dateFormat: "Invalid input, please enter the correct data"
             },
         },
         submitHandler: function (form) {
@@ -89,16 +97,13 @@ $("form").each(function () { //Change
 });
 
 let submitBtn = $('.product-submit-btn'),
-    requestType = $('[name=request_type]'),
     adminEmail = $('[name=admin_email]');
 
 submitBtn.on('click', function () {
     let ths = $(this),
-        thsEmail = ths.attr('data-email'),
-        thsRequestType = ths.attr('data-request-type');
+        thsEmail = ths.attr('data-email');
 
     adminEmail.val(thsEmail);
-    requestType.val(thsRequestType);
 })
 
 
@@ -125,9 +130,24 @@ inputs.on('focus', function () {
 
 // check if quantity selected
 $('.order-quantity__item__input').on('click', function () {
-
     let ths = $(this);
     if (ths.prop('checked') == true) {
         ths.closest('.order-product-wrap').find('.order-product-input').prop('checked', true);
     }
 });
+
+//Company Field not required for Investment Form
+$(document).on('click', 'input[name="contact_form_type"]', function (e) {
+    let companyField = $(document).find('input[name="company"]'),
+        starField = $(companyField).prev('label').find('em');
+    $(this).each(function (e) {
+        let formType = $(this).attr('data-form-type');
+        if (formType == 'invest') {
+            $(companyField).removeAttr('required');
+            $(starField).text('');
+        } else {
+            $(companyField).prop('required', true);
+            $(starField).text('*');
+        }
+    })
+})

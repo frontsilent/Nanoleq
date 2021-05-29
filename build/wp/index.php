@@ -12,8 +12,8 @@ get_header();
     <section data-theme="orange" id="main-desc" class="section main-desc-section" style="background-image: url('<?php bloginfo('template_url'); ?>/img/main-desc-bg.jpg')">
         <div class="container">
             <div class="main-desc">
-                <svg width="253" height="85.526">
-                    <path fill="none" class="ecg" d="M1.5 51.686h20.541l12.218-17.622 10.438 17.622h8.961l8.875 22.744L69.286 1.5l6.856 82.526 6.342-32.34h12.059l6.529-9.705 6.7 9.705h30.337l11.963-15.941 10.814 15.941h14.832l8.643 14.23 6.855-62.98 7.1 78.857 5.945-30.107h11.656l6.133-9.705 6.555 8.663H251.5"/>
+                <svg width="254.646" height="134.981" viewBox="0 0 254.646 134.981">
+                    <path fill="none" class="ecg" data-name="Path 7872" d="M-11483.287,604.594h43.043l11.639-28.182,12.666,28.182h20.734l13.656,36.374,27.3-116.635,25.756,131.981,16.193-51.72h20.9l8.063-15.521,8.361,15.521h43.326" transform="translate(11484.787 -522.833)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
                 </svg>
 
                 <div class="main-desc__title el-title el-title--big el-title--black el-title--left">
@@ -30,12 +30,11 @@ get_header();
         </div>
     </section>
     <!-- game-->
-    <div data-theme="dark" class="section game-section">
+<!--     <div data-theme="dark" class="section game-section">
         <div  class="wrapper game-main game-main-section" id="mainarea">
             <div class="alert alert-warning centered-axis-xy" style="min-height: 20px; display:none;" role="alert" id="compilingmessage">
                 <div id='loadTasks'> </div>
             </div>
-            <!-- The "tabindex=0" specifier on the canvas is important to allow it to capture keyboard focus when clicking on it with a mouse -->
             <canvas tabindex=0 id="canvas" class="emscripten" oncontextmenu="event.preventDefault()" style="display:none;"></canvas>
         </div>
     </div>
@@ -49,10 +48,14 @@ get_header();
         <div class="col-sm-2 text-center"></div>
         <div class="col-sm-2 text-center"></div>
     </div>
-    <div class="texthalf text-normal jumbotron " id="logwindow" style='display:none'></div>
+    <div class="texthalf text-normal jumbotron " id="logwindow" style='display:none'></div> -->
     <!-- advantages -->
+    <section data-theme="white" id="tim-shirt" class="section tim-shirt-section">
+        <?php if (get_field('advantages_img')) : ?>
+            <img src="<?php echo get_field('advantages_img'); ?>" alt="">
+        <?php endif; ?>
+    </section>
     <section data-theme="orange-white" id="advantages" class="section advantages-section">
-        <div class="container">
             <div class="advantages">
                 <div class="advantages__left">
                     <div class="advantages__title el-title el-title--big el-title--black el-title--left">
@@ -65,6 +68,10 @@ get_header();
                             <?php echo get_field('advantages_subtitle'); ?>
                         <?php endif; ?>
                     </div>
+                    
+                </div>
+                <div class="advantages__right">
+                    
                     <?php if (have_rows('advantages_items')) : ?>
                         <div class="advantages__items">
                             <?php while (have_rows('advantages_items')) : the_row(); ?>
@@ -80,13 +87,7 @@ get_header();
                         </div>
                     <?php endif; ?>
                 </div>
-                <div class="advantages__right">
-                    <?php if (get_field('advantages_img')) : ?>
-                        <img class="advantages__img" src="<?php echo get_field('advantages_img'); ?>" alt="">
-                    <?php endif; ?>
-                </div>
             </div>
-        </div>
     </section>
     <!-- shirts -->
     <section data-theme="dark" id="shirts" class="section shirts-section">

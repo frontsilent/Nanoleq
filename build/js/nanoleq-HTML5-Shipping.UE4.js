@@ -45,7 +45,7 @@ const explicitlyUseWebGL1 = (location.search.indexOf('webgl1') != -1);
 // When hosting UE4 builds live on a production CDN, compression should always be enabled,
 // since uncompressed files are too huge to be downloaded over the web.
 // Please view tip in "Project Setting" for more information.
-const serveCompressedAssets = false;
+const serveCompressedAssets = true;
 
 // "Project Settings" -> Project -> Packaging -> "Use Pak File"
 // For the large .data file, there's two ways to manage compression: either UE4 UnrealPak tool can compress it in engine, or
@@ -73,7 +73,7 @@ var Module = {
 	assetDownloadProgress: {}, // Track how many bytes of each needed asset has been downloaded so far.
 
 	UE4_indexedDBName: 'UE4_assetDatabase_nanoleq', // this should be an ascii ID string without special characters that is unique to the project that is being packaged
-	UE4_indexedDBVersion: 202104301125, // Bump this number to invalidate existing IDB storages in browsers.
+	UE4_indexedDBVersion: 202105251151, // Bump this number to invalidate existing IDB storages in browsers.
 };
 
 
@@ -1133,7 +1133,7 @@ $(document).ready(function() {
 				return { db: db, wasmBytes: wasmBytes, fromIndexedDB: true };
 			});
 		}).catch(function() {
-			return download(Module.locateFile('UE4Game-HTML5-Shipping.wasm'), 'arraybuffer').then(function(wasmBytes) {
+			return download(Module.locateFile('nanoleq-HTML5-Shipping.wasm'), 'arraybuffer').then(function(wasmBytes) {
 				return { db: db, wasmBytes: wasmBytes, fromIndexedDB: false };
 			});
 		});
@@ -1145,7 +1145,7 @@ $(document).ready(function() {
 
 		// ----------------------------------------
 		// MAIN JS
-		var mainJsDownload = fetchOrDownloadAndStore(db, Module.locateFile('UE4Game-HTML5-Shipping.js'), 'blob').then(function(data) {
+		var mainJsDownload = fetchOrDownloadAndStore(db, Module.locateFile('nanoleq-HTML5-Shipping.js'), 'blob').then(function(data) {
 				Module['mainScriptUrlOrBlob'] = data;
 				return addScriptToDom(data).then(function() {
 					addRunDependency('wait-for-compiled-code');

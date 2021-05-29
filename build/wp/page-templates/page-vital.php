@@ -32,12 +32,18 @@ get_header();
                 <div class="vital-desc-connect__items">
                     <?php if( have_rows('vital_apps')) :?>
                         <?php while( have_rows('vital_apps')) : the_row(); ?>
-                            <a href="<?php echo get_sub_field('link'); ?>" class="vital-desc-connect__item">
-                                <img src="<?php echo get_sub_field('icon'); ?>" alt="img">
-                            </a>
+                            <?php if (get_sub_field('link')) : ?>
+                                <a href="<?php echo get_sub_field('link'); ?>" class="vital-desc-connect__item">
+                                    <img src="<?php echo get_sub_field('icon'); ?>" alt="img">
+                                </a>
+                            <?php else: ?>
+                                <span class="vital-desc-connect__item">
+                                    <img src="<?php echo get_sub_field('icon'); ?>" alt="img">
+                                </span>
+                            <?php endif; ?>
                         <?php endwhile; ?>
                     <?php endif;?>
-                    <a href="<?php echo get_sub_field('vital_more_link'); ?>" class="vital-desc-connect__item">
+                    <a href="<?php echo get_field('vital_more_link'); ?>" class="vital-desc-connect__item">
                         <img src="<?php bloginfo('template_url'); ?>/img/more.svg" alt="img">
                     </a>
                 </div>
